@@ -142,3 +142,4 @@ D:\Intern .net\ASP .NET MVC\HotelBooking\obj\Debug\net8.0\refint\HotelBooking.dl
 D:\Intern .net\ASP .NET MVC\HotelBooking\obj\Debug\net8.0\HotelBooking.pdb
 D:\Intern .net\ASP .NET MVC\HotelBooking\obj\Debug\net8.0\HotelBooking.genruntimeconfig.cache
 D:\Intern .net\ASP .NET MVC\HotelBooking\obj\Debug\net8.0\ref\HotelBooking.dll
+D:\Intern .net\ASP .NET MVC\HotelBooking\obj\Debug\net8.0\HotelBooking.sourcelink.json
