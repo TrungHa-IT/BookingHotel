@@ -18,6 +18,40 @@ namespace HotelBooking.Controllers
             return View();
         }
 
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        public IActionResult blogdetail()
+        {
+            return View();
+        }
+
+        public IActionResult rooms()
+        {
+            return View();
+        }
+
+        public IActionResult blog()
+        {
+            return View();
+        }
+
+        public IActionResult roomdetails()
+        {
+            return View();
+        }
+
+            public IActionResult main()
+            {
+                return View();
+            }
+
+        public IActionResult about()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
