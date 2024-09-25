@@ -20,65 +20,19 @@ namespace HotelBooking.Controllers
 
         public async Task LoginGoogle()
         {
-            await HttpContext.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
-                new AuthenticationProperties
-                {
-                    RedirectUri = Url.Action("GoogleResponse")
-                });
+            await HttpContext.ChallengeAsync(GoogleDefaults.AuthenticationScheme, new AuthenticationProperties()
+            {
+                RedirectUri = Url.Action("GoogleResponse")
+            });
         }
 
         public async Task<IActionResult> GoogleResponse()
         {
             var result = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+         
+            return RedirectToAction("Index", "Home");
 
-            // Check if the authentication result is successful and has a principal
-            if (result.Succeeded && result.Principal != null)
-            {
-                var claims = result.Principal.Identities.FirstOrDefault()?.Claims.ToList();
-
-                // Extract email claim
-                var emailClaim = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email);
-                if (emailClaim != null)
-                {
-                    var email = emailClaim.Value;
-
-                    // Check if user already exists
-                    var user = await userManager.FindByEmailAsync(email);
-                    if (user != null)
-                    {
-                        // User exists, sign them in
-                        await signInManager.SignInAsync(user, isPersistent: false);
-                        return RedirectToAction("Index", "Home");
-                    }
-                    else
-                    {
-                        // User does not exist, create a new user
-                        var newUser = new AppUser
-                        {
-                            Email = email,
-                            UserName = claims.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)?.Value,
-                            PhoneNumber = claims.FirstOrDefault(c => c.Type == ClaimTypes.Surname)?.Value
-                        };
-
-                        var resultCreate = await userManager.CreateAsync(newUser);
-                        if (resultCreate.Succeeded)
-                        {
-                            await signInManager.SignInAsync(newUser, isPersistent: false);
-                            return RedirectToAction("Index", "Home");
-                        }
-                        foreach (var error in resultCreate.Errors)
-                        {
-                            ModelState.AddModelError("", error.Description);
-                        }
-                    }
-                }
-            }
-
-            // Handle the case when authentication fails
-            ModelState.AddModelError("", "Google authentication failed.");
-            return View("Login"); // or any appropriate view
         }
-
 
 
 

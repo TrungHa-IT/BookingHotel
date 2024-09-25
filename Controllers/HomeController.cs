@@ -38,6 +38,12 @@ namespace HotelBooking.Controllers
             return View();
         }
 
+        public IActionResult createblog()
+        {
+            return View();
+        }
+
+
         public IActionResult roomdetails()
         {
             return View();
