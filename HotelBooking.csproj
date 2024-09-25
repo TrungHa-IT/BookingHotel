@@ -11,7 +11,6 @@
 
   <ItemGroup>
     <Content Remove="Views\Account\Main.cshtml" />
-    <Content Remove="Views\Home\index1.cshtml" />
     <Content Remove="wwwroot\img\about\about-1.jpg" />
     <Content Remove="wwwroot\img\about\about-2.jpg" />
     <Content Remove="wwwroot\img\about\about-p1.jpg" />
@@ -72,7 +71,6 @@
 
   <ItemGroup>
     <None Include="Views\Account\Main.cshtml" />
-    <None Include="Views\Home\Index1.cshtml" />
     <None Include="wwwroot\img\about\about-1.jpg" />
     <None Include="wwwroot\img\about\about-2.jpg" />
     <None Include="wwwroot\img\about\about-p1.jpg" />
@@ -141,6 +139,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.5" />
   </ItemGroup>
 
 </Project>

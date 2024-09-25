@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace HotelBooking.Controllers
 {
@@ -13,6 +15,13 @@ namespace HotelBooking.Controllers
     {
         private readonly SignInManager<AppUser> signInManager;
         private readonly UserManager<AppUser> userManager;
+
+        public AccountController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
+        {
+            this.signInManager = signInManager;
+            this.userManager = userManager;
+        }
+
         public IActionResult Login()
         {
             return View();
@@ -28,18 +37,58 @@ namespace HotelBooking.Controllers
 
         public async Task<IActionResult> GoogleResponse()
         {
-            var result = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-         
+            // Get the authentication result for Google login
+            var result = await HttpContext.AuthenticateAsync(GoogleDefaults.AuthenticationScheme);
+
+            // Extract user claims
+            var claims = result.Principal?.Identities.FirstOrDefault()?.Claims;
+            var email = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+            var googleId = claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            var name = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+            var address = claims?.FirstOrDefault(c => c.Type == ClaimTypes.StreetAddress)?.Value;
+            
+
+            if (googleId == null || email == null)
+            {
+                return RedirectToAction("Login", "Account"); // Redirect to login if Google data is not available
+            }
+
+            // Check if the user already exists in the database
+            var user = await userManager.FindByEmailAsync(email);
+
+            if (user == null)
+            {
+                // Create a new user if not found
+                user = new AppUser // Ensure this matches your user model
+                {
+                    UserName = email,
+                    Email = email,
+                    Address = address,
+                    Name = name // Assuming your user model has a FullName field
+                };
+
+                // Save the new user in the database
+                var resultCreate = await userManager.CreateAsync(user);
+                if (!resultCreate.Succeeded)
+                {
+                    // Handle the error (e.g., log the failure, show error message)
+                    foreach (var error in resultCreate.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                    return RedirectToAction("Error", "Home");
+                }
+
+                // Add login information to AspNetUserLogins for external login
+                var loginInfo = new UserLoginInfo(GoogleDefaults.AuthenticationScheme, googleId, "Google");
+                await userManager.AddLoginAsync(user, loginInfo);
+            }
+
+            // Sign in the user
+            await signInManager.SignInAsync(user, isPersistent: false);
+
+            // Redirect to the home page after successful login
             return RedirectToAction("Index", "Home");
-
-        }
-
-
-
-        public AccountController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
-        {
-            this.signInManager = signInManager;
-            this.userManager = userManager;
         }
 
         [HttpPost]
@@ -47,14 +96,13 @@ namespace HotelBooking.Controllers
         {
             if (ModelState.IsValid)
             {
-                //Login
+                // Login
                 var result = await signInManager.PasswordSignInAsync(model.Username!, model.Password!, model.RememberMe, false);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Invalid login attempt");
-                return View(model);
             }
             return View(model);
         }
@@ -71,8 +119,8 @@ namespace HotelBooking.Controllers
             {
                 AppUser u = new()
                 {
-                   Name = model.LastName,
-                   UserName = model.Email,
+                    Name = model.LastName,
+                    UserName = model.Email,
                     Email = model.Email,
                     Address = model.Address
                 };
@@ -80,8 +128,9 @@ namespace HotelBooking.Controllers
                 var result = await userManager.CreateAsync(u, model.Password!);
                 if (result.Succeeded)
                 {
-                    //await signInManager.SignInAsync(u, false);
-                    return RedirectToAction("Login", "Account"); 
+                    // Optionally sign in the user immediately after registration
+                    // await signInManager.SignInAsync(u, isPersistent: false);
+                    return RedirectToAction("Login", "Account");
                 }
                 foreach (var error in result.Errors)
                 {
@@ -94,7 +143,7 @@ namespace HotelBooking.Controllers
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

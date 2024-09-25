@@ -10,5 +10,6 @@ namespace HotelBooking.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) 
         { 
         }
+        public DbSet<HotelBooking.Models.Categories> Categories { get; set; } = default!;
     }
 }

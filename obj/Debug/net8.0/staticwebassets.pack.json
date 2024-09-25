@@ -97,6 +97,14 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\wwwroot\\js\\uploadImage .js",
+      "PackagePath": "staticwebassets\\js\\uploadImage .js"
+    },
+    {
+      "Id": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\wwwroot\\js\\uploadimage.js",
+      "PackagePath": "staticwebassets\\js\\uploadimage.js"
+    },
+    {
       "Id": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
