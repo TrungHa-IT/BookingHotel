@@ -10,16 +10,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Configure Google Authentication
 builder.Services.AddAuthentication(options =>
 {
-    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme; // Default scheme for cookie authentication
-    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme; // Default scheme for Google authentication
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
 })
-.AddCookie() // Add cookie authentication
+.AddCookie() // Adds cookie authentication
 .AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
 {
     options.ClientId = builder.Configuration.GetSection("GoogleKeys:ClientID").Value;
     options.ClientSecret = builder.Configuration.GetSection("GoogleKeys:ClientSecret").Value;
-    options.CallbackPath = "/signin-google"; // Set the callback path (this should match the one in Google Console)
 });
+
 
 // Configure the database connection
 var connectionString = builder.Configuration.GetConnectionString("default");
