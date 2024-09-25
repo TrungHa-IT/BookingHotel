@@ -59,9 +59,9 @@
         </div>
         <nav class="mainmenu mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./rooms.html">Rooms</a></li>
-                <li><a href="./about-us.html">About Us</a></li>
+                <li class="active"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><<a asp-controller="Home" asp-action="rooms">Rooms</a></li>
+                <li><a asp-controller="Home" asp-action="about">About Us</a></li>
                 <li>
                     <a href="./pages.html">Pages</a>
                     <ul class="dropdown">
@@ -71,8 +71,8 @@
                         <li><a href="#">Premium Room</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">News</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a asp-controller="Home" asp-action="blog">News</a></li>
+                <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -137,9 +137,9 @@
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="./index.html">Home</a></li>
-                                    <li class="active"><a href="./rooms.html">Rooms</a></li>
-                                    <li><a href="./about-us.html">About Us</a></li>
+                                    <li class="active"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                    <li><<a asp-controller="Home" asp-action="rooms">Rooms</a></li>
+                                    <li><a asp-controller="Home" asp-action="about">About Us</a></li>
                                     <li>
                                         <a href="./pages.html">Pages</a>
                                         <ul class="dropdown">
@@ -149,8 +149,8 @@
                                             <li><a href="#">Premium Room</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="./blog.html">News</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
+                                    <li><a asp-controller="Home" asp-action="blog">News</a></li>
+                                    <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
                                 </ul>
                             </nav>
                             <div class="nav-right search-switch">

@@ -1,0 +1,103 @@
+﻿@model HotelBooking.Models.Categories
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Categories</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <!-- Add form ID so it can be referenced in JavaScript -->
+        <form id="categoryForm" asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input type="file" id="photo" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <!-- Hidden field to store the image URL -->
+            <input type="hidden" asp-for="Image" id="ProductImageUrl" />
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateAt" class="control-label"></label>
+                <input type="date" asp-for="CreateAt" class="form-control" />
+                <span asp-validation-for="CreateAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <!-- The button now triggers both image upload and form submission -->
+                <input type="button" id="uploadAndSubmit" class="btn btn-primary" value="Create" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAcQVo6V1PFQvm9m298zKlaeZJR7bS2Paw",
+            authDomain: "image-upload-62189.firebaseapp.com",
+            databaseURL: "https://image-upload-62189-default-rtdb.firebaseio.com",
+            projectId: "image-upload-62189",
+            storageBucket: "image-upload-62189.appspot.com",
+            messagingSenderId: "451832402315",
+            appId: "1:451832402315:web:ced11b67eb5433ce269f8e",
+            measurementId: "G-VX4F3HFQZY"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        document.getElementById('uploadAndSubmit').addEventListener('click', function () {
+            const ref = firebase.storage().ref();
+            const file = document.querySelector("#photo").files[0];
+
+            if (!file) {
+                alert("Please select a file.");
+                return;
+            }
+
+            const name = +new Date() + "-" + file.name;
+            const metadata = {
+                contentType: file.type
+            };
+
+            // Upload the file to Firebase
+            ref.child(name).put(file, metadata)
+                .then(snapshot => snapshot.ref.getDownloadURL())
+                .then(url => {
+                    console.log("File available at: ", url);
+
+                    // Set the image URL to the hidden input field
+                    document.querySelector("#ProductImageUrl").value = url;
+
+                    // Submit the form after the image is uploaded
+                    document.getElementById("categoryForm").submit();
+                })
+                .catch(console.error);
+        });
+    </script>
+}
