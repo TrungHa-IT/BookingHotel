@@ -128,8 +128,12 @@ namespace HotelBooking.Controllers
                 var result = await userManager.CreateAsync(u, model.Password!);
                 if (result.Succeeded)
                 {
+                    // Gán vai trò "User" cho tài khoản mới
+                    //await userManager.AddToRoleAsync(u, "Customer");
+
                     // Optionally sign in the user immediately after registration
                     // await signInManager.SignInAsync(u, isPersistent: false);
+
                     return RedirectToAction("Login", "Account");
                 }
                 foreach (var error in result.Errors)
@@ -139,6 +143,7 @@ namespace HotelBooking.Controllers
             }
             return View(model);
         }
+
 
         public async Task<IActionResult> Logout()
         {

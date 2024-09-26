@@ -1,5 +1,6 @@
-using HotelBooking.Data;
+﻿using HotelBooking.Data;
 using HotelBooking.Models;
+using HotelBooking.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Identity;
@@ -25,6 +26,9 @@ builder.Services.AddAuthentication(options =>
 var connectionString = builder.Configuration.GetConnectionString("default");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
 
+// Đăng ký Repository
+builder.Services.AddScoped<ICategoriesRepositories, CategoriesRepository>();
+builder.Services.AddTransient<UnitOfWork>();
 // Add ASP.NET Core Identity services
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
