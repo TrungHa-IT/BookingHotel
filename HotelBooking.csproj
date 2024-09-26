@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <Content Remove="Views\Account\Main.cshtml" />
+    <Content Remove="Views\Dashboard\Index.cshtml" />
     <Content Remove="wwwroot\img\about\about-1.jpg" />
     <Content Remove="wwwroot\img\about\about-2.jpg" />
     <Content Remove="wwwroot\img\about\about-p1.jpg" />
@@ -71,6 +72,7 @@
 
   <ItemGroup>
     <None Include="Views\Account\Main.cshtml" />
+    <None Include="Views\Dashboard\Index.cshtml" />
     <None Include="wwwroot\img\about\about-1.jpg" />
     <None Include="wwwroot\img\about\about-2.jpg" />
     <None Include="wwwroot\img\about\about-p1.jpg" />

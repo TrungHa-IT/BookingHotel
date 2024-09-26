@@ -136,7 +136,7 @@ namespace HotelBooking.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Blog");
+                    b.ToTable("Blogs");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.Categories", b =>
@@ -165,6 +165,37 @@ namespace HotelBooking.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("HotelBooking.Models.Comments", b =>
+                {
+                    b.Property<int>("CommentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentID"));
+
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ParentCommentID")
+                        .HasColumnType("int");
+
+                    b.HasKey("CommentID");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("ParentCommentID");
+
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.Roles", b =>
@@ -331,6 +362,23 @@ namespace HotelBooking.Migrations
                     b.Navigation("AppUser");
                 });
 
+            modelBuilder.Entity("HotelBooking.Models.Comments", b =>
+                {
+                    b.HasOne("HotelBooking.Models.AppUser", "AppUser")
+                        .WithMany("Comments")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HotelBooking.Models.Comments", "ParentComment")
+                        .WithMany("Replies")
+                        .HasForeignKey("ParentCommentID");
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("ParentComment");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -385,6 +433,13 @@ namespace HotelBooking.Migrations
             modelBuilder.Entity("HotelBooking.Models.AppUser", b =>
                 {
                     b.Navigation("Blogs");
+
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("HotelBooking.Models.Comments", b =>
+                {
+                    b.Navigation("Replies");
                 });
 #pragma warning restore 612, 618
         }
