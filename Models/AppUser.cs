@@ -14,5 +14,7 @@ namespace HotelBooking.Models
 
         // Thuộc tính điều hướng tới Blog (1 AppUser có nhiều Blog)
         public ICollection<Blog> Blogs { get; set; }
+        // Thuộc tính điều hướng tới Blog (1 AppUser có nhiều Comments)
+        public ICollection<Comments> Comments { get; set; }
     }
 }
