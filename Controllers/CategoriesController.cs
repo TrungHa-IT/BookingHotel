@@ -7,22 +7,27 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HotelBooking.Data;
 using HotelBooking.Models;
+using Microsoft.AspNetCore.Authorization;
+using HotelBooking.Repositories;
 
 namespace HotelBooking.Controllers
 {
     public class CategoriesController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly ICategoriesRepositories _categoriesRepositories;
 
-        public CategoriesController(AppDbContext context)
+        public CategoriesController(ICategoriesRepositories categoriesRepositories)
         {
-            _context = context;
+            _categoriesRepositories = categoriesRepositories;
         }
 
+
+       
         // GET: Categories
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 10, string searchName = "")
         {
-            return View(await _context.Categories.ToListAsync());
+            var categories = await _categoriesRepositories.GetCategoriesPagedAsync(pageNumber, pageSize, searchName);
+            return View(categories);
         }
 
         // GET: Categories/Details/5
@@ -33,8 +38,7 @@ namespace HotelBooking.Controllers
                 return NotFound();
             }
 
-            var categories = await _context.Categories
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var categories = await _categoriesRepositories.GetCategoriesByIdAsync(id.Value);
             if (categories == null)
             {
                 return NotFound();
@@ -43,6 +47,8 @@ namespace HotelBooking.Controllers
             return View(categories);
         }
 
+
+       
         // GET: Categories/Create
         public IActionResult Create()
         {
@@ -54,17 +60,17 @@ namespace HotelBooking.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Image,Description,CreateAt")] Categories categories)
+        public async Task<IActionResult> Create(Categories categories)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(categories);
-                await _context.SaveChangesAsync();
+                await _categoriesRepositories.CreateCategoriesAsync(categories);
                 return RedirectToAction(nameof(Index));
             }
             return View(categories);
         }
 
+        
         // GET: Categories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -73,7 +79,7 @@ namespace HotelBooking.Controllers
                 return NotFound();
             }
 
-            var categories = await _context.Categories.FindAsync(id);
+            var categories = await _categoriesRepositories.GetCategoriesByIdAsync(id.Value);
             if (categories == null)
             {
                 return NotFound();
@@ -86,7 +92,7 @@ namespace HotelBooking.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Image,Description,CreateAt")] Categories categories)
+        public async Task<IActionResult> Edit(int id, Categories categories)
         {
             if (id != categories.Id)
             {
@@ -97,8 +103,7 @@ namespace HotelBooking.Controllers
             {
                 try
                 {
-                    _context.Update(categories);
-                    await _context.SaveChangesAsync();
+                    await _categoriesRepositories.UpdateCategoriesAsync(categories);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -124,8 +129,7 @@ namespace HotelBooking.Controllers
                 return NotFound();
             }
 
-            var categories = await _context.Categories
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var categories = await _categoriesRepositories.GetCategoriesByIdAsync(id.Value);
             if (categories == null)
             {
                 return NotFound();
@@ -139,19 +143,20 @@ namespace HotelBooking.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var categories = await _context.Categories.FindAsync(id);
-            if (categories != null)
+            try
             {
-                _context.Categories.Remove(categories);
+                await _categoriesRepositories.DeleteCategoriesAsync(id);
+                return RedirectToAction(nameof(Index));
             }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            catch (KeyNotFoundException)
+            {
+                return NotFound();
+            }
         }
 
         private bool CategoriesExists(int id)
         {
-            return _context.Categories.Any(e => e.Id == id);
+            return _categoriesRepositories.GetCategoriesByIdAsync(id).Result != null;
         }
     }
 }
