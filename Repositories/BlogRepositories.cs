@@ -1,4 +1,5 @@
 ﻿using HotelBooking.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelBooking.Repositories
 {
@@ -41,6 +42,9 @@ namespace HotelBooking.Repositories
         {
             return await _unitOfWork._blogRepository.GetByIdAsync(id);
         }
+
+
+
 
         public async Task<IEnumerable<Blog>> GetBlogPagedAsync(int pageNumber, int pageSize, string name)
         {

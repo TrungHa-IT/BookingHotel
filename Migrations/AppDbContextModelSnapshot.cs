@@ -115,8 +115,8 @@ namespace HotelBooking.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateOnly>("CreateAt")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -129,8 +129,8 @@ namespace HotelBooking.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateOnly>("UpdateAt")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("UpdateAt")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
