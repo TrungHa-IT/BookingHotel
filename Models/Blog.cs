@@ -8,31 +8,31 @@ namespace HotelBooking.Models
         public int Id { get; set; }
 
         [Required]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         [Required]
-        public string Content { get; set; }
+        public string? Content { get; set; }
 
         [Required]
-        public string Thumbnail { get; set; }
+        public string? Thumbnail { get; set; }
 
         [Required]
-        public string BriefInfor { get; set; }
+        public string? BriefInfor { get; set; }
 
         [Required]
-        public DateOnly CreateAt { get; set; }
+        public DateTime CreateAt { get; set; }
 
         [Required]
-        public DateOnly UpdateAt { get; set; }
+        public DateTime UpdateAt { get; set; }
 
         [Required]
         public int Status { get; set; }
 
         // Khóa ngoại tới AppUser
-        public string AppUserId { get; set; }
+        public string? AppUserId { get; set; }
 
         // Thuộc tính điều hướng tới AppUser
-        public AppUser AppUser { get; set; }
+        public virtual AppUser? AppUser { get; set; }
     }
 
 }
