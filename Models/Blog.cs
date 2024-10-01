@@ -33,6 +33,10 @@ namespace HotelBooking.Models
 
         // Thuộc tính điều hướng tới AppUser
         public virtual AppUser? AppUser { get; set; }
+
+        // Thuộc tính điều hướng tới các bình luận của Blog
+        public virtual ICollection<Comments> Comments { get; set; } = new List<Comments>();
     }
+
 
 }

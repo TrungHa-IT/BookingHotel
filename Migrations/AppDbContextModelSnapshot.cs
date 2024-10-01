@@ -104,7 +104,6 @@ namespace HotelBooking.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AppUserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("BriefInfor")
@@ -179,6 +178,9 @@ namespace HotelBooking.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -192,6 +194,8 @@ namespace HotelBooking.Migrations
                     b.HasKey("CommentID");
 
                     b.HasIndex("AppUserId");
+
+                    b.HasIndex("BlogId");
 
                     b.HasIndex("ParentCommentID");
 
@@ -355,9 +359,7 @@ namespace HotelBooking.Migrations
                 {
                     b.HasOne("HotelBooking.Models.AppUser", "AppUser")
                         .WithMany("Blogs")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AppUserId");
 
                     b.Navigation("AppUser");
                 });
@@ -370,11 +372,19 @@ namespace HotelBooking.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HotelBooking.Models.Blog", "Blog")
+                        .WithMany("Comments")
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("HotelBooking.Models.Comments", "ParentComment")
                         .WithMany("Replies")
                         .HasForeignKey("ParentCommentID");
 
                     b.Navigation("AppUser");
+
+                    b.Navigation("Blog");
 
                     b.Navigation("ParentComment");
                 });
@@ -434,6 +444,11 @@ namespace HotelBooking.Migrations
                 {
                     b.Navigation("Blogs");
 
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("HotelBooking.Models.Blog", b =>
+                {
                     b.Navigation("Comments");
                 });
 
