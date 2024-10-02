@@ -96,7 +96,7 @@ namespace HotelBooking.Controllers
             if (!User.Identity.IsAuthenticated)
             {
                 var returnUrl = Url.Action("Detail", "Blog", new { id = BlogId });
-                return RedirectToAction("Login", "Account", new { returnUrl });
+                return Json(new { success = false, redirectUrl = Url.Action("Login", "Account", new { returnUrl }) });
             }
 
             if (ModelState.IsValid)
@@ -108,11 +108,13 @@ namespace HotelBooking.Controllers
                 comments.Likes = 0;
                 await _commentRepositories.CreateCommentAsync(comments);
 
-                return RedirectToAction("Detail", "Blog", new { id = BlogId });
+                // Optionally return the created comment object as JSON
+                return Json(new { success = true, comment = comments });
             }
 
-            return RedirectToAction("Index", "Blog");
+            return Json(new { success = false });
         }
+
 
         // Hàm kiểm tra xem người dùng đã thích bình luận hay chưa
         public async Task<bool> UserHasLikedCommentAsync(int commentId, string userId)

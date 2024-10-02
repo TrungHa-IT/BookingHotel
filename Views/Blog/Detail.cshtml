@@ -236,20 +236,14 @@
                                         <input type="hidden" name="CommentId" value="@item.CommentID" />
                                         <input type="hidden" name="BlogId" value="@Model?.Id" />
                                         <button type="submit" class="comment-btn">
-                                            @if (userHasLikedComment)
-                                            {
-                                                <text>Unlike</text> <!-- Nếu người dùng đã like, hiển thị nút Unlike -->
-                                            }
-                                            else
-                                            {
-                                                <text>Like</text> <!-- Nếu người dùng chưa like, hiển thị nút Like -->
-                                            }
+                                            
+                                                <text>Like</text> 
                                         </button>
                                     </form>
                                     <a href="javascript:void(0);" class="comment-btn reply-btn" data-comment-id="@item.CommentID">Reply</a>
                                     <!-- Reply Form -->
                                     <div class="reply-form" id="reply-form-@item.CommentID" style="display:none;">
-                                        <form asp-controller="Comment" asp-action="CreateComment" method="post" class="comment-form">
+                                        <form id="comment-form-@item.CommentID" asp-controller="Comment" asp-action="CreateComment" method="post" class="comment-form">
                                             <input type="hidden" name="BlogId" value="@Model?.Id" />
                                             <input type="hidden" name="ParentCommentId" value="@item.CommentID" />
                                             <div class="row">
@@ -405,6 +399,42 @@
         </div>
     </div>
     <!-- Search model end -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("form.comment-form").submit(function (event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                var form = $(this);
+                var formData = form.serialize(); // Serialize the form data
+
+                $.ajax({
+                    type: "POST",
+                    url: form.attr("action"),
+                    data: formData,
+                    success: function (response) {
+                        if (response.success) {
+                            // Update the comments section dynamically (you may want to append or prepend)
+                            var newCommentHtml = `<div class="comment">
+                                <p>${response.comment.Content}</p>
+                                <span>By ${response.comment.AppUserId} on ${response.comment.CreatedDate}</span>
+                            </div>`;
+                            $("#comments-section").append(newCommentHtml); // Assuming you have a section with ID "comments-section"
+                            form[0].reset(); // Reset the form
+                        } else {
+                            // Handle errors (optional)
+                            alert("Error submitting comment. Please try again.");
+                        }
+                    },
+                    error: function () {
+                        alert("An error occurred. Please try again.");
+                    }
+                });
+            });
+        });
+    </script>
+
     <!-- Js Plugins -->
     <script src="~/js/jquery-3.3.1.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
@@ -414,6 +444,9 @@
     <script src="~/js/jquery.slicknav.js"></script>
     <script src="~/js/owl.carousel.min.js"></script>
     <script src="~/js/main.js"></script>
+
+          
+
 
     <script>
     document.querySelectorAll('.reply-btn').forEach(button => {
