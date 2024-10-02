@@ -22,20 +22,23 @@ namespace HotelBooking.Controllers
             this.userManager = userManager;
         }
 
-        public IActionResult Login()
+        [HttpGet]
+        public IActionResult Login(string? returnUrl = null)
         {
+            ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
 
-        public async Task LoginGoogle()
+        public async Task LoginGoogle(string? returnUrl = null)
         {
             await HttpContext.ChallengeAsync(GoogleDefaults.AuthenticationScheme, new AuthenticationProperties()
             {
-                RedirectUri = Url.Action("GoogleResponse")
+                RedirectUri = Url.Action("GoogleResponse", new { returnUrl }) // Chuyển returnUrl đến GoogleResponse
             });
         }
 
-        public async Task<IActionResult> GoogleResponse()
+
+        public async Task<IActionResult> GoogleResponse(string? returnUrl = null)
         {
             // Get the authentication result for Google login
             var result = await HttpContext.AuthenticateAsync(GoogleDefaults.AuthenticationScheme);
@@ -46,7 +49,9 @@ namespace HotelBooking.Controllers
             var googleId = claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
             var name = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
             var address = claims?.FirstOrDefault(c => c.Type == ClaimTypes.StreetAddress)?.Value;
-            
+
+            ViewData["ReturnUrl"] = returnUrl;
+
 
             if (googleId == null || email == null)
             {
@@ -86,26 +91,39 @@ namespace HotelBooking.Controllers
 
             // Sign in the user
             await signInManager.SignInAsync(user, isPersistent: false);
-
+            // Nếu có ReturnUrl, chuyển hướng về đó
+            if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
             // Redirect to the home page after successful login
             return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
-        public async Task<IActionResult> LoginAsync(LoginVm model)
+        public async Task<IActionResult> LoginAsync(LoginVm model, string? returnUrl = null)
         {
             if (ModelState.IsValid)
             {
-                // Login
                 var result = await signInManager.PasswordSignInAsync(model.Username!, model.Password!, model.RememberMe, false);
                 if (result.Succeeded)
                 {
+                    // Nếu có ReturnUrl, chuyển hướng về đó
+                    if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
+
+                    // Nếu không, chuyển hướng đến trang chủ
                     return RedirectToAction("Index", "Home");
                 }
+
                 ModelState.AddModelError("", "Invalid login attempt");
             }
+
             return View(model);
         }
+
 
         public IActionResult Register()
         {

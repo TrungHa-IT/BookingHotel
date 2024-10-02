@@ -21,6 +21,16 @@ namespace HotelBooking.Controllers
             return View(categories);
         }
 
+        public IActionResult Like()
+        {
+            return RedirectToAction("Detail", "Blog");
+        }
+
+        public IActionResult ReplyComment()
+        {
+            return RedirectToAction("Detail", "Blog");
+        }
+
         public IActionResult CreateComment()
         {
             return View();
@@ -30,30 +40,27 @@ namespace HotelBooking.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateComment(Comments comments, int BlogId)
         {
-            // Kiểm tra xem người dùng đã đăng nhập hay chưa
             if (!User.Identity.IsAuthenticated)
             {
-                // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập hoặc thông báo lỗi
-                return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
+                var returnUrl = Url.Action("Detail", "Blog", new { id = BlogId });
+                return RedirectToAction("Login", "Account", new { returnUrl });
             }
 
-            // Nếu đã đăng nhập, tiến hành lưu bình luận vào CSDL
             if (ModelState.IsValid)
             {
-
-                // Lưu vào cơ sở dữ liệu (giả sử bạn có DbContext đã được thiết lập)
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);  // Get current user's ID
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 comments.AppUserId = userId;
                 comments.CreatedDate = DateTime.Now;
-                comments.BlogId = BlogId; // Gán BlogId từ yêu cầu
+                comments.BlogId = BlogId;
+                comments.Likes = 0;
                 await _commentRepositories.CreateCommentAsync(comments);
 
-                return RedirectToAction("Index", "Blog"); // Chuyển hướng đến danh sách blog sau khi tạo bình luận
+                return RedirectToAction("Detail", "Blog", new { id = BlogId });
             }
 
-            // Nếu Model không hợp lệ, trở lại trang tạo bình luận với thông tin hiện tại
             return RedirectToAction("Index", "Blog");
         }
+
 
     }
 }

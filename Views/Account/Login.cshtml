@@ -11,6 +11,8 @@
     <div class="col-md-3 card p-3">
         <h2 class="text-center text-info">Login</h2>
         <form asp-action="Login" method="post">
+            <input type="hidden" name="returnUrl" value="@ViewData["ReturnUrl"]" />
+
             <div asp-validation-summary="ModelOnly"></div>
             <div class="mb-1">
                 <label asp-for="Username"></label>
@@ -32,7 +34,9 @@
                     <a asp-action="Register" class="text-decoration-none float-start mt-2">Don't have account'</a>
                 </div>
                 <div class="col-4">
-                    <a asp-action="LoginGoogle" class="text-decoration-none float-start mt-2">Login with Google</a>
+                    <a asp-action="LoginGoogle" asp-route-returnUrl="@ViewData["ReturnUrl"]" class="text-decoration-none float-start mt-2">
+                        Login with Google
+                    </a>
                 </div>
                 <div class="col-4">
                     <input type="submit" value="Login" class="btn btn-primary btn-sm float-end" />

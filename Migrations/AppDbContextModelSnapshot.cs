@@ -175,10 +175,9 @@ namespace HotelBooking.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentID"));
 
                     b.Property<string>("AppUserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("BlogId")
+                    b.Property<int?>("BlogId")
                         .HasColumnType("int");
 
                     b.Property<string>("Content")
@@ -187,6 +186,9 @@ namespace HotelBooking.Migrations
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("Likes")
+                        .HasColumnType("int");
 
                     b.Property<int?>("ParentCommentID")
                         .HasColumnType("int");
@@ -368,15 +370,11 @@ namespace HotelBooking.Migrations
                 {
                     b.HasOne("HotelBooking.Models.AppUser", "AppUser")
                         .WithMany("Comments")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AppUserId");
 
                     b.HasOne("HotelBooking.Models.Blog", "Blog")
                         .WithMany("Comments")
-                        .HasForeignKey("BlogId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BlogId");
 
                     b.HasOne("HotelBooking.Models.Comments", "ParentComment")
                         .WithMany("Replies")

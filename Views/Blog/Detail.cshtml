@@ -217,24 +217,40 @@
                             </div>
                         </div>
                         <div class="comment-option">
-                            <h4>2 Comments</h4>
+                        <h4>@Model.Comments.Count() Comments</h4>
+                        @foreach (var item in Model.Comments)
+                        {
                             <div class="single-comment-item first-comment">
                                 <div class="sc-author">
-                                    <img src="img/blog/blog-details/avatar/avatar-1.jpg" alt="">
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/image-upload-62189.appspot.com/o/pngtree-flat-contact-png-image_4420854.jpg?alt=media&token=84930ea1-d87b-4541-9fe4-90cac627042f" alt="">
                                 </div>
                                 <div class="sc-text">
-                                    <span>27 Aug 2019</span>
-                                    <h5>Brandon Kelley</h5>
+                                    <span>@Html.DisplayFor(modelItem => item.CreatedDate)</span>
+                                    <h5>@Html.DisplayFor(modelItem => item.AppUser.Name)</h5>
                                     <p>
-                                        Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-                                        adipisci velit, sed quia non numquam eius modi tempora. incidunt ut labore et
-                                        dolore magnam.
+                                        @Html.DisplayFor(modelItem => item.Content)
                                     </p>
-                                    <a href="#" class="comment-btn">Like</a>
-                                    <a href="#" class="comment-btn">Reply</a>
+                                    <a asp-controller="Comment" asp-action="Like" class="comment-btn">Like</a>
+                                    <a href="javascript:void(0);" class="comment-btn reply-btn" data-comment-id="@item.CommentID">Reply</a>
+
+                                    <!-- Reply Form -->
+                                    <div class="reply-form" id="reply-form-@item.CommentID" style="display:none;">
+                                        <form asp-controller="Comment" asp-action="CreateComment" method="post" class="comment-form">
+                                            <input type="hidden" name="BlogId" value="@Model?.Id" />
+                                            <input type="hidden" name="ParentCommentId" value="@item.CommentID" /> <!-- Gửi ID của bình luận cha -->
+                                            <div class="row">
+                                                <div class="col-lg-12 text-center">
+                                                    <textarea name="Content" placeholder="Type your reply here..."></textarea>
+                                                    <button type="submit" class="site-btn">Send Reply</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="single-comment-item reply-comment">
+                        }
+                        </div>
+                        <div class="single-comment-item reply-comment">s
                                 <div class="sc-author">
                                     <img src="img/blog/blog-details/avatar/avatar-2.jpg" alt="">
                                 </div>
@@ -250,37 +266,9 @@
                                     <a href="#" class="comment-btn reply-btn">Reply</a>
                                 </div>
                             </div>
-                            <div class="single-comment-item second-comment ">
-                                <div class="sc-author">
-                                    <img src="img/blog/blog-details/avatar/avatar-3.jpg" alt="">
-                                </div>
-                                <div class="sc-text">
-                                    <span>27 Aug 2019</span>
-                                    <h5>Brandon Kelley</h5>
-                                    <p>
-                                        Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-                                        adipisci velit, sed quia non numquam eius modi tempora. incidunt ut labore et
-                                        dolore magnam.
-                                    </p>
-                                    <a href="#" class="comment-btn">Like</a>
-                                    <a href="#" class="comment-btn">Reply</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="leave-comment">
-                            <h4>Leave A Comment</h4>
-                            <form asp-controller="Comment" asp-action="CreateComment" asp-route-id="@Model?.Id"  method="post" class="comment-form">
-                                <input type="hidden" name="BlogId" value="@Model?.Id" /> <!-- Trường ẩn để gửi ID -->
-                                <div class="row">
-                                    <div class="col-lg-12 text-center">
-                                        <textarea name="Content" placeholder="Messages"></textarea>
-                                        <button type="submit" class="site-btn">Send Message</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+
+
+                  </div>
             </div>
         </div>
     </section>
@@ -416,6 +404,16 @@
     <script src="~/js/jquery.slicknav.js"></script>
     <script src="~/js/owl.carousel.min.js"></script>
     <script src="~/js/main.js"></script>
+
+    <script>
+    document.querySelectorAll('.reply-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const commentId = this.getAttribute('data-comment-id');
+            const replyForm = document.getElementById(`reply-form-${commentId}`);
+            replyForm.style.display = replyForm.style.display === 'none' ? 'block' : 'none'; // Hiện/ẩn form trả lời
+        });
+    });
+</script>
 
 </body>
 

@@ -54,6 +54,8 @@ namespace HotelBooking.Repositories
         /// <param name="entity">The entity to add.</param>
         void Add(T entity);
 
+        IQueryable<T> GetQuery();
+
         /// <summary>
         /// Asynchronously adds a new entity.
         /// </summary>
@@ -156,7 +158,6 @@ namespace HotelBooking.Repositories
             _dbContext = dbContext;
             _entities = _dbContext.Set<T>();
         }
-
         /// <summary>
         /// Gets an entity by its identifier.
         /// </summary>
@@ -402,6 +403,11 @@ namespace HotelBooking.Repositories
         {
             var entity = await _entities.FindAsync(id);
             return entity != null;
+        }
+
+        public IQueryable<T> GetQuery()
+        {
+            return _entities.AsQueryable();
         }
     }
 }
