@@ -40,7 +40,11 @@ namespace HotelBooking.Repositories
 
         public async Task<Blog> GetBlogByIdAsync(int id)
         {
-            return await _unitOfWork._blogRepository.GetByIdAsync(id);
+            return await _unitOfWork._blogRepository
+                                    .GetQuery()  // Truy cập vào IQueryable<Blog>
+                                    .Include(b => b.Comments)  // Include bảng Comments
+                                        .ThenInclude(c => c.AppUser)  // Include bảng AppUser từ Comments
+                                    .FirstOrDefaultAsync(b => b.Id == id);  // Lọc theo Id của Blog
         }
 
 
