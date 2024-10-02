@@ -230,14 +230,28 @@
                                     <p>
                                         @Html.DisplayFor(modelItem => item.Content)
                                     </p>
-                                    <a asp-controller="Comment" asp-action="Like" class="comment-btn">Like</a>
+                                    <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true" src="https://scontent.fhan2-3.fna.fbcdn.net/m1/v/t6/An-HX414PnqCVzyEq9OFFdayyrdj8c3jnyPbPcierija6hpzsUvw-1VPQ260B2M9EbxgmP7pYlNQSjYAXF782_vnvvpDLxvJQD74bwdWEJ0DhcErkDga6gazZZUYm_Q.png?ccb=10-5&amp;oh=00_AYC0im9QT2OWXd5hY_Z4gcW3Os70GyfvS-0SqqAz_2Pnmw&amp;oe=67243C63&amp;_nc_sid=7da55a" style="height: 20px; width: 20px;">
+                                    @Html.DisplayFor(modelItem => item.Likes)
+                                    <form asp-controller="Comment" asp-action="Like" method="post" style="display:inline;">
+                                        <input type="hidden" name="CommentId" value="@item.CommentID" />
+                                        <input type="hidden" name="BlogId" value="@Model?.Id" />
+                                        <button type="submit" class="comment-btn">
+                                            @if (userHasLikedComment)
+                                            {
+                                                <text>Unlike</text> <!-- Nếu người dùng đã like, hiển thị nút Unlike -->
+                                            }
+                                            else
+                                            {
+                                                <text>Like</text> <!-- Nếu người dùng chưa like, hiển thị nút Like -->
+                                            }
+                                        </button>
+                                    </form>
                                     <a href="javascript:void(0);" class="comment-btn reply-btn" data-comment-id="@item.CommentID">Reply</a>
-
                                     <!-- Reply Form -->
                                     <div class="reply-form" id="reply-form-@item.CommentID" style="display:none;">
                                         <form asp-controller="Comment" asp-action="CreateComment" method="post" class="comment-form">
                                             <input type="hidden" name="BlogId" value="@Model?.Id" />
-                                            <input type="hidden" name="ParentCommentId" value="@item.CommentID" /> <!-- Gửi ID của bình luận cha -->
+                                            <input type="hidden" name="ParentCommentId" value="@item.CommentID" />
                                             <div class="row">
                                                 <div class="col-lg-12 text-center">
                                                     <textarea name="Content" placeholder="Type your reply here..."></textarea>
@@ -249,25 +263,21 @@
                                 </div>
                             </div>
                         }
-                        </div>
-                        <div class="single-comment-item reply-comment">s
-                                <div class="sc-author">
-                                    <img src="img/blog/blog-details/avatar/avatar-2.jpg" alt="">
+
+                        <br />
+                            <div class="leave-comment">
+                            <h4>Leave A Comment</h4>
+                            <form asp-controller="Comment" asp-action="CreateComment" method="post" class="comment-form">
+                                 <input type="hidden" name="BlogId" value="@Model.Id" />
+                                <div class="row">
+                                    <div class="col-lg-12 text-center">
+                                        <textarea name="Content" placeholder="Messages"></textarea>
+                                        <button type="submit" class="site-btn">Send Message</button>
+                                    </div>
                                 </div>
-                                <div class="sc-text">
-                                    <span>27 Aug 2019</span>
-                                    <h5>Brandon Kelley</h5>
-                                    <p>
-                                        Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-                                        adipisci velit, sed quia non numquam eius modi tempora. incidunt ut labore et
-                                        dolore magnam.
-                                    </p>
-                                    <a href="#" class="comment-btn like-btn">Like</a>
-                                    <a href="#" class="comment-btn reply-btn">Reply</a>
-                                </div>
+                            </form>
                             </div>
-
-
+                        </div>
                   </div>
             </div>
         </div>

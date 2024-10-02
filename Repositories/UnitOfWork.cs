@@ -11,6 +11,7 @@ namespace HotelBooking.Repositories
         public IRepository<Categories> _categoriesRepository { get; set; }
         public IRepository<Roles> _roleRepository { get; set; }
         public IRepository<Blog> _blogRepository { get; set; }
+        public IRepository<LikeRecord> _likerecordRepository { get; set; }
         public IRepository<Comments> _commentRepository { get; set; }
 
         private bool _disposed = false;
@@ -21,7 +22,8 @@ namespace HotelBooking.Repositories
             _categoriesRepository = new Repository<Categories>(_dbContext);
             _roleRepository = new Repository<Roles>(_dbContext);
             _blogRepository = new Repository<Blog>(_dbContext);
-            _commentRepository = new Repository<Comments>(_dbContext);  
+            _commentRepository = new Repository<Comments>(_dbContext);
+            _likerecordRepository = new Repository<LikeRecord>(_dbContext);
         }
         
         /// <summary>

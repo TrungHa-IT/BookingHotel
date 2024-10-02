@@ -14,7 +14,18 @@ namespace HotelBooking.Models
 
         // Thuộc tính điều hướng tới Blog (1 AppUser có nhiều Blog)
         public virtual ICollection<Blog> Blogs { get; set; }
-        // Thuộc tính điều hướng tới Blog (1 AppUser có nhiều Comments)
+
+        // Thuộc tính điều hướng tới Comments (1 AppUser có nhiều Comments)
         public virtual ICollection<Comments> Comments { get; set; }
+
+        // Thuộc tính điều hướng tới LikeRecord (1 AppUser có nhiều lượt Like)
+        public virtual ICollection<LikeRecord> LikeRecords { get; set; }
+
+        public AppUser()
+        {
+            Blogs = new List<Blog>();
+            Comments = new List<Comments>();
+            LikeRecords = new List<LikeRecord>(); // Khởi tạo để tránh null
+        }
     }
 }
