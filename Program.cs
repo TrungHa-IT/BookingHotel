@@ -31,6 +31,7 @@ builder.Services.AddScoped<ICategoriesRepositories, CategoriesRepository>();
 builder.Services.AddScoped<ICommentsRepositories, CommentsRepositories>();
 builder.Services.AddScoped<IBlogRepositories, BlogRepositories>();
 builder.Services.AddScoped<IRoleRepositories, RoleRepositories>();
+builder.Services.AddScoped<ILikeRecordRepositories, LikeRecordRepositories>();
 builder.Services.AddTransient<UnitOfWork>();
 // Add ASP.NET Core Identity services
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>

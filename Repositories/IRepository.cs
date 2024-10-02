@@ -20,6 +20,12 @@ namespace HotelBooking.Repositories
         /// <returns>A task that represents the asynchronous operation. The task result contains the entity if found; otherwise, null.</returns>
         Task<T?> GetByIdAsync(int id);
 
+        //Get Like By ID
+        Task<LikeRecord?> GetLikeByIdAsync(int commentId, string userId);
+
+
+        Task<bool> UserHasLikedCommentAsync(int commentId, string userId);
+
         /// <summary>
         /// Gets all entities.
         /// </summary>
@@ -409,5 +415,20 @@ namespace HotelBooking.Repositories
         {
             return _entities.AsQueryable();
         }
+
+        public async Task<LikeRecord?> GetLikeByIdAsync(int commentId, string userId)
+        {
+            return await _entities.OfType<LikeRecord>()
+                                  .FirstOrDefaultAsync(lr => lr.CommentId == commentId && lr.UserId == userId);
+        }
+
+        public async Task<bool> UserHasLikedCommentAsync(int commentId, string userId)
+        {
+            var likeRecord = await _dbContext.Set<LikeRecord>()
+                                             .FirstOrDefaultAsync(lr => lr.CommentId == commentId && lr.UserId == userId);
+            return likeRecord != null;
+        }
+
+       
     }
 }

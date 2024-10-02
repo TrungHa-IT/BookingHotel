@@ -32,10 +32,14 @@ namespace HotelBooking.Models
 
         // Thuộc tính điều hướng tới các bình luận con (reply)
         public ICollection<Comments> Replies { get; set; }
+        // Thuộc tính điều hướng tới các bình luận con (reply)
+        // Điều hướng tới danh sách LikeRecord
+        public ICollection<LikeRecord> LikeRecords { get; set; }
 
         public Comments()
         {
             Replies = new List<Comments>(); // Khởi tạo để tránh null
+            LikeRecords = new List<LikeRecord>(); // Khởi tạo để tránh null
         }
     }
 
