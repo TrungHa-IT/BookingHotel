@@ -179,7 +179,7 @@
         </div>
         <div class="row">
             <div>
-                <p><i class="icon_profile"></i> @Html.DisplayFor(model => model.AppUser.Name)</p>
+                <p><i class="icon_profile"></i> @Html.DisplayFor(modelItem => Model.AppUser.Name)</p>
             </div>
             <div>
                 <p class="b-time">@Html.DisplayFor(model => model.CreateAt)</p>
@@ -216,7 +216,7 @@
                                 <a href="#"><i class="fa fa-youtube-play"></i></a>
                             </div>
                         </div>
-                        <div class="comment-option">
+                        <div class="comment-option" id="commentList">
                         <h4>@Model.Comments.Count() Comments</h4>
                         @foreach (var item in Model.Comments)
                         {
@@ -254,23 +254,37 @@
                                             </div>
                                         </form>
                                     </div>
+
+                                <!-- This is where the comments will be appended dynamically -->
+                                        <div id="comments-section">
+                                            <!-- Existing comments will be here -->
+                                        </div>
+
                                 </div>
                             </div>
                         }
 
                         <br />
-                            <div class="leave-comment">
+                        <div class="leave-comment">
+                           <div class="leave-comment">
                             <h4>Leave A Comment</h4>
-                            <form asp-controller="Comment" asp-action="CreateComment" method="post" class="comment-form">
-                                 <input type="hidden" name="BlogId" value="@Model.Id" />
+                            <form id="commentForm" method="post" class="comment-form">
+                                <input type="hidden" name="BlogId" value="@Model.Id" />
                                 <div class="row">
                                     <div class="col-lg-12 text-center">
-                                        <textarea name="Content" placeholder="Messages"></textarea>
+                                        <textarea name="Content" placeholder="Messages" required></textarea>
                                         <button type="submit" class="site-btn">Send Message</button>
                                     </div>
                                 </div>
                             </form>
-                            </div>
+                        </div>
+
+                        <div id="commentList" class="comment-list">
+                            <!-- Danh sách bình luận sẽ được hiển thị ở đây -->
+                        </div>
+
+
+
                         </div>
                   </div>
             </div>
@@ -401,39 +415,51 @@
     <!-- Search model end -->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("form.comment-form").submit(function (event) {
-                event.preventDefault(); // Prevent the default form submission
 
-                var form = $(this);
-                var formData = form.serialize(); // Serialize the form data
+          <script>
+    $(document).ready(function() {
+        $('#commentForm').on('submit', function(event) {
+            event.preventDefault(); // Ngăn chặn gửi form mặc định
 
-                $.ajax({
-                    type: "POST",
-                    url: form.attr("action"),
-                    data: formData,
-                    success: function (response) {
-                        if (response.success) {
-                            // Update the comments section dynamically (you may want to append or prepend)
-                            var newCommentHtml = `<div class="comment">
+            // Lấy dữ liệu từ form
+            var formData = $(this).serialize();
+
+            $.ajax({
+                url: '@Url.Action("CreateComment", "Comment")', // Địa chỉ URL của hành động CreateComment
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    if (response.success) {
+                        // Thêm bình luận vào danh sách bình luận
+                        var commentHtml = `
+                            <div class="comment">
+                                <p><strong>${response.comment.UserName}</strong> (${response.comment.CreatedDate})</p>
                                 <p>${response.comment.Content}</p>
-                                <span>By ${response.comment.AppUserId} on ${response.comment.CreatedDate}</span>
-                            </div>`;
-                            $("#comments-section").append(newCommentHtml); // Assuming you have a section with ID "comments-section"
-                            form[0].reset(); // Reset the form
-                        } else {
-                            // Handle errors (optional)
-                            alert("Error submitting comment. Please try again.");
-                        }
-                    },
-                    error: function () {
-                        alert("An error occurred. Please try again.");
+                            </div>
+                        `;
+                    
+                        // Thêm bình luận mới vào đầu danh sách
+                        $('#commentList').prepend(commentHtml);
+                    
+                        // Thông báo thành công
+                        alert('Comment posted successfully!');
+                    
+                        // Dọn dẹp nội dung của textarea sau khi gửi
+                        $('textarea[name="Content"]').val('');
+                    } else {
+                        // Xử lý nếu không thành công
+                        alert(response.message);
                     }
-                });
+                },
+                error: function(xhr, status, error) {
+                    // Xử lý lỗi
+                    alert('An error occurred: ' + error);
+                }
             });
         });
+    });
     </script>
+
 
     <!-- Js Plugins -->
     <script src="~/js/jquery-3.3.1.min.js"></script>

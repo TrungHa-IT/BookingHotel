@@ -84,10 +84,6 @@ namespace HotelBooking.Controllers
             return RedirectToAction("Detail", "Blog");
         }
 
-        public IActionResult CreateComment()
-        {
-            return View();
-        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -96,24 +92,39 @@ namespace HotelBooking.Controllers
             if (!User.Identity.IsAuthenticated)
             {
                 var returnUrl = Url.Action("Detail", "Blog", new { id = BlogId });
-                return Json(new { success = false, redirectUrl = Url.Action("Login", "Account", new { returnUrl }) });
+                return RedirectToAction("Login", "Account", new { returnUrl });
             }
 
             if (ModelState.IsValid)
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var userName = User.Identity.Name;
+
                 comments.AppUserId = userId;
                 comments.CreatedDate = DateTime.Now;
                 comments.BlogId = BlogId;
                 comments.Likes = 0;
+
                 await _commentRepositories.CreateCommentAsync(comments);
 
-                // Optionally return the created comment object as JSON
-                return Json(new { success = true, comment = comments });
+                return Json(new
+                {
+                    success = true,
+                    comment = new
+                    {
+                        Content = comments.Content,
+                        UserName = userName,
+                        CreatedDate = comments.CreatedDate.ToString("yyyy-MM-ddTHH:mm:ss")
+                    }
+                });
             }
 
-            return Json(new { success = false });
+            return Json(new { success = false, message = "Failed to create comment." });
         }
+
+
+
+
 
 
         // Hàm kiểm tra xem người dùng đã thích bình luận hay chưa
