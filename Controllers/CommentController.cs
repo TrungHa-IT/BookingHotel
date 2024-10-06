@@ -107,14 +107,14 @@ namespace HotelBooking.Controllers
                 await _commentRepositories.CreateCommentAsync(comments);
 
                 // Sau khi lưu, lấy ID của bình luận
-                var commentId = comments.CommentID; // Hoặc cách khác để lấy ID
+                // Hoặc cách khác để lấy ID
 
                 return Json(new
                 {
                     success = true,
                     comment = new
                     {
-                        Id = commentId, // Thêm ID của bình luận vào phản hồi
+                        CommentID = comments.CommentID, // Thêm ID của bình luận vào phản hồi
                         Content = comments.Content,
                         UserName = userName,
                         CreatedDate = comments.CreatedDate.ToString("yyyy-MM-ddTHH:mm:ss")
