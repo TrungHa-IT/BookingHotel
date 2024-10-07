@@ -117,6 +117,7 @@ namespace HotelBooking.Controllers
                         CommentID = comments.CommentID, // Thêm ID của bình luận vào phản hồi
                         Content = comments.Content,
                         UserName = userName,
+                        LikeComment = comments.Likes,
                         CreatedDate = comments.CreatedDate.ToString("yyyy-MM-ddTHH:mm:ss")
                     }
                 });

@@ -14,5 +14,9 @@ namespace HotelBooking.Data
         public DbSet<HotelBooking.Models.Roles> Roles { get; set; } = default!;
         public DbSet<Blog> Blogs { get; set; } = default!;
         public DbSet<Comments> Comments { get; set; } = default!;
+        public DbSet<Service> Services { get; set; } = default!;
+        public DbSet<ServiceCategories> ServiceCategories { get; set; } = default!;
+        public DbSet<Image> Images { get; set; } = default!;
+        public DbSet<BookingService> BookingServices { get; set; } = default!;
     }
 }

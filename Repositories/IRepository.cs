@@ -1,4 +1,6 @@
-﻿using System.Linq.Expressions;
+﻿using System.ComponentModel.Design;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 using HotelBooking.Data;
 using HotelBooking.Models;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +39,9 @@ namespace HotelBooking.Repositories
         /// </summary>
         /// <returns>A task that represents the asynchronous operation. The task result contains an enumerable of all entities.</returns>
         Task<IEnumerable<T>> GetAllAsync();
+
+
+        Task<IEnumerable<Service>> GetAllServiceAsync();
 
         /// <summary>
         /// Finds an entity based on a predicate and includes related entities if specified.
@@ -429,6 +434,12 @@ namespace HotelBooking.Repositories
             return likeRecord != null;
         }
 
-       
+        public async Task<IEnumerable<Service>> GetAllServiceAsync()
+        {
+            var result = await _entities.OfType<Service>()
+                                        .Include(s => s.ServiceCategories) // Include để lấy dữ liệu từ bảng ServiceCategories
+                                        .ToListAsync();
+            return result;
+        }
     }
 }

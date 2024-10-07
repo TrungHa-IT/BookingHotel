@@ -10,9 +10,11 @@ namespace HotelBooking.Repositories
         private IDbContextTransaction? _transaction;
         public IRepository<Categories> _categoriesRepository { get; set; }
         public IRepository<Roles> _roleRepository { get; set; }
+        public IRepository<ServiceCategories> _serviceCategoriesRepository { get; set; }
         public IRepository<Blog> _blogRepository { get; set; }
         public IRepository<LikeRecord> _likerecordRepository { get; set; }
         public IRepository<Comments> _commentRepository { get; set; }
+        public IRepository<Service> _serviceRepository { get; set; }
 
         private bool _disposed = false;
 
@@ -24,6 +26,8 @@ namespace HotelBooking.Repositories
             _blogRepository = new Repository<Blog>(_dbContext);
             _commentRepository = new Repository<Comments>(_dbContext);
             _likerecordRepository = new Repository<LikeRecord>(_dbContext);
+            _serviceCategoriesRepository = new Repository<ServiceCategories>(_dbContext);
+            _serviceRepository = new Repository<Service>(_dbContext);
         }
         
         /// <summary>
