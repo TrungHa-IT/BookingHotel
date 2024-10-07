@@ -486,22 +486,29 @@
                                 <h5><strong>${response.comment.userName || "Anonymous"}</strong></h5>
                                 <p>${response.comment.content || "No content"}</p>
                                 <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true" src="https://scontent.fhan2-3.fna.fbcdn.net/m1/v/t6/An-HX414PnqCVzyEq9OFFdayyrdj8c3jnyPbPcierija6hpzsUvw-1VPQ260B2M9EbxgmP7pYlNQSjYAXF782_vnvvpDLxvJQD74bwdWEJ0DhcErkDga6gazZZUYm_Q.png?ccb=10-5&amp;oh=00_AYC0im9QT2OWXd5hY_Z4gcW3Os70GyfvS-0SqqAz_2Pnmw&amp;oe=67243C63&amp;_nc_sid=7da55a" style="height: 20px; width: 20px;">
-                                <button type="button" class="comment-btn like-btn" id="like-btn-${response.comment.commentID}" data-comment-id="${response.comment.commentID}">
+                                <button type="button" class="comment-btn like-btn" id="like-btn-${response.comment.Id}" data-comment-id="${response.comment.Id}">
                                         Like
                                     </button>
-                                <a href="javascript:void(0);" class="comment-btn reply-btn" data-comment-id="${response.comment.commentID}">Reply</a>
+                                <a href="javascript:void(0);" class="comment-btn reply-btn" data-comment-id="${response.comment.Id}">Reply</a>
                                 <!-- Reply Form -->
-                                <div class="reply-form" id="reply-form-${response.comment.commentID}" style="display:none;">
-                                    <form id="comment-form-${response.comment.commentID}" asp-controller="Comment" asp-action="CreateComment" method="post" class="comment-form">
+                                <div class="reply-form" id="reply-form-${response.comment.Id}" style="display:none;">
+                                    <form id="comment-form-${response.comment.Id}" asp-controller="Comment" asp-action="CreateComment" method="post" class="comment-form">
                                         <input type="hidden" name="BlogId" value="@Model?.Id" />
-                                        <input type="hidden" name="ParentCommentId" value="${response.comment.commentID}" />
+                                        <input type="hidden" name="ParentCommentId" value="${response.comment.Id}" />
                                         <div class="row">
                                             <div class="col-lg-12 text-center">
                                                 <textarea name="Content" placeholder="Type your reply here..."></textarea>
                                                 <button type="submit" class="site-btn">Send Reply</button>
-
-                         </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     `;
+
+
+                
 
                     $('#commentList').append(commentHtml);
                 
