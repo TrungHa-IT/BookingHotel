@@ -474,39 +474,39 @@
                     // Thêm bình luận vào danh sách bình luận
                 
                         var commentHtml = `
-                        <div class="single-comment-item first-comment">
-                            <div class="sc-author">
-                                <img src="https://firebasestorage.googleapis.com/v0/b/image-upload-62189.appspot.com/o/pngtree-flat-contact-png-image_4420854.jpg?alt=media&token=84930ea1-d87b-4541-9fe4-90cac627042f" alt="User Avatar">
-                            </div>
-                            <div class="sc-text">
-                                <span>(${new Date(response.comment.createdDate).toLocaleString() || "Invalid Date"})</span>
-                                <h5><strong>${response.comment.userName || "Anonymous"}</strong></h5>
-                                <p>${response.comment.content || "No content"}</p>
-                                <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true" src="https://scontent.fhan2-3.fna.fbcdn.net/m1/v/t6/An-HX414PnqCVzyEq9OFFdayyrdj8c3jnyPbPcierija6hpzsUvw-1VPQ260B2M9EbxgmP7pYlNQSjYAXF782_vnvvpDLxvJQD74bwdWEJ0DhcErkDga6gazZZUYm_Q.png?ccb=10-5&amp;oh=00_AYC0im9QT2OWXd5hY_Z4gcW3Os70GyfvS-0SqqAz_2Pnmw&amp;oe=67243C63&amp;_nc_sid=7da55a" style="height: 20px; width: 20px;">
-                                <button type="button" class="comment-btn like-btn" id="like-btn-${response.comment.Id}" data-comment-id="${response.comment.Id}">
+                            <div class="single-comment-item first-comment">
+                                <div class="sc-author">
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/image-upload-62189.appspot.com/o/pngtree-flat-contact-png-image_4420854.jpg?alt=media&token=84930ea1-d87b-4541-9fe4-90cac627042f" alt="User Avatar">
+                                </div>
+                                <div class="sc-text">
+                                    <span>(${new Date(response.comment.createdDate).toLocaleString() || "Invalid Date"})</span>
+                                    <h5><strong>${response.comment.userName || "Anonymous"}</strong></h5>
+                                    <p>${response.comment.content || "No content"}</p>
+                                    <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true" src="https://scontent.fhan2-3.fna.fbcdn.net/m1/v/t6/An-HX414PnqCVzyEq9OFFdayyrdj8c3jnyPbPcierija6hpzsUvw-1VPQ260B2M9EbxgmP7pYlNQSjYAXF782_vnvvpDLxvJQD74bwdWEJ0DhcErkDga6gazZZUYm_Q.png?ccb=10-5&amp;oh=00_AYC0im9QT2OWXd5hY_Z4gcW3Os70GyfvS-0SqqAz_2Pnmw&amp;oe=67243C63&amp;_nc_sid=7da55a" style="height: 20px; width: 20px;">
+                                    <button type="button" class="comment-btn like-btn" id="like-btn-${response.comment.Id}" data-comment-id="${response.comment.Id}" onclick="likeComment(${response.comment.Id})">
                                         Like
                                     </button>
-                                <a href="javascript:void(0);" class="comment-btn reply-btn" data-comment-id="${response.comment.Id}">Reply</a>
-                                <!-- Reply Form -->
-                                <div class="reply-form" id="reply-form-${response.comment.Id}" style="display:none;">
-                                    <form id="comment-form-${response.comment.Id}" asp-controller="Comment" asp-action="CreateComment" method="post" class="comment-form">
-                                        <input type="hidden" name="BlogId" value="@Model?.Id" />
-                                        <input type="hidden" name="ParentCommentId" value="${response.comment.Id}" />
-                                        <div class="row">
-                                            <div class="col-lg-12 text-center">
-                                                <textarea name="Content" placeholder="Type your reply here..."></textarea>
-                                                <button type="submit" class="site-btn">Send Reply</button>
+                                    <a href="javascript:void(0);" class="comment-btn reply-btn" data-comment-id="${response.comment.Id}">Reply</a>
+                                    <!-- Reply Form -->
+                                    <div class="reply-form" id="reply-form-${response.comment.Id}" style="display:none;">
+                                        <form id="comment-form-${response.comment.Id}" asp-controller="Comment" asp-action="CreateComment" method="post" class="comment-form">
+                                            <input type="hidden" name="BlogId" value="@Model?.Id" />
+                                            <input type="hidden" name="ParentCommentId" value="${response.comment.Id}" />
+                                            <div class="row">
+                                                <div class="col-lg-12 text-center">
+                                                    <textarea name="Content" placeholder="Type your reply here..."></textarea>
+                                                    <button type="submit" class="site-btn">Send Reply</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    `;
+                        `;
+
 
                 
 
-                    // Thêm bình luận mới vào đầu danh sách
                     $('#commentList').append(commentHtml);
                 
                     // Thông báo thành công
@@ -528,6 +528,50 @@
 });
 
     </script>
+
+
+    <script>
+       // Hàm xử lý Like Comment
+function likeComment(commentId) {
+    var blogId = '@Model?.Id'; // Bạn có thể truyền giá trị BlogId từ Razor
+
+    $.ajax({
+        url: '@Url.Action("Like", "Comment")', // Đường dẫn đến action Like trong controller Comment
+        type: 'POST',
+        data: {
+            commentId: commentId,
+            blogId: blogId
+        },
+        headers: {
+            'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val() // CSRF token nếu cần
+        },
+        success: function(response) {
+            console.log(response); // Log kết quả từ server
+
+            if (response.success) {
+                // Cập nhật số lượt like trong giao diện
+                var likesCount = parseInt($(`#like-count-${commentId}`).text());
+                likesCount = response.liked ? likesCount + 1 : likesCount - 1; // Tăng hoặc giảm số like
+                $(`#like-count-${commentId}`).text(likesCount);
+
+                // Cập nhật text của nút like
+                if (response.liked) {
+                    $(`#like-btn-${commentId}`).text('Unlike');
+                } else {
+                    $(`#like-btn-${commentId}`).text('Like');
+                }
+            } else {
+                alert(response.message || 'Có lỗi xảy ra!');
+            }
+        },
+        error: function(xhr, status, error) {
+            // Xử lý lỗi
+            alert('Lỗi khi thực hiện like: ' + error);
+        }
+    });
+}
+    </script>
+
 
     <!-- Js Plugins -->
     <script src="~/js/jquery-3.3.1.min.js"></script>
