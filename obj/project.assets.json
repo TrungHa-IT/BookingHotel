@@ -8014,19 +8014,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hatru\\.nuget\\packages\\": {}
+    "C:\\Users\\nguye\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\HotelBooking.csproj",
+      "projectUniqueName": "E:\\ASP\\1\\SS\\BookingHotel\\HotelBooking.csproj",
       "projectName": "HotelBooking",
-      "projectPath": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\HotelBooking.csproj",
-      "packagesPath": "C:\\Users\\hatru\\.nuget\\packages\\",
-      "outputPath": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\obj\\",
+      "projectPath": "E:\\ASP\\1\\SS\\BookingHotel\\HotelBooking.csproj",
+      "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
+      "outputPath": "E:\\ASP\\1\\SS\\BookingHotel\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\hatru\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8034,6 +8039,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
