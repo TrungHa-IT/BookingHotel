@@ -40,7 +40,7 @@ namespace HotelBooking.Controllers
 
             var serviceCategories = await _serviceCategoriesRepositories.GetAllServiceCategoriesAsync();
             ViewData["ServiceCategoriesID"] = new SelectList(serviceCategories, "Id", "Name", service.ServiceCategoriesID);
-            service.CreateAt = DateTime.Now;
+           
                 await _serviceRepositories.CreateServicesAsync(service);
                 return RedirectToAction("Index", "Service");
             
@@ -53,7 +53,7 @@ namespace HotelBooking.Controllers
         public async Task<IActionResult> Detail(int? id)
         {
             if (id == null)
-            {
+            { 
                 return NotFound();
             }
 

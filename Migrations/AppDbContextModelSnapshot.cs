@@ -149,12 +149,17 @@ namespace HotelBooking.Migrations
                     b.Property<int>("ServiceID")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("date")
+                    b.Property<DateTime?>("date")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("end_time")
+                        .IsRequired()
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("fullname")
                         .IsRequired()
@@ -170,6 +175,10 @@ namespace HotelBooking.Migrations
                     b.Property<string>("phone_number")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("start_time")
+                        .IsRequired()
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -247,25 +256,29 @@ namespace HotelBooking.Migrations
 
             modelBuilder.Entity("HotelBooking.Models.Image", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int?>("ServiceId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("create_at")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("entity_type")
-                        .HasColumnType("int");
 
                     b.Property<string>("imageURL")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("service_id")
-                        .HasColumnType("int");
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
-                    b.HasIndex("service_id");
+                    b.HasIndex("ServiceId");
 
                     b.ToTable("Images");
                 });
@@ -325,18 +338,14 @@ namespace HotelBooking.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreateAt")
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Create_At")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Duration")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Inclusions")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -344,19 +353,12 @@ namespace HotelBooking.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Reason")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ServiceCategoriesID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Terms")
+                    b.Property<int?>("Status")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -373,7 +375,8 @@ namespace HotelBooking.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreateAt")
+                    b.Property<DateTime?>("CreateAt")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
@@ -384,12 +387,58 @@ namespace HotelBooking.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Status")
+                    b.Property<int?>("Status")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.ToTable("ServiceCategories");
+                });
+
+            modelBuilder.Entity("HotelBooking.Models.UsingImage", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("ImageID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RelationID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TypeID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ImageID")
+                        .IsUnique();
+
+                    b.HasIndex("TypeID")
+                        .IsUnique();
+
+                    b.ToTable("UsingImage");
+                });
+
+            modelBuilder.Entity("HotelBooking.Models.UsingType", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("UsingTypes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -568,13 +617,9 @@ namespace HotelBooking.Migrations
 
             modelBuilder.Entity("HotelBooking.Models.Image", b =>
                 {
-                    b.HasOne("HotelBooking.Models.Service", "Service")
+                    b.HasOne("HotelBooking.Models.Service", null)
                         .WithMany("Images")
-                        .HasForeignKey("service_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Service");
+                        .HasForeignKey("ServiceId");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.LikeRecord", b =>
@@ -605,6 +650,25 @@ namespace HotelBooking.Migrations
                         .IsRequired();
 
                     b.Navigation("ServiceCategories");
+                });
+
+            modelBuilder.Entity("HotelBooking.Models.UsingImage", b =>
+                {
+                    b.HasOne("HotelBooking.Models.Image", "Image")
+                        .WithOne("UsingImage")
+                        .HasForeignKey("HotelBooking.Models.UsingImage", "ImageID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HotelBooking.Models.UsingType", "UsingType")
+                        .WithOne("UsingImages")
+                        .HasForeignKey("HotelBooking.Models.UsingImage", "TypeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Image");
+
+                    b.Navigation("UsingType");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -679,10 +743,14 @@ namespace HotelBooking.Migrations
                     b.Navigation("Replies");
                 });
 
+            modelBuilder.Entity("HotelBooking.Models.Image", b =>
+                {
+                    b.Navigation("UsingImage");
+                });
+
             modelBuilder.Entity("HotelBooking.Models.Service", b =>
                 {
-                    b.Navigation("BookingService")
-                        .IsRequired();
+                    b.Navigation("BookingService");
 
                     b.Navigation("Images");
                 });
@@ -690,6 +758,11 @@ namespace HotelBooking.Migrations
             modelBuilder.Entity("HotelBooking.Models.ServiceCategories", b =>
                 {
                     b.Navigation("Services");
+                });
+
+            modelBuilder.Entity("HotelBooking.Models.UsingType", b =>
+                {
+                    b.Navigation("UsingImages");
                 });
 #pragma warning restore 612, 618
         }

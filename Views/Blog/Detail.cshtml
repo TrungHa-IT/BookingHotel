@@ -581,15 +581,14 @@ function likeComment(commentId) {
     <script src="~/js/main.js"></script>
 
           
-
-
     <script>
-    document.querySelectorAll('.reply-btn').forEach(button => {
-        button.addEventListener('click', function () {
-            const commentId = this.getAttribute('data-comment-id');
+    document.addEventListener('click', function (event) {
+        // Kiểm tra xem phần tử được click có phải là nút reply hay không
+        if (event.target.classList.contains('reply-btn')) {
+            const commentId = event.target.getAttribute('data-comment-id');
             const replyForm = document.getElementById(`reply-form-${commentId}`);
             replyForm.style.display = replyForm.style.display === 'none' ? 'block' : 'none'; // Hiện/ẩn form trả lời
-        });
+        }
     });
 </script>
 

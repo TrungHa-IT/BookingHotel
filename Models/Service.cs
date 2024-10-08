@@ -15,19 +15,10 @@ namespace HotelBooking.Models
         public string? Description { get; set; }
 
         [Required]
-        public string? Duration { get; set; }
+        public string? Content { get; set; }
 
         [Required]
-        public string? Inclusions { get; set; }
-
-        [Required]
-        public string? Reason { get; set; }
-
-        [Required]
-        public string? Terms { get; set; }
-
-        [Required]
-        public DateTime? CreateAt { get; set; }
+        public DateTime Create_At { get; set; }
 
         [Required]
         public int? Status { get; set; }
