@@ -29,7 +29,8 @@ namespace HotelBooking.Models
 
         // Điều hướng đến ServiceCategories
         public virtual ServiceCategories? ServiceCategories { get; set; }
-        public virtual ICollection<Image>? Images { get; set; }  // Danh sách các Service thuộc Category này
+    
+        public virtual ICollection<UsingImage> UsingImages { get; set; }
         public virtual BookingService? BookingService { get; set; }
     }
 }

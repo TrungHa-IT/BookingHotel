@@ -1,246 +1,65 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\",
+  "WorkspaceRootPath": "E:\\ASP\\1\\SS\\BookingHotel\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\trunghacs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\trunghacs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\usingimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\usingimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\usingtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\usingtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\servicecategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\servicecategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\controllers\\servicecategories1controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:controllers\\servicecategories1controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\controllers\\servicecategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:controllers\\servicecategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241008145807_Fix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241008145807_Fix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\views\\servicecategories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:views\\servicecategories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\views\\service\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:views\\service\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\views\\servicecategories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:views\\servicecategories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241008144634_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241008144634_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\migrations\\20241008144402_addmodeliamgeusing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:migrations\\20241008144402_addmodeliamgeusing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\migrations\\20241008144205_addimagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:migrations\\20241008144205_addimagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|e:\\asp\\1\\ss\\bookinghotel\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241008143858_ImageFix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241008143858_ImageFix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|e:\\asp\\1\\ss\\bookinghotel\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\roomimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\roomimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|e:\\asp\\1\\ss\\bookinghotel\\models\\usingimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\usingimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\hotelimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\hotelimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|e:\\asp\\1\\ss\\bookinghotel\\models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|e:\\asp\\1\\ss\\bookinghotel\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ASP\\1\\SS\\BookingHotel\\Migrations\\20241008162032_bich0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241008162032_bich0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ASP\\1\\SS\\BookingHotel\\Migrations\\20241008161309_bich1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241008161309_bich1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\hotelpolicies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\hotelpolicies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|e:\\asp\\1\\ss\\bookinghotel\\models\\usingtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\usingtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\controllers\\likerecordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:controllers\\likerecordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|e:\\asp\\1\\ss\\bookinghotel\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|e:\\asp\\1\\ss\\bookinghotel\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|e:\\asp\\1\\ss\\bookinghotel\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|e:\\asp\\1\\ss\\bookinghotel\\models\\servicecategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\servicecategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|e:\\asp\\1\\ss\\bookinghotel\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\servicerepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\servicerepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.204\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\servicecategoriesrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\servicecategoriesrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\iservicerepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\iservicerepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\rolerepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\rolerepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\iservicecategoriesrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\iservicecategoriesrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\iimagerepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\iimagerepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\categoriesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\categoriesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\ibookingservicerepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\ibookingservicerepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\iblogrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\iblogrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\icommentsrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\icommentsrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\irolerepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\irolerepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\ilikerecordrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\ilikerecordrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\repositories\\icategoriesrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:repositories\\icategoriesrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241007080829_AddServiceMdel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241007080829_AddServiceMdel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\comments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\comments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\models\\likerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:models\\likerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|d:\\intern .net\\asp .net mvc\\hotelbooking\\views\\blog\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:views\\blog\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|e:\\asp\\1\\ss\\bookinghotel\\migrations\\20241008162505_bich1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C799DCB-B861-4B47-8FDC-245C6BCFBF4E}|HotelBooking.csproj|solutionrelative:migrations\\20241008162505_bich1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -250,747 +69,202 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 11,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UsingImage.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\UsingImage.cs",
-              "RelativeDocumentMoniker": "Models\\UsingImage.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\UsingImage.cs",
-              "RelativeToolTip": "Models\\UsingImage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T14:25:36.736Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UsingType.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\UsingType.cs",
-              "RelativeDocumentMoniker": "Models\\UsingType.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\UsingType.cs",
-              "RelativeToolTip": "Models\\UsingType.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T14:30:07.306Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Image.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Image.cs",
-              "RelativeDocumentMoniker": "Models\\Image.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Image.cs",
-              "RelativeToolTip": "Models\\Image.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:44:02.768Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TrungHacs.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\TrungHacs.cs",
-              "RelativeDocumentMoniker": "Models\\TrungHacs.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\TrungHacs.cs",
-              "RelativeToolTip": "Models\\TrungHacs.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:13:53.355Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ServiceCategories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\ServiceCategories.cs",
-              "RelativeDocumentMoniker": "Models\\ServiceCategories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\ServiceCategories.cs",
-              "RelativeToolTip": "Models\\ServiceCategories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:51:49.355Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "20241008145807_Fix.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241008145807_Fix.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241008145807_Fix.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241008145807_Fix.cs",
-              "RelativeToolTip": "Migrations\\20241008145807_Fix.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T14:58:07.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Views\\Service\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Service\\Create.cshtml",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Views\\Service\\Create.cshtml",
-              "RelativeToolTip": "Views\\Service\\Create.cshtml",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAACoAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-07T10:35:01.88Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AppDbContextModelSnapshot.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\AppDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "Migrations\\AppDbContextModelSnapshot.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\AppDbContextModelSnapshot.cs",
-              "RelativeToolTip": "Migrations\\AppDbContextModelSnapshot.cs",
-              "ViewState": "AQIAAGEBAAAAAAAAAAAgwF8BAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:09:51.837Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Views\\Service\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Service\\Index.cshtml",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Views\\Service\\Index.cshtml",
-              "RelativeToolTip": "Views\\Service\\Index.cshtml",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAnwCcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-07T10:34:37.583Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Views\\ServiceCategories\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\ServiceCategories\\Create.cshtml",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Views\\ServiceCategories\\Create.cshtml",
-              "RelativeToolTip": "Views\\ServiceCategories\\Create.cshtml",
-              "ViewState": "AQIAABkAAAAAAAAAAAAQwCgAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-07T09:49:43.925Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ServiceController.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\ServiceController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ServiceController.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\ServiceController.cs",
-              "RelativeToolTip": "Controllers\\ServiceController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwDEAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T10:13:53.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ServiceCategoriesController.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\ServiceCategoriesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ServiceCategoriesController.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\ServiceCategoriesController.cs",
-              "RelativeToolTip": "Controllers\\ServiceCategoriesController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAowDYAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:41:51.267Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ServiceCategories1Controller.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\ServiceCategories1Controller.cs",
-              "RelativeDocumentMoniker": "Controllers\\ServiceCategories1Controller.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\ServiceCategories1Controller.cs",
-              "RelativeToolTip": "Controllers\\ServiceCategories1Controller.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:47:55.859Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Views\\ServiceCategories\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\ServiceCategories\\Index.cshtml",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Views\\ServiceCategories\\Index.cshtml",
-              "RelativeToolTip": "Views\\ServiceCategories\\Index.cshtml",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABkAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-07T09:48:52.594Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "BookingService.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\BookingService.cs",
-              "RelativeDocumentMoniker": "Models\\BookingService.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\BookingService.cs",
-              "RelativeToolTip": "Models\\BookingService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Title": "20241008162505_bich1.cs",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\Migrations\\20241008162505_bich1.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241008162505_bich1.cs",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\Migrations\\20241008162505_bich1.cs",
+              "RelativeToolTip": "Migrations\\20241008162505_bich1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:01:07.327Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T16:25:05.67Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 5,
+              "Title": "20241008162032_bich0.cs",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\Migrations\\20241008162032_bich0.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241008162032_bich0.cs",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\Migrations\\20241008162032_bich0.cs",
+              "RelativeToolTip": "Migrations\\20241008162032_bich0.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:20:32.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20241008161309_bich1.cs",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\Migrations\\20241008161309_bich1.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241008161309_bich1.cs",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\Migrations\\20241008161309_bich1.cs",
+              "RelativeToolTip": "Migrations\\20241008161309_bich1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:13:10.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Service.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Service.cs",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\Service.cs",
               "RelativeDocumentMoniker": "Models\\Service.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Service.cs",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\Service.cs",
               "RelativeToolTip": "Models\\Service.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAAAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAIwCAAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:48:15.794Z",
+              "WhenOpened": "2024-10-08T16:05:04.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "Models\\Booking.cs",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\Booking.cs",
+              "RelativeToolTip": "Models\\Booking.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAA1wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:04:34.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Blog.cs",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\Blog.cs",
+              "RelativeDocumentMoniker": "Models\\Blog.cs",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\Blog.cs",
+              "RelativeToolTip": "Models\\Blog.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAA0wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:04:20.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Image.cs",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\Image.cs",
+              "RelativeDocumentMoniker": "Models\\Image.cs",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\Image.cs",
+              "RelativeToolTip": "Models\\Image.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T15:47:15.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-08T15:42:07.845Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContextModelSnapshot.cs",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\AppDbContextModelSnapshot.cs",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\AppDbContextModelSnapshot.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T15:45:16.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsingImage.cs",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\UsingImage.cs",
+              "RelativeDocumentMoniker": "Models\\UsingImage.cs",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\UsingImage.cs",
+              "RelativeToolTip": "Models\\UsingImage.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBIAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T15:44:18.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "Models\\AppUser.cs",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\AppUser.cs",
+              "RelativeToolTip": "Models\\AppUser.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:03:09.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAowBAAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T15:43:36.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ServiceCategories.cs",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\ServiceCategories.cs",
+              "RelativeDocumentMoniker": "Models\\ServiceCategories.cs",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\ServiceCategories.cs",
+              "RelativeToolTip": "Models\\ServiceCategories.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAiwBQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T15:43:16.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsingType.cs",
+              "DocumentMoniker": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\UsingType.cs",
+              "RelativeDocumentMoniker": "Models\\UsingType.cs",
+              "ToolTip": "E:\\ASP\\1\\SS\\BookingHotel\\Models\\UsingType.cs",
+              "RelativeToolTip": "Models\\UsingType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T15:41:30.704Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T14:41:29.078Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "20241008144634_Initial.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241008144634_Initial.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241008144634_Initial.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241008144634_Initial.cs",
-              "RelativeToolTip": "Migrations\\20241008144634_Initial.cs",
-              "ViewState": "AQIAAN8BAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T14:46:35.02Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "20241008144205_AddImageModel.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241008144205_AddImageModel.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241008144205_AddImageModel.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241008144205_AddImageModel.cs",
-              "RelativeToolTip": "Migrations\\20241008144205_AddImageModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T14:42:05.94Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "20241008144402_AddModelIamgeUsing.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241008144402_AddModelIamgeUsing.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241008144402_AddModelIamgeUsing.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241008144402_AddModelIamgeUsing.cs",
-              "RelativeToolTip": "Migrations\\20241008144402_AddModelIamgeUsing.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T14:44:02.805Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "20241008143858_ImageFix.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241008143858_ImageFix.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241008143858_ImageFix.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241008143858_ImageFix.cs",
-              "RelativeToolTip": "Migrations\\20241008143858_ImageFix.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T14:38:59.025Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "RoomImage.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\RoomImage.cs",
-              "RelativeDocumentMoniker": "Models\\RoomImage.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\RoomImage.cs",
-              "RelativeToolTip": "Models\\RoomImage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T17:39:50.994Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-07T08:10:24.563Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "HotelImage.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\HotelImage.cs",
-              "RelativeDocumentMoniker": "Models\\HotelImage.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\HotelImage.cs",
-              "RelativeToolTip": "Models\\HotelImage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:50:24.767Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Categories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Categories.cs",
-              "RelativeDocumentMoniker": "Models\\Categories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Categories.cs",
-              "RelativeToolTip": "Models\\Categories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T14:14:29.948Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Role.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Role.cs",
-              "RelativeDocumentMoniker": "Models\\Role.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Role.cs",
-              "RelativeToolTip": "Models\\Role.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T17:39:53.651Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "AppUser.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\AppUser.cs",
-              "RelativeDocumentMoniker": "Models\\AppUser.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\AppUser.cs",
-              "RelativeToolTip": "Models\\AppUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T17:22:42.071Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Feedback.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Feedback.cs",
-              "RelativeDocumentMoniker": "Models\\Feedback.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Feedback.cs",
-              "RelativeToolTip": "Models\\Feedback.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:50:45.091Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Hotel.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Hotel.cs",
-              "RelativeDocumentMoniker": "Models\\Hotel.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Hotel.cs",
-              "RelativeToolTip": "Models\\Hotel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:50:26.198Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "HotelPolicies.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\HotelPolicies.cs",
-              "RelativeDocumentMoniker": "Models\\HotelPolicies.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\HotelPolicies.cs",
-              "RelativeToolTip": "Models\\HotelPolicies.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:50:43.084Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Payment.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Payment.cs",
-              "RelativeDocumentMoniker": "Models\\Payment.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Payment.cs",
-              "RelativeToolTip": "Models\\Payment.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:50:41.355Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Booking.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Booking.cs",
-              "RelativeDocumentMoniker": "Models\\Booking.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Booking.cs",
-              "RelativeToolTip": "Models\\Booking.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T17:55:28.275Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "CategoriesController.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\CategoriesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CategoriesController.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\CategoriesController.cs",
-              "RelativeToolTip": "Controllers\\CategoriesController.cs",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAmwDcAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T17:55:47.915Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "LikeRecordController.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\LikeRecordController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LikeRecordController.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\LikeRecordController.cs",
-              "RelativeToolTip": "Controllers\\LikeRecordController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:32:29.947Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Room.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Room.cs",
-              "RelativeDocumentMoniker": "Models\\Room.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Room.cs",
-              "RelativeToolTip": "Models\\Room.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:50:39.332Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\IRepository.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IRepository.cs",
-              "RelativeToolTip": "Repositories\\IRepository.cs",
-              "ViewState": "AQIAAKQBAAAAAAAAAAAuwLoBAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:28:21.146Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "ServiceRepositories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\ServiceRepositories.cs",
-              "RelativeDocumentMoniker": "Repositories\\ServiceRepositories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\ServiceRepositories.cs",
-              "RelativeToolTip": "Repositories\\ServiceRepositories.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAA1wB0AAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:22:08.855Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "CommentController.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\CommentController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CommentController.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\CommentController.cs",
-              "RelativeToolTip": "Controllers\\CommentController.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAIwEMAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T06:50:09.736Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "Repositories\\UnitOfWork.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\UnitOfWork.cs",
-              "RelativeToolTip": "Repositories\\UnitOfWork.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB0AAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:36:29.819Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "Blog.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Blog.cs",
-              "RelativeDocumentMoniker": "Models\\Blog.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Blog.cs",
-              "RelativeToolTip": "Models\\Blog.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:50:27.767Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-07T15:49:39.856Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACQAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:10:06.17Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "ServiceCategoriesRepositories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\ServiceCategoriesRepositories.cs",
-              "RelativeDocumentMoniker": "Repositories\\ServiceCategoriesRepositories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\ServiceCategoriesRepositories.cs",
-              "RelativeToolTip": "Repositories\\ServiceCategoriesRepositories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:34:40.544Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "IServiceRepositories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IServiceRepositories.cs",
-              "RelativeDocumentMoniker": "Repositories\\IServiceRepositories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IServiceRepositories.cs",
-              "RelativeToolTip": "Repositories\\IServiceRepositories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:21:53.73Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "RoleRepositories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\RoleRepositories.cs",
-              "RelativeDocumentMoniker": "Repositories\\RoleRepositories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\RoleRepositories.cs",
-              "RelativeToolTip": "Repositories\\RoleRepositories.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAowB0AAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:30:51.05Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "IServiceCategoriesRepositories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IServiceCategoriesRepositories.cs",
-              "RelativeDocumentMoniker": "Repositories\\IServiceCategoriesRepositories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IServiceCategoriesRepositories.cs",
-              "RelativeToolTip": "Repositories\\IServiceCategoriesRepositories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:30:42.717Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "BlogController.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\BlogController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BlogController.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Controllers\\BlogController.cs",
-              "RelativeToolTip": "Controllers\\BlogController.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwDsAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:41:57.086Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "IImageRepositories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IImageRepositories.cs",
-              "RelativeDocumentMoniker": "Repositories\\IImageRepositories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IImageRepositories.cs",
-              "RelativeToolTip": "Repositories\\IImageRepositories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:30:51.087Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "CategoriesRepository.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\CategoriesRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\CategoriesRepository.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\CategoriesRepository.cs",
-              "RelativeToolTip": "Repositories\\CategoriesRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:33:58.116Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "IBookingServiceRepositories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IBookingServiceRepositories.cs",
-              "RelativeDocumentMoniker": "Repositories\\IBookingServiceRepositories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IBookingServiceRepositories.cs",
-              "RelativeToolTip": "Repositories\\IBookingServiceRepositories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:33:01.393Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "ICommentsRepositories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\ICommentsRepositories.cs",
-              "RelativeDocumentMoniker": "Repositories\\ICommentsRepositories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\ICommentsRepositories.cs",
-              "RelativeToolTip": "Repositories\\ICommentsRepositories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:30:57.75Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "IRoleRepositories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IRoleRepositories.cs",
-              "RelativeDocumentMoniker": "Repositories\\IRoleRepositories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IRoleRepositories.cs",
-              "RelativeToolTip": "Repositories\\IRoleRepositories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:28:24.618Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "ILikeRecordRepositories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\ILikeRecordRepositories.cs",
-              "RelativeDocumentMoniker": "Repositories\\ILikeRecordRepositories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\ILikeRecordRepositories.cs",
-              "RelativeToolTip": "Repositories\\ILikeRecordRepositories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:30:59.146Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "IBlogRepositories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IBlogRepositories.cs",
-              "RelativeDocumentMoniker": "Repositories\\IBlogRepositories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\IBlogRepositories.cs",
-              "RelativeToolTip": "Repositories\\IBlogRepositories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:22:11.544Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "ICategoriesRepositories.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\ICategoriesRepositories.cs",
-              "RelativeDocumentMoniker": "Repositories\\ICategoriesRepositories.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Repositories\\ICategoriesRepositories.cs",
-              "RelativeToolTip": "Repositories\\ICategoriesRepositories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:22:16.834Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "20241007080829_AddServiceMdel.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241007080829_AddServiceMdel.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241007080829_AddServiceMdel.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Migrations\\20241007080829_AddServiceMdel.cs",
-              "RelativeToolTip": "Migrations\\20241007080829_AddServiceMdel.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:08:29.687Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "Voucher.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Voucher.cs",
-              "RelativeDocumentMoniker": "Models\\Voucher.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Voucher.cs",
-              "RelativeToolTip": "Models\\Voucher.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:06:23.366Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "Comments.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Comments.cs",
-              "RelativeDocumentMoniker": "Models\\Comments.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\Comments.cs",
-              "RelativeToolTip": "Models\\Comments.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAIwCQAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:50:15.908Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "LikeRecord.cs",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\LikeRecord.cs",
-              "RelativeDocumentMoniker": "Models\\LikeRecord.cs",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Models\\LikeRecord.cs",
-              "RelativeToolTip": "Models\\LikeRecord.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:50:41.991Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
-              "Title": "Detail.cshtml",
-              "DocumentMoniker": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Views\\Blog\\Detail.cshtml",
-              "RelativeDocumentMoniker": "Views\\Blog\\Detail.cshtml",
-              "ToolTip": "D:\\Intern .net\\ASP .NET MVC\\HotelBooking\\Views\\Blog\\Detail.cshtml",
-              "RelativeToolTip": "Views\\Blog\\Detail.cshtml",
-              "ViewState": "AQIAADYBAAAAAAAAAIBJwN8AAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-07T06:58:43.615Z"
+              "Title": "Microsoft.PackageDependencyResolution.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ViewState": "AQIAAPsAAAAAAAAAAAAowAkBAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-10-08T15:41:23.975Z"
             }
           ]
         }

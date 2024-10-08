@@ -262,9 +262,6 @@ namespace HotelBooking.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int?>("ServiceId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("create_at")
                         .HasColumnType("datetime2");
 
@@ -277,8 +274,6 @@ namespace HotelBooking.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("ServiceId");
 
                     b.ToTable("Images");
                 });
@@ -407,7 +402,7 @@ namespace HotelBooking.Migrations
                     b.Property<int>("ImageID")
                         .HasColumnType("int");
 
-                    b.Property<int>("RelationID")
+                    b.Property<int>("ServiceID")
                         .HasColumnType("int");
 
                     b.Property<int>("TypeID")
@@ -415,8 +410,9 @@ namespace HotelBooking.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ImageID")
-                        .IsUnique();
+                    b.HasIndex("ImageID");
+
+                    b.HasIndex("ServiceID");
 
                     b.HasIndex("TypeID")
                         .IsUnique();
@@ -615,13 +611,6 @@ namespace HotelBooking.Migrations
                     b.Navigation("ParentComment");
                 });
 
-            modelBuilder.Entity("HotelBooking.Models.Image", b =>
-                {
-                    b.HasOne("HotelBooking.Models.Service", null)
-                        .WithMany("Images")
-                        .HasForeignKey("ServiceId");
-                });
-
             modelBuilder.Entity("HotelBooking.Models.LikeRecord", b =>
                 {
                     b.HasOne("HotelBooking.Models.Comments", "Comment")
@@ -655,8 +644,14 @@ namespace HotelBooking.Migrations
             modelBuilder.Entity("HotelBooking.Models.UsingImage", b =>
                 {
                     b.HasOne("HotelBooking.Models.Image", "Image")
-                        .WithOne("UsingImage")
-                        .HasForeignKey("HotelBooking.Models.UsingImage", "ImageID")
+                        .WithMany("UsingImages")
+                        .HasForeignKey("ImageID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HotelBooking.Models.Service", "Service")
+                        .WithMany("UsingImages")
+                        .HasForeignKey("ServiceID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -667,6 +662,8 @@ namespace HotelBooking.Migrations
                         .IsRequired();
 
                     b.Navigation("Image");
+
+                    b.Navigation("Service");
 
                     b.Navigation("UsingType");
                 });
@@ -745,14 +742,14 @@ namespace HotelBooking.Migrations
 
             modelBuilder.Entity("HotelBooking.Models.Image", b =>
                 {
-                    b.Navigation("UsingImage");
+                    b.Navigation("UsingImages");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.Service", b =>
                 {
                     b.Navigation("BookingService");
 
-                    b.Navigation("Images");
+                    b.Navigation("UsingImages");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.ServiceCategories", b =>

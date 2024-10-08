@@ -9,14 +9,14 @@ namespace HotelBooking.Models
         public int ID { get; set; }
 
         [Required]
-        public string imageURL { get; set; }
+        public string? imageURL { get; set; }
 
         [Required]
-        public string name { get; set; }
+        public string? name { get; set; }
 
         [Required]
         public DateTime create_at { get; set; }
 
-        public virtual UsingImage? UsingImage { get; set; }
+       public virtual ICollection<UsingImage> UsingImages { get; set; }
     }
 }

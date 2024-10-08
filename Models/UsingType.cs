@@ -8,7 +8,7 @@ namespace HotelBooking.Models
         public int ID { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         // Navigation property for the "many" side
         public virtual UsingImage? UsingImages { get; set; }

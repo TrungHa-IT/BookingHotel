@@ -9,14 +9,15 @@ namespace HotelBooking.Models {
         public int ID { get; set; }
 
         [Required]
-        public int RelationID { get; set; }
+        public int ServiceID { get; set; }
 
         [ForeignKey("UsingType")]
         public int TypeID { get; set; }
         public virtual UsingType? UsingType { get; set; }
-
         [ForeignKey("Image")]
         public int ImageID { get; set; }
-        public virtual ICollection<Image>? Image { get; set; }
+        public virtual Image? Image { get; set; }
+        public virtual Service? Service { get; set; }
+
     }
 }

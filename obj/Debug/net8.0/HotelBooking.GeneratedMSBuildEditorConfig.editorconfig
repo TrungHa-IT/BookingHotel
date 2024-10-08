@@ -17,187 +17,187 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HotelBooking
 build_property.RootNamespace = HotelBooking
-build_property.ProjectDir = D:\Intern .net\ASP .NET MVC\HotelBooking\
+build_property.ProjectDir = E:\ASP\1\SS\BookingHotel\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Intern .net\ASP .NET MVC\HotelBooking
+build_property.MSBuildProjectDirectory = E:\ASP\1\SS\BookingHotel
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Account/Login.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Account/Register.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Blogs/Create.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Blogs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Blogs/Delete.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Blogs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Blogs/Details.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Blogs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Blogs/Edit.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Blogs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Blogs/Index.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Blogs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Blog/CreateBlog.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Blog/CreateBlog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xDcmVhdGVCbG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Blog/Detail.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Blog/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Blog/Index.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Blog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Categories/Create.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Categories/Delete.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Categories/Details.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Categories/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Categories/Edit.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Categories/Index.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Comment/CreateComment.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Comment/CreateComment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxDcmVhdGVDb21tZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Comment/Index.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Comment/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Dashborad/Index.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Dashborad/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvcmFkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Home/about.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Home/about.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxhYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Home/blog.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Home/blog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxibG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Home/blogdetail.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Home/blogdetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxibG9nZGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Home/Contact.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Home/createblog.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Home/createblog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjcmVhdGVibG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Home/Index.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Home/main.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Home/main.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtYWluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Home/Privacy.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Home/roomdetails.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Home/roomdetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxyb29tZGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Home/rooms.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Home/rooms.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxyb29tcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Roles/Create.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Roles/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Roles/Delete.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Roles/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Roles/Details.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Roles/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Roles/Edit.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Roles/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Roles/Index.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Roles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Sale/CategoriesRoom.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Sale/CategoriesRoom.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxDYXRlZ29yaWVzUm9vbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/ServiceCategories/Create.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/ServiceCategories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUNhdGVnb3JpZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/ServiceCategories/Index.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/ServiceCategories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUNhdGVnb3JpZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Service/Create.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Service/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Service/Index.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Service/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Shared/Error.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Shared/_LoginPartial.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/_ViewImports.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/_ViewStart.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Intern .net/ASP .NET MVC/HotelBooking/Views/Shared/_Layout.cshtml]
+[E:/ASP/1/SS/BookingHotel/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7dmtl713c2
