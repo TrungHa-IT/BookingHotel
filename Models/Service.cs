@@ -6,7 +6,7 @@ namespace HotelBooking.Models
     public class Service
     {
         [Key]
-        public int Id { get; set; }  // Khóa chính
+        public int Id { get; set; }
 
         [Required]
         public string? Name { get; set; }
@@ -23,14 +23,10 @@ namespace HotelBooking.Models
         [Required]
         public int? Status { get; set; }
 
-        // Thiết lập khóa ngoại đến ServiceCategories (quan hệ nhiều Service với 1 ServiceCategories)
         [ForeignKey("ServiceCategories")]
         public int ServiceCategoriesID { get; set; }
-
-        // Điều hướng đến ServiceCategories
         public virtual ServiceCategories? ServiceCategories { get; set; }
-    
-        public virtual ICollection<UsingImage>? UsingImages { get; set; }
-        public virtual BookingService? BookingService { get; set; }
+
+        public virtual ICollection<UsingImage>? UsingImages { get; set; }  // Một Service có thể có nhiều ảnh
     }
 }

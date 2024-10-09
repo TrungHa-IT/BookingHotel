@@ -22,7 +22,7 @@ switch (optionDatabases)
         break;
     case 2:
         {
-            var connectionString = builder.Configuration.GetConnectionString("SQLServerConnection") ?? throw new InvalidOperationException("Connection string 'SQLServerConnection' not found.");
+            var connectionString = builder.Configuration.GetConnectionString("default") ?? throw new InvalidOperationException("Connection string 'SQLServerConnection' not found.");
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(connectionString));
         }
@@ -46,7 +46,6 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddScoped<ICategoriesRepositories, CategoriesRepository>();
 builder.Services.AddScoped<ICommentsRepositories, CommentsRepositories>();
 builder.Services.AddScoped<IBlogRepositories, BlogRepositories>();
-builder.Services.AddScoped<IRoleRepositories, RoleRepositories>();
 builder.Services.AddScoped<ILikeRecordRepositories, LikeRecordRepositories>();
 builder.Services.AddScoped<IServiceCategoriesRepositories, ServiceCategoriesRepositories>();
 builder.Services.AddScoped<IServiceRepositories, ServiceRepositories>();

@@ -5,12 +5,9 @@ namespace HotelBooking.Models
     public class UsingType
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }  // Ví dụ: "Service", "CategoriesRoom"
 
-        [Required]
-        public string? Name { get; set; }
-
-        // Navigation property for the "many" side
-        public virtual UsingImage? UsingImages { get; set; }
+        public virtual ICollection<UsingImage>? UsingImages { get; set; }
     }
 }

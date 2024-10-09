@@ -9,7 +9,6 @@ namespace HotelBooking.Repositories
         private readonly AppDbContext _dbContext;
         private IDbContextTransaction? _transaction;
         public IRepository<Categories> _categoriesRepository { get; set; }
-        public IRepository<Roles> _roleRepository { get; set; }
         public IRepository<ServiceCategories> _serviceCategoriesRepository { get; set; }
         public IRepository<Blog> _blogRepository { get; set; }
         public IRepository<LikeRecord> _likerecordRepository { get; set; }
@@ -22,7 +21,6 @@ namespace HotelBooking.Repositories
         {
             _dbContext = dbContext;
             _categoriesRepository = new Repository<Categories>(_dbContext);
-            _roleRepository = new Repository<Roles>(_dbContext);
             _blogRepository = new Repository<Blog>(_dbContext);
             _commentRepository = new Repository<Comments>(_dbContext);
             _likerecordRepository = new Repository<LikeRecord>(_dbContext);
