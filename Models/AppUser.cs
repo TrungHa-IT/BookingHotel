@@ -12,6 +12,10 @@ namespace HotelBooking.Models
 
         public string? Address { get; set; }
 
+        public int numberOfBooking { get; set; }
+
+        public int numberOfBlog { get; set; }
+
         // Thuộc tính điều hướng tới Blog (1 AppUser có nhiều Blog)
         public virtual ICollection<Blog> Blogs { get; set; }
 

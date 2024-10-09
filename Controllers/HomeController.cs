@@ -1,4 +1,5 @@
 using HotelBooking.Models;
+using HotelBooking.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,16 +7,19 @@ namespace HotelBooking.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IServiceCategoriesRepositories _serviceCategoriesRepositories;
+        private readonly IServiceRepositories _serviceRepositories;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IServiceCategoriesRepositories serviceCategoriesRepositories, IServiceRepositories serviceRepositories)
         {
-            _logger = logger;
+            _serviceCategoriesRepositories = serviceCategoriesRepositories;
+            _serviceRepositories = serviceRepositories;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var sc = await _serviceCategoriesRepositories.GetAllServiceCategoriesAsync();
+            return View(sc);
         }
 
         public IActionResult Contact()
@@ -33,14 +37,16 @@ namespace HotelBooking.Controllers
             return View();
         }
 
-        public IActionResult blog()
+        public async Task<IActionResult> cservicedetail(int id)
         {
-            return View();
+            var sc = await _serviceRepositories.GetServiceByIdServiceCategoryAsync(id);
+            return View(sc);
         }
 
-        public IActionResult createblog()
+        public async Task<IActionResult> servicedetail(int id)
         {
-            return View();
+             var service = await _serviceRepositories.GetServiceByIdAsync(id);
+            return View(service);
         }
 
 

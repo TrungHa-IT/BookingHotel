@@ -8,6 +8,27 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configure the database connection
+int optionDatabases = 2;
+
+switch (optionDatabases)
+{
+    case 1:
+        {
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlite(connectionString));
+        }
+        break;
+    case 2:
+        {
+            var connectionString = builder.Configuration.GetConnectionString("default") ?? throw new InvalidOperationException("Connection string 'SQLServerConnection' not found.");
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(connectionString));
+        }
+        break;
+}
+
 // Configure Google Authentication
 builder.Services.AddAuthentication(options =>
 {
@@ -21,17 +42,13 @@ builder.Services.AddAuthentication(options =>
     options.ClientSecret = builder.Configuration.GetSection("GoogleKeys:ClientSecret").Value;
 });
 
-
-// Configure the database connection
-var connectionString = builder.Configuration.GetConnectionString("default");
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
-
 // Đăng ký Repository
 builder.Services.AddScoped<ICategoriesRepositories, CategoriesRepository>();
 builder.Services.AddScoped<ICommentsRepositories, CommentsRepositories>();
 builder.Services.AddScoped<IBlogRepositories, BlogRepositories>();
-builder.Services.AddScoped<IRoleRepositories, RoleRepositories>();
 builder.Services.AddScoped<ILikeRecordRepositories, LikeRecordRepositories>();
+builder.Services.AddScoped<IServiceCategoriesRepositories, ServiceCategoriesRepositories>();
+builder.Services.AddScoped<IServiceRepositories, ServiceRepositories>();
 builder.Services.AddTransient<UnitOfWork>();
 // Add ASP.NET Core Identity services
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
@@ -64,6 +81,13 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=index}/{id?}");
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+}
+
 
 // Run the application
 app.Run();

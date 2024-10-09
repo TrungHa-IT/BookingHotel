@@ -482,10 +482,11 @@
                                 <img src="https://firebasestorage.googleapis.com/v0/b/image-upload-62189.appspot.com/o/pngtree-flat-contact-png-image_4420854.jpg?alt=media&token=84930ea1-d87b-4541-9fe4-90cac627042f" alt="User Avatar">
                             </div>
                             <div class="sc-text">
-                                <span>(${new Date(response.comment.createdDate).toLocaleString() || "Invalid Date"})</span>
+                                <span>${new Date(response.comment.createdDate).toLocaleString() || "Invalid Date"}</span>
                                 <h5><strong>${response.comment.userName || "Anonymous"}</strong></h5>
                                 <p>${response.comment.content || "No content"}</p>
                                 <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true" src="https://scontent.fhan2-3.fna.fbcdn.net/m1/v/t6/An-HX414PnqCVzyEq9OFFdayyrdj8c3jnyPbPcierija6hpzsUvw-1VPQ260B2M9EbxgmP7pYlNQSjYAXF782_vnvvpDLxvJQD74bwdWEJ0DhcErkDga6gazZZUYm_Q.png?ccb=10-5&amp;oh=00_AYC0im9QT2OWXd5hY_Z4gcW3Os70GyfvS-0SqqAz_2Pnmw&amp;oe=67243C63&amp;_nc_sid=7da55a" style="height: 20px; width: 20px;">
+                                <span">${response.comment.likeComment || "9"}</span>
                                 <button type="button" class="comment-btn like-btn" id="like-btn-${response.comment.commentID}" data-comment-id="${response.comment.commentID}">
                                         Like
                                     </button>
@@ -580,15 +581,14 @@ function likeComment(commentId) {
     <script src="~/js/main.js"></script>
 
           
-
-
     <script>
-    document.querySelectorAll('.reply-btn').forEach(button => {
-        button.addEventListener('click', function () {
-            const commentId = this.getAttribute('data-comment-id');
+    document.addEventListener('click', function (event) {
+        // Kiểm tra xem phần tử được click có phải là nút reply hay không
+        if (event.target.classList.contains('reply-btn')) {
+            const commentId = event.target.getAttribute('data-comment-id');
             const replyForm = document.getElementById(`reply-form-${commentId}`);
             replyForm.style.display = replyForm.style.display === 'none' ? 'block' : 'none'; // Hiện/ẩn form trả lời
-        });
+        }
     });
 </script>
 

@@ -9,10 +9,14 @@ namespace HotelBooking.Repositories
         private readonly AppDbContext _dbContext;
         private IDbContextTransaction? _transaction;
         public IRepository<Categories> _categoriesRepository { get; set; }
-        public IRepository<Roles> _roleRepository { get; set; }
+        public IRepository<ServiceCategories> _serviceCategoriesRepository { get; set; }
         public IRepository<Blog> _blogRepository { get; set; }
         public IRepository<LikeRecord> _likerecordRepository { get; set; }
         public IRepository<Comments> _commentRepository { get; set; }
+        public IRepository<Service> _serviceRepository { get; set; }
+        public IRepository<Image> _imageRepository { get; set; }
+
+        public IRepository<UsingImage> _usingImageRepository { get; set; }
 
         private bool _disposed = false;
 
@@ -20,10 +24,13 @@ namespace HotelBooking.Repositories
         {
             _dbContext = dbContext;
             _categoriesRepository = new Repository<Categories>(_dbContext);
-            _roleRepository = new Repository<Roles>(_dbContext);
             _blogRepository = new Repository<Blog>(_dbContext);
             _commentRepository = new Repository<Comments>(_dbContext);
             _likerecordRepository = new Repository<LikeRecord>(_dbContext);
+            _serviceCategoriesRepository = new Repository<ServiceCategories>(_dbContext);
+            _serviceRepository = new Repository<Service>(_dbContext);
+            _usingImageRepository = new Repository<UsingImage>(_dbContext);
+            _imageRepository = new Repository<Image>(_dbContext);
         }
         
         /// <summary>
