@@ -35,6 +35,11 @@ namespace HotelBooking.Repositories
             return await _unitOfWork._serviceRepository.GetByIdAsync(id); 
         }
 
+        public async Task<IEnumerable<Service>> GetServiceByIdServiceCategoryAsync(int id)
+        {
+            return await _unitOfWork._serviceRepository.GetByIdServiceCategoriesAsync(id);
+        }
+
         public async Task<bool> ServiceExistAsync(int id)
         {
             return await _unitOfWork._serviceRepository.ExistsAsync(id);
@@ -45,5 +50,7 @@ namespace HotelBooking.Repositories
             _unitOfWork._serviceRepository.Update(service);
             await _unitOfWork.SaveChangesAsync();
         }
+
+       
     }
 }

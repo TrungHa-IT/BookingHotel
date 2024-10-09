@@ -22,6 +22,8 @@ namespace HotelBooking.Repositories
         /// <returns>A task that represents the asynchronous operation. The task result contains the entity if found; otherwise, null.</returns>
         Task<T?> GetByIdAsync(int id);
 
+        Task<IEnumerable<Service?>> GetByIdServiceCategoriesAsync(int id);
+
         //Get Like By ID
         Task<LikeRecord?> GetLikeByIdAsync(int commentId, string userId);
 
@@ -441,5 +443,16 @@ namespace HotelBooking.Repositories
                                         .ToListAsync();
             return result;
         }
+
+        public async Task<IEnumerable<Service>> GetByIdServiceCategoriesAsync(int id)
+        {
+            var result = await _entities.OfType<Service>()
+                                        .Include(s => s.ServiceCategories) // Include để lấy dữ liệu từ bảng ServiceCategories
+                                        .Where(s => s.ServiceCategoriesID == id) // Lọc theo ServiceCategoriesID
+                                        .ToListAsync();
+            return result;
+        }
+
+        
     }
 }

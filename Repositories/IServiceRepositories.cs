@@ -6,6 +6,7 @@ namespace HotelBooking.Repositories
     {
         Task<IEnumerable<Service>> GetAllServiceAsync();
         Task<Service> GetServiceByIdAsync(int id);
+        Task<IEnumerable<Service>> GetServiceByIdServiceCategoryAsync(int id);
         Task CreateServicesAsync(Service service);
         Task UpdateServiceAsync(Service service);
         Task DeleteServiceAsync(int id);

@@ -14,6 +14,9 @@ namespace HotelBooking.Repositories
         public IRepository<LikeRecord> _likerecordRepository { get; set; }
         public IRepository<Comments> _commentRepository { get; set; }
         public IRepository<Service> _serviceRepository { get; set; }
+        public IRepository<Image> _imageRepository { get; set; }
+
+        public IRepository<UsingImage> _usingImageRepository { get; set; }
 
         private bool _disposed = false;
 
@@ -26,6 +29,8 @@ namespace HotelBooking.Repositories
             _likerecordRepository = new Repository<LikeRecord>(_dbContext);
             _serviceCategoriesRepository = new Repository<ServiceCategories>(_dbContext);
             _serviceRepository = new Repository<Service>(_dbContext);
+            _usingImageRepository = new Repository<UsingImage>(_dbContext);
+            _imageRepository = new Repository<Image>(_dbContext);
         }
         
         /// <summary>
