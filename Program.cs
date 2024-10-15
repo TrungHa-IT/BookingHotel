@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure the database connection
-int optionDatabases = 2;
+int optionDatabases = 1;
 
 switch (optionDatabases)
 {

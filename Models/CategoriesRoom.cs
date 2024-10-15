@@ -20,6 +20,6 @@ namespace HotelBooking.Models
         public virtual ICollection<Room>? Rooms { get; set; }  // Một CategoriesRoom có thể có nhiều Room
 
         // Mối quan hệ 1-nhiều với UsingImage
-        public virtual ICollection<UsingImage>? UsingImages { get; set; }  // Một CategoriesRoom có thể có nhiều ảnh
+        // Một CategoriesRoom có thể có nhiều ảnh
     }
 }

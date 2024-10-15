@@ -41,7 +41,7 @@ namespace HotelBooking.Models
         public virtual CategoriesRoom? CategoriesRoom { get; set; }  // Điều hướng đến bảng CategoriesRoom
 
         // Mối quan hệ 1-nhiều với bảng UsingImage
-        public virtual ICollection<UsingImage>? UsingImages { get; set; }  // Một Room có thể có nhiều ảnh
+        // Một Room có thể có nhiều ảnh
     }
 
 }
