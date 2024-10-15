@@ -9,7 +9,7 @@ namespace HotelBooking.Models
         [Required]
         public string? Content { get; set; }
         [Required]
-        public int Star {  get; set; }
+        public int Star { get; set; }
         [Required]
         public DateTime? CreateAt { get; set; }
         public int user_id { get; set; }
@@ -17,6 +17,5 @@ namespace HotelBooking.Models
 
         public int room_id { get; set; }
         public virtual Room? Room { get; set; }
-        public virtual ICollection<UsingImage>? UsingImages { get; set; }  // Một CategoriesRoom có thể có nhiều ảnh
     }
 }
