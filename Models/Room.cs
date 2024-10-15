@@ -39,11 +39,6 @@ namespace HotelBooking.Models
         public int CategoryID { get; set; }  // Khóa ngoại từ bảng CategoriesRoom
 
         public virtual CategoriesRoom? CategoriesRoom { get; set; }  // Điều hướng đến bảng CategoriesRoom
-
-        // Thêm ngoại khóa UsingImageID
-        [ForeignKey("UsingImage")]
-        public int UsingImageID { get; set; }
-        public virtual UsingImage? UsingImage { get; set; }
     }
 
 }

@@ -26,10 +26,5 @@ namespace HotelBooking.Models
         [ForeignKey("ServiceCategories")]
         public int ServiceCategoriesID { get; set; }
         public virtual ServiceCategories? ServiceCategories { get; set; }
-
-        // Thêm ngoại khóa UsingImageID
-        [ForeignKey("UsingImage")]
-        public int UsingImageID { get; set; }
-        public virtual UsingImage? UsingImage { get; set; }
     }
 }

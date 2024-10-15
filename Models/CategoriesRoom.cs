@@ -19,11 +19,5 @@ namespace HotelBooking.Models
 
         // Mối quan hệ 1-nhiều với Room
         public virtual ICollection<Room>? Rooms { get; set; }  // Một CategoriesRoom có thể có nhiều Room
-
-        // Mối quan hệ 1-nhiều với UsingImage
-        // Thêm ngoại khóa UsingImageID
-        [ForeignKey("UsingImage")]
-        public int UsingImageID { get; set; }
-        public virtual UsingImage? UsingImage { get; set; }
     }
 }
