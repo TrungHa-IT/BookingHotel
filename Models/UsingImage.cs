@@ -17,6 +17,6 @@ namespace HotelBooking.Models
         public int ImageID { get; set; }  // Khóa ngoại liên kết đến bảng Image
         public virtual Image? Image { get; set; }
 
-        public int RelationID { get; set; }  // Khóa ngoại chung cho Service hoặc CategoriesRoom
+        public int RID { get; set; }
     }
 }

@@ -364,7 +364,12 @@ namespace HotelBooking.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UsingImageID")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UsingImageID");
 
                     b.ToTable("CategoriesRooms");
                 });
@@ -460,6 +465,9 @@ namespace HotelBooking.Data.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("UsingImageID")
+                        .HasColumnType("int");
+
                     b.Property<int>("room_id")
                         .HasColumnType("int");
 
@@ -471,6 +479,8 @@ namespace HotelBooking.Data.Migrations
                     b.HasIndex("RoomId");
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("UsingImageID");
 
                     b.ToTable("Feedbacks");
                 });
@@ -580,12 +590,17 @@ namespace HotelBooking.Data.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
+                    b.Property<int>("UsingImageID")
+                        .HasColumnType("int");
+
                     b.Property<int>("VoucherId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryID");
+
+                    b.HasIndex("UsingImageID");
 
                     b.HasIndex("VoucherId")
                         .IsUnique();
@@ -623,9 +638,14 @@ namespace HotelBooking.Data.Migrations
                         .IsRequired()
                         .HasColumnType("int");
 
+                    b.Property<int>("UsingImageID")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ServiceCategoriesID");
+
+                    b.HasIndex("UsingImageID");
 
                     b.ToTable("Services");
                 });
@@ -654,7 +674,12 @@ namespace HotelBooking.Data.Migrations
                         .IsRequired()
                         .HasColumnType("int");
 
+                    b.Property<int>("UsingImageID")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UsingImageID");
 
                     b.ToTable("ServiceCategories");
                 });
@@ -667,25 +692,10 @@ namespace HotelBooking.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int?>("CategoriesRoomId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FeedbackId")
-                        .HasColumnType("int");
-
                     b.Property<int>("ImageID")
                         .HasColumnType("int");
 
-                    b.Property<int>("RelationID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("RoomId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ServiceCategoriesId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ServiceId")
+                    b.Property<int>("RID")
                         .HasColumnType("int");
 
                     b.Property<int>("TypeID")
@@ -693,17 +703,7 @@ namespace HotelBooking.Data.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CategoriesRoomId");
-
-                    b.HasIndex("FeedbackId");
-
                     b.HasIndex("ImageID");
-
-                    b.HasIndex("RoomId");
-
-                    b.HasIndex("ServiceCategoriesId");
-
-                    b.HasIndex("ServiceId");
 
                     b.HasIndex("TypeID");
 
@@ -958,6 +958,17 @@ namespace HotelBooking.Data.Migrations
                     b.Navigation("Service");
                 });
 
+            modelBuilder.Entity("HotelBooking.Models.CategoriesRoom", b =>
+                {
+                    b.HasOne("HotelBooking.Models.UsingImage", "UsingImage")
+                        .WithMany()
+                        .HasForeignKey("UsingImageID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UsingImage");
+                });
+
             modelBuilder.Entity("HotelBooking.Models.Comments", b =>
                 {
                     b.HasOne("HotelBooking.Models.AppUser", "AppUser")
@@ -989,9 +1000,17 @@ namespace HotelBooking.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId");
 
+                    b.HasOne("HotelBooking.Models.UsingImage", "UsingImage")
+                        .WithMany()
+                        .HasForeignKey("UsingImageID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Room");
 
                     b.Navigation("User");
+
+                    b.Navigation("UsingImage");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.LikeRecord", b =>
@@ -1021,6 +1040,12 @@ namespace HotelBooking.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HotelBooking.Models.UsingImage", "UsingImage")
+                        .WithMany()
+                        .HasForeignKey("UsingImageID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("HotelBooking.Models.Voucher", "Voucher")
                         .WithOne("Room")
                         .HasForeignKey("HotelBooking.Models.Room", "VoucherId")
@@ -1028,6 +1053,8 @@ namespace HotelBooking.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("CategoriesRoom");
+
+                    b.Navigation("UsingImage");
 
                     b.Navigation("Voucher");
                 });
@@ -1040,36 +1067,35 @@ namespace HotelBooking.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HotelBooking.Models.UsingImage", "UsingImage")
+                        .WithMany()
+                        .HasForeignKey("UsingImageID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("ServiceCategories");
+
+                    b.Navigation("UsingImage");
+                });
+
+            modelBuilder.Entity("HotelBooking.Models.ServiceCategories", b =>
+                {
+                    b.HasOne("HotelBooking.Models.UsingImage", "UsingImage")
+                        .WithMany()
+                        .HasForeignKey("UsingImageID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UsingImage");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.UsingImage", b =>
                 {
-                    b.HasOne("HotelBooking.Models.CategoriesRoom", null)
-                        .WithMany("UsingImages")
-                        .HasForeignKey("CategoriesRoomId");
-
-                    b.HasOne("HotelBooking.Models.Feedback", null)
-                        .WithMany("UsingImages")
-                        .HasForeignKey("FeedbackId");
-
                     b.HasOne("HotelBooking.Models.Image", "Image")
                         .WithMany("UsingImages")
                         .HasForeignKey("ImageID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("HotelBooking.Models.Room", null)
-                        .WithMany("UsingImages")
-                        .HasForeignKey("RoomId");
-
-                    b.HasOne("HotelBooking.Models.ServiceCategories", null)
-                        .WithMany("UsingImages")
-                        .HasForeignKey("ServiceCategoriesId");
-
-                    b.HasOne("HotelBooking.Models.Service", null)
-                        .WithMany("UsingImages")
-                        .HasForeignKey("ServiceId");
 
                     b.HasOne("HotelBooking.Models.UsingType", "UsingType")
                         .WithMany("UsingImages")
@@ -1150,8 +1176,6 @@ namespace HotelBooking.Data.Migrations
             modelBuilder.Entity("HotelBooking.Models.CategoriesRoom", b =>
                 {
                     b.Navigation("Rooms");
-
-                    b.Navigation("UsingImages");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.Comments", b =>
@@ -1161,22 +1185,7 @@ namespace HotelBooking.Data.Migrations
                     b.Navigation("Replies");
                 });
 
-            modelBuilder.Entity("HotelBooking.Models.Feedback", b =>
-                {
-                    b.Navigation("UsingImages");
-                });
-
             modelBuilder.Entity("HotelBooking.Models.Image", b =>
-                {
-                    b.Navigation("UsingImages");
-                });
-
-            modelBuilder.Entity("HotelBooking.Models.Room", b =>
-                {
-                    b.Navigation("UsingImages");
-                });
-
-            modelBuilder.Entity("HotelBooking.Models.Service", b =>
                 {
                     b.Navigation("UsingImages");
                 });
@@ -1184,8 +1193,6 @@ namespace HotelBooking.Data.Migrations
             modelBuilder.Entity("HotelBooking.Models.ServiceCategories", b =>
                 {
                     b.Navigation("Services");
-
-                    b.Navigation("UsingImages");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.UsingType", b =>

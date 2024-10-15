@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotelBooking.Models
 {
@@ -17,6 +18,10 @@ namespace HotelBooking.Models
 
         public int room_id { get; set; }
         public virtual Room? Room { get; set; }
-        public virtual ICollection<UsingImage>? UsingImages { get; set; }  // Một CategoriesRoom có thể có nhiều ảnh
+
+        // Thêm ngoại khóa UsingImageID
+        [ForeignKey("UsingImage")]
+        public int UsingImageID { get; set; }
+        public virtual UsingImage? UsingImage { get; set; }
     }
 }

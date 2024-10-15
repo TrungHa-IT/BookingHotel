@@ -27,6 +27,9 @@ namespace HotelBooking.Models
         public int ServiceCategoriesID { get; set; }
         public virtual ServiceCategories? ServiceCategories { get; set; }
 
-        public virtual ICollection<UsingImage>? UsingImages { get; set; }  // Một Service có thể có nhiều ảnh
+        // Thêm ngoại khóa UsingImageID
+        [ForeignKey("UsingImage")]
+        public int UsingImageID { get; set; }
+        public virtual UsingImage? UsingImage { get; set; }
     }
 }
