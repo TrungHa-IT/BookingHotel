@@ -8,11 +8,12 @@ namespace HotelBooking.Controllers
     public class ServiceCategoriesController : Controller
     {
         private readonly IServiceCategoriesRepositories _serviceCategoriesRepositories;
+        private readonly IImageRepositories _imageRepositories;
 
-        public ServiceCategoriesController(IServiceCategoriesRepositories serviceCategoriesRepositories)
+        public ServiceCategoriesController(IServiceCategoriesRepositories serviceCategoriesRepositories, IImageRepositories imageRepositories)
         {
             _serviceCategoriesRepositories = serviceCategoriesRepositories;
-
+            _imageRepositories = imageRepositories;
         }
 
         public async Task<IActionResult> Index()
@@ -33,6 +34,7 @@ namespace HotelBooking.Controllers
             
                 serviceCategories.CreateAt = DateTime.Now;
                 await _serviceCategoriesRepositories.CreateServiceCategoriesAsync(serviceCategories);
+                await _imageRepositories.CreateServiceCategoriesAsync(serviceCategories);
                 return RedirectToAction("Index", "ServiceCategories");
             
         }
