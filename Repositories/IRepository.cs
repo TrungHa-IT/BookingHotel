@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using HotelBooking.Data;
 using HotelBooking.Models;
 using Microsoft.EntityFrameworkCore;
+using Google.Cloud.Storage.V1;
 namespace HotelBooking.Repositories
 {
     public interface IRepository<T> where T : class
@@ -22,11 +23,13 @@ namespace HotelBooking.Repositories
         /// <returns>A task that represents the asynchronous operation. The task result contains the entity if found; otherwise, null.</returns>
         Task<T?> GetByIdAsync(int id);
 
+        int  GetMaxId();
+        string ConvertIFormFileToString(IFormFile file);
         Task<IEnumerable<Service?>> GetByIdServiceCategoriesAsync(int id);
 
         //Get Like By ID
         Task<LikeRecord?> GetLikeByIdAsync(int commentId, string userId);
-
+        
 
         Task<bool> UserHasLikedCommentAsync(int commentId, string userId);
 
@@ -453,6 +456,15 @@ namespace HotelBooking.Repositories
             return result;
         }
 
-        
+        public string ConvertIFormFileToString(IFormFile file)
+        {
+            return file?.FileName; // Lấy tên file từ IFormFile
+        }
+
+        public int GetMaxId()
+        {
+            return  _entities.OfType<T>()
+                             .Max(e => e.ID);
+        }
     }
 }

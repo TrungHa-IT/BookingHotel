@@ -8,11 +8,12 @@ namespace HotelBooking.Controllers
     public class ServiceCategoriesController : Controller
     {
         private readonly IServiceCategoriesRepositories _serviceCategoriesRepositories;
+        private readonly IImageRepositories _imageRepositories;
 
-        public ServiceCategoriesController(IServiceCategoriesRepositories serviceCategoriesRepositories)
+        public ServiceCategoriesController(IServiceCategoriesRepositories serviceCategoriesRepositories, IImageRepositories imageRepositories)
         {
             _serviceCategoriesRepositories = serviceCategoriesRepositories;
-
+            _imageRepositories = imageRepositories;
         }
 
         public async Task<IActionResult> Index()
