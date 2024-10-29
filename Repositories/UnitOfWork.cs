@@ -15,11 +15,10 @@ namespace HotelBooking.Repositories
         public IRepository<Comments> _commentRepository { get; set; }
         public IRepository<Service> _serviceRepository { get; set; }
         public IRepository<Image> _imageRepository { get; set; }
-
         public IRepository<UsingImage> _usingImageRepository { get; set; }
+        public IRepository<CategoriesRoom> _categoriesRoomRepository { get; set; }
 
         private bool _disposed = false;
-
         public UnitOfWork(AppDbContext dbContext)
         {
             _dbContext = dbContext;
@@ -31,6 +30,7 @@ namespace HotelBooking.Repositories
             _serviceRepository = new Repository<Service>(_dbContext);
             _usingImageRepository = new Repository<UsingImage>(_dbContext);
             _imageRepository = new Repository<Image>(_dbContext);
+            _categoriesRoomRepository = new Repository<CategoriesRoom>(_dbContext);
         }
         
         /// <summary>
