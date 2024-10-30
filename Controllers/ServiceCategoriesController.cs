@@ -34,7 +34,6 @@ namespace HotelBooking.Controllers
             
                 serviceCategories.CreateAt = DateTime.Now;
                 await _serviceCategoriesRepositories.CreateServiceCategoriesAsync(serviceCategories);
-                await _imageRepositories.CreateServiceCategoriesAsync(serviceCategories);
                 return RedirectToAction("Index", "ServiceCategories");
             
         }

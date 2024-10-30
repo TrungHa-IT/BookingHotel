@@ -49,6 +49,7 @@ builder.Services.AddScoped<IBlogRepositories, BlogRepositories>();
 builder.Services.AddScoped<ILikeRecordRepositories, LikeRecordRepositories>();
 builder.Services.AddScoped<IServiceCategoriesRepositories, ServiceCategoriesRepositories>();
 builder.Services.AddScoped<IServiceRepositories, ServiceRepositories>();
+builder.Services.AddScoped<IImageRepositories, ImageRepositories>();
 builder.Services.AddTransient<UnitOfWork>();
 // Add ASP.NET Core Identity services
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
@@ -82,11 +83,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=index}/{id?}");
 
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate();
-}
+
 
 
 // Run the application
