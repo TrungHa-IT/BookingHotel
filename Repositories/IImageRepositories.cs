@@ -6,7 +6,7 @@ namespace HotelBooking.Repositories
     {
         Task<IEnumerable<Image>> GetAllImageAsync();
         Task<Image> GetImageByIdAsync(int id);
-        Task CreateImageAsync(Image image);
+        Task CreateImagesAsync(int relationId, int typeID, List<IFormFile> imageUrls);
         Task UpdateImageAsync(Image image);
         Task DeleteImageAsync(int id);
         Task<bool> ImageExistAsync(int id);
