@@ -3,13 +3,13 @@ using System.IO;
 using System.Security.Policy;
 using System.Threading.Tasks;
 using HotelBooking.Models;
+using HotelBooking.Services;
 
 namespace HotelBooking.Repositories
 {
     public class ImageRepositories : IImageRepositories
     {
         private readonly UnitOfWork _unitOfWork;
-
 
         public ImageRepositories(UnitOfWork unitOfWork)
         {
@@ -31,9 +31,8 @@ namespace HotelBooking.Repositories
                     var newImage = new Image
                     {
                         imageURL = url,
-                        name = lastId.ToString(),
+                        name = count.ToString(),
                         create_at = DateTime.Now,
-
                     };
 
                     _unitOfWork._imageRepository.Add(newImage);

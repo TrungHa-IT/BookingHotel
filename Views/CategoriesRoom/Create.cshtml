@@ -1,0 +1,25 @@
+﻿@model HotelBooking.Models.CategoriesRoom 
+@{
+    ViewData["Title"] = "Create";
+}
+
+    <h2>Create a New Category Room</h2>
+
+    @using (Html.BeginForm("Create", "CategoriesRoom", FormMethod.Post))
+    {
+        <div>
+            <label for="Name">Name</label>
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+
+        <div>
+            <label for="Description">Description</label>
+            @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+
+        <button type="submit">Create</button>
+        <a asp-action="Index" asp-controller="CategoriesRoom">Goback</a>
+    }
+
