@@ -15,7 +15,7 @@ namespace HotelBooking.Models
         public string? Amenities { get; set; }  // Các tiện nghi của phòng
 
         [Required]
-        public DateTime? CheckInOut { get; set; }  // Thời gian check-in/check-out
+        public string? CheckInOut { get; set; }  // Thời gian check-in/check-out
 
         public string? Others { get; set; }  // Các thông tin khác
 

@@ -39,14 +39,12 @@ namespace HotelBooking.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Room room)
         {
-            if (!ModelState.IsValid)
-            {
+            
                 room.CreateAt = DateTime.Now;
                 room.VoucherId = 1;
+                room.Status = 1;
                 await _roomRepositories.CreateRoomAsync(room);
                 return RedirectToAction(nameof(Index));
-            }
-            return View(room);
         }
         //Details/CategoriesRoom
         public async Task<IActionResult> Details(int id)
