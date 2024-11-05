@@ -51,6 +51,7 @@ builder.Services.AddScoped<IServiceCategoriesRepositories, ServiceCategoriesRepo
 builder.Services.AddScoped<IServiceRepositories, ServiceRepositories>();
 builder.Services.AddScoped<IImageRepositories, ImageRepositories>();
 builder.Services.AddScoped<ICategoriesRoomRepository, CategoriesRoomRepository>();
+builder.Services.AddScoped<IRoomRepositories, RoomRepository>();
 builder.Services.AddTransient<UnitOfWork>();
 // Add ASP.NET Core Identity services
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>

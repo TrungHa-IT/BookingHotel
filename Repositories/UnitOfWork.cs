@@ -18,6 +18,8 @@ namespace HotelBooking.Repositories
         public IRepository<CategoriesRoom> _categoriesRoomRepository { get; set; }
         public IRepository<UsingImage> _usingImageRepository { get; set; }
 
+        public IRepository<Room> _roomRepository { get; set; }
+
         private bool _disposed = false;
 
         public UnitOfWork(AppDbContext dbContext)
@@ -32,6 +34,7 @@ namespace HotelBooking.Repositories
             _usingImageRepository = new Repository<UsingImage>(_dbContext);
             _imageRepository = new Repository<Image>(_dbContext);
             _categoriesRoomRepository = new Repository<CategoriesRoom>(_dbContext);
+            _roomRepository = new Repository<Room>(_dbContext);
         }
         
         /// <summary>
