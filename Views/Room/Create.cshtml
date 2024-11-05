@@ -1,0 +1,87 @@
+﻿@model HotelBooking.ViewModels.RoomViewModel
+
+@{
+    ViewData["Title"] = "Create Room";
+}
+
+<h1>Create Room</h1>
+
+<h4>Room Details</h4>
+<hr />
+
+<!-- TinyMCE Script for Rich Text Editing -->
+
+<!-- Place the first <script> tag in your HTML's <head> -->
+<script src="https://cdn.tiny.cloud/1/o1g5c643pbicfl0antdwpng1g0b2vv4khb6ma9shg0lvvgqb/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+<!-- Place the following <script> and <textarea> tags your HTML's <body> -->
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    });
+</script>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post" id="roomForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Description Field -->
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <!-- Amenities Field with TinyMCE Editor -->
+            <div class="form-group">
+                <label asp-for="Amenities" class="control-label"></label>
+                <textarea asp-for="Amenities" class="form-control"></textarea>
+                <span asp-validation-for="Amenities" class="text-danger"></span>
+            </div>
+
+            <!-- CheckInOut Field -->
+            <div class="form-group">
+                <label asp-for="CheckInOut" class="control-label"></label>
+                <input asp-for="CheckInOut" class="form-control" />
+                <span asp-validation-for="CheckInOut" class="text-danger"></span>
+            </div>
+
+            <!-- Others Field -->
+            <div class="form-group">
+                <label asp-for="Others" class="control-label"></label>
+                <input asp-for="Others" class="form-control" />
+                <span asp-validation-for="Others" class="text-danger"></span>
+            </div>
+
+            <!-- Features Field -->
+            <div class="form-group">
+                <label asp-for="Features" class="control-label"></label>
+                <input asp-for="Features" class="form-control" />
+                <span asp-validation-for="Features" class="text-danger"></span>
+            </div>
+
+            <!-- Voucher Selection Dropdown -->
+            
+
+            <!-- Category Selection Dropdown -->
+            <div class="form-group">
+                <label asp-for="CategoryID" class="control-label"></label>
+                <select asp-for="CategoryID" class="form-control" asp-items="ViewBag.RoomCategoriesID"></select>
+                <span asp-validation-for="CategoryID" class="text-danger"></span>
+            </div>
+
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<HotelBooking.Models.Room>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<h2>CategoriesRoom List</h2>
+<a asp-action="Create">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Description)</th>
+            <th>@Html.DisplayNameFor(model => model.Amenities)</th>
+            <th>@Html.DisplayNameFor(model => model.CheckInOut) </th>
+            <th>@Html.DisplayNameFor(model => model.Others) </th>
+            <th>@Html.DisplayNameFor(model => model.Features) </th>
+            <th>@Html.DisplayNameFor(model => model.CreateAt) </th>
+            <th>@Html.DisplayNameFor(model => model.Status) </th>
+            <th>Voucher</th>
+            <th>Category</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Description</td>
+                <td>@item.Amenities</td>
+                <td>@item.CheckInOut</td>
+                <td>@item.Others</td>
+                <td>@item.Features</td>
+                <td>@item.CreateAt?.ToString("yyyy-MM-dd")</td>
+                <td>@item.Status</td>
+                <td>@item.VoucherId</td>
+                <td>@item.CategoryID</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <form asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirmDelete();">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function confirmDelete() {
+        return confirm('Do you want to delete this item?');
+    }
+</script>

@@ -1,0 +1,65 @@
+﻿@model HotelBooking.Models.Room
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit Category Room</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="text" asp-for="Id" readonly />
+    <input type="date" asp-for="CreateAt" />
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Amenities"></label>
+        <input asp-for="Amenities" class="form-control" />
+        <span asp-validation-for="Amenities" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="CheckInOut"></label>
+        <input asp-for="CheckInOut" class="form-control" />
+        <span asp-validation-for="CheckInOut" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Others"></label>
+        <input asp-for="Others" class="form-control" />
+        <span asp-validation-for="Others" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Features"></label>
+        <input asp-for="Features" class="form-control" />
+        <span asp-validation-for="Features" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Status"></label>
+        <input asp-for="Status" class="form-control" />
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="VoucherId"></label>
+        <input asp-for="VoucherId" class="form-control" />
+        <span asp-validation-for="VoucherId" class="text-danger"></span>
+    </div
+
+    <div>
+        <label asp-for="CategoryID"></label>
+        <input asp-for="CategoryID" class="form-control" />
+        <span asp-validation-for="CategoryID" class="text-danger"></span>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+

@@ -1,16 +1,21 @@
 ﻿using HotelBooking.Models;
 using HotelBooking.Repositories;
+using HotelBooking.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelBooking.Controllers
 {
     public class RoomController : Controller
     {
         private readonly IRoomRepositories _roomRepositories;
-
-        public RoomController(IRoomRepositories roomRepositories)
+        private readonly ICategoriesRoomRepository _categoriesRoomRepository;
+       
+        public RoomController(IRoomRepositories roomRepositories, ICategoriesRoomRepository categoriesRoomRepository)
         {
             _roomRepositories = roomRepositories;
+            _categoriesRoomRepository = categoriesRoomRepository;
         }
         public async Task<IActionResult> Index()
         {
@@ -19,8 +24,14 @@ namespace HotelBooking.Controllers
         }
 
         //Create/CategoriesRoom
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+
+            // Lấy danh sách ServiceCategories
+            var roomCategories = await _categoriesRoomRepository.GetAllCategoriesRoomAsync();
+
+            // Sử dụng SelectList để hiển thị trong dropdown
+            ViewData["RoomCategoriesID"] = new SelectList(roomCategories, "Id", "Name");
             return View();
         }
 
@@ -31,6 +42,7 @@ namespace HotelBooking.Controllers
             if (!ModelState.IsValid)
             {
                 room.CreateAt = DateTime.Now;
+                room.VoucherId = 1;
                 await _roomRepositories.CreateRoomAsync(room);
                 return RedirectToAction(nameof(Index));
             }

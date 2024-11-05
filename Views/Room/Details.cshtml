@@ -1,0 +1,28 @@
+﻿@model HotelBooking.Models.Room
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Category Room Details</h2>
+
+<div>
+    <h3>Category Information</h3>
+    <p><strong>ID:</strong> @Model.Id</p>
+    <p><strong>Name:</strong> @Model.Description</p>
+    <p><strong>Description:</strong> @Model.Amenities</p>
+    <p><strong>Description:</strong> @Model.CheckInOut</p>
+    <p><strong>Description:</strong> @Model.Others</p>
+    <p><strong>Description:</strong> @Model.Features</p>
+    <p><strong>Created At:</strong> @Model.CreateAt?.ToString("yyyy-MM-dd")</p>
+    <p><strong>Description:</strong> @Model.Status</p>
+    <p><strong>Description:</strong> @Model.VoucherId</p>
+    <p><strong>Description:</strong> @Model.CategoryID</p>
+</div>
+
+
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
