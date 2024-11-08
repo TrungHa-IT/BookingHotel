@@ -30,11 +30,23 @@
         <form asp-action="Create" method="post" id="roomForm">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
             <!-- Description Field -->
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <!-- Amenities Field with TinyMCE Editor -->
+            <div class="form-group">
+                <label asp-for="Inclusions" class="control-label"></label>
+                <textarea asp-for="Inclusions" class="form-control"></textarea>
+                <span asp-validation-for="Inclusions" class="text-danger"></span>
             </div>
 
             <!-- Amenities Field with TinyMCE Editor -->
@@ -47,21 +59,21 @@
             <!-- CheckInOut Field -->
             <div class="form-group">
                 <label asp-for="CheckInOut" class="control-label"></label>
-                <input asp-for="CheckInOut" class="form-control" />
+                <textarea asp-for="CheckInOut" class="form-control"></textarea>s
                 <span asp-validation-for="CheckInOut" class="text-danger"></span>
             </div>
 
             <!-- Others Field -->
             <div class="form-group">
                 <label asp-for="Others" class="control-label"></label>
-                <input asp-for="Others" class="form-control" />
+                <textarea asp-for="Others" class="form-control"></textarea>
                 <span asp-validation-for="Others" class="text-danger"></span>
             </div>
 
             <!-- Features Field -->
             <div class="form-group">
                 <label asp-for="Features" class="control-label"></label>
-                <input asp-for="Features" class="form-control" />
+                <textarea asp-for="Features" class="form-control"></textarea>
                 <span asp-validation-for="Features" class="text-danger"></span>
             </div>
 

@@ -377,12 +377,12 @@
                                     <table>
                                         <tbody>
                                             <tr style="color: white;">
-                                                @Html.Raw(croom.Features)
+                                                @Html.Raw(croom.Amenities)
                                             </tr>
                                         </tbody>
 
                                     </table>
-                                    <a href= asp-controller="Blog" asp-action="Detail" asp-route-id="@croom.Id" class="primary-btn">More Details</a>
+                                    <a asp-controller="Blog" asp-action="Detail" asp-route-id="@croom.Id" class="primary-btn">More Details</a>
                                 </div>
                             </div>
                         </div>
@@ -467,7 +467,7 @@
                 @foreach (var i in Model.Blog)
                 {
                     <div class="col-lg-4">
-                        <div class="blog-item set-bg" data-setbg="img/hero/hero-1.jpg">
+                        <div class="blog-item set-bg" data-setbg="@Html.DisplayFor(modelItem => i.Thumbnail)">
                             <div class="bi-text">
                                 <span class="b-tag">@Html.DisplayFor(modelItem => i.Title)</span>
                                 <h4><a asp-controller="Blog" asp-action="Detail" asp-route-id="@i.Id">@Html.DisplayFor(modelItem => i.BriefInfor)</a></h4>

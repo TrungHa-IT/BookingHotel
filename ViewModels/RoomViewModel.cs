@@ -6,15 +6,20 @@ namespace HotelBooking.ViewModels
     public class RoomViewModel
     {
         [Required]
-        public string Description { get; set; }
+        public string Name { get; set; }
 
-        public string Amenities { get; set; }
 
-        public string CheckInOut { get; set; }
+        public string? Description { get; set; }
 
-        public string Others { get; set; }
+        public string? Inclusions { get; set; }
 
-        public string Features { get; set; }
+        public string? Amenities { get; set; }
+
+        public string? CheckInOut { get; set; }
+
+        public string? Others { get; set; }
+
+        public string? Features { get; set; }
 
         // Selected Category ID
         [Display(Name = "Category")]

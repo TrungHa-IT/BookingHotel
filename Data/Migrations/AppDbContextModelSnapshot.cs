@@ -558,9 +558,9 @@ namespace HotelBooking.Data.Migrations
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("CheckInOut")
+                    b.Property<string>("CheckInOut")
                         .IsRequired()
-                        .HasColumnType("datetime2");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("CreateAt")
                         .IsRequired()
@@ -571,6 +571,14 @@ namespace HotelBooking.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Features")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Inclusions")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

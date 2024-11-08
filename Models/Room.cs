@@ -9,6 +9,12 @@ namespace HotelBooking.Models
         public int Id { get; set; }  // Khóa chính
 
         [Required]
+        public string? Name { get; set; }
+
+        [Required]
+        public string? Inclusions { get; set; }  // Mô tả phòng
+
+        [Required]
         public string? Description { get; set; }  // Mô tả phòng
 
         [Required]

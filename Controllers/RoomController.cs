@@ -41,8 +41,12 @@ namespace HotelBooking.Controllers
         {
             
                 room.CreateAt = DateTime.Now;
-                room.VoucherId = 1;
+                room.VoucherId = 2;
                 room.Status = 1;
+                if(room.Features == null)
+            {
+                room.Features = "Default";
+            }
                 await _roomRepositories.CreateRoomAsync(room);
                 return RedirectToAction(nameof(Index));
         }
