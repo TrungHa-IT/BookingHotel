@@ -1,5 +1,6 @@
 using HotelBooking.Models;
 using HotelBooking.Repositories;
+using HotelBooking.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -8,19 +9,41 @@ namespace HotelBooking.Controllers
     public class HomeController : Controller
     {
         private readonly IServiceCategoriesRepositories _serviceCategoriesRepositories;
+        private readonly IRoomRepositories _roomRepositories;
+        private readonly ICategoriesRoomRepository _categoriesRoomRepositories;
         private readonly IServiceRepositories _serviceRepositories;
-
-        public HomeController(IServiceCategoriesRepositories serviceCategoriesRepositories, IServiceRepositories serviceRepositories)
+        private readonly IBlogRepositories _blogRepositories;
+        public HomeController(
+            IServiceCategoriesRepositories serviceCategoriesRepositories,
+            IRoomRepositories roomRepositories, ICategoriesRoomRepository categoriesRoomRepository, IServiceRepositories serviceRepositories, IBlogRepositories blogRepositories)
         {
             _serviceCategoriesRepositories = serviceCategoriesRepositories;
+            _roomRepositories = roomRepositories;
+            _categoriesRoomRepositories = categoriesRoomRepository;
             _serviceRepositories = serviceRepositories;
+            _blogRepositories = blogRepositories;
         }
 
         public async Task<IActionResult> Index()
         {
-            var sc = await _serviceCategoriesRepositories.GetAllServiceCategoriesAsync();
-            return View(sc);
+            var serviceCategories = await _serviceCategoriesRepositories.GetAllServiceCategoriesAsync();
+            var rooms = await _roomRepositories.GetAllRoomAsync();
+            var categoriesRooms = await _categoriesRoomRepositories.GetAllCategoriesRoomAsync();
+            var service = await _serviceRepositories.GetAllServiceAsync();
+            var blogs = await _blogRepositories.GetAllBlogAsync();
+
+            var model = new HomeViewModel
+            {
+                ServiceCategories = serviceCategories,
+                Room = rooms,
+                CategoriesRoom = categoriesRooms,
+                services = service,
+                Blog = blogs
+            };
+
+            return View(model);
         }
+
 
         public IActionResult Contact()
         {

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<HotelBooking.Models.ServiceCategories>
+﻿@model HotelBooking.ViewModels.HomeViewModel
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -195,24 +196,65 @@
                                 <input type="text" class="date-input" id="date-out">
                                 <i class="icon_calendar"></i>
                             </div>
-                            <div class="select-option">
-                                <label for="guest">Guests:</label>
-                                <select id="guest">
-                                    <option value="">2 Adults</option>
-                                    <option value="">3 Adults</option>
-                                </select>
+
+                            <div id="room-selection-container">
+                                <!-- Room selection will be dynamically added here -->
                             </div>
-                            <div class="select-option">
-                                <label for="room">Room:</label>
-                                <select id="room">
-                                    <option value="">1 Room</option>
-                                    <option value="">2 Room</option>
-                                </select>
-                            </div>
+
+                            <button type="button" id="add-room-btn">Add Room</button>
                             <button type="submit">Check Availability</button>
                         </form>
                     </div>
                 </div>
+
+                <script>
+                    let roomCount = 1; // Start with 1 room section by default
+
+                    function addRoomSelection() {
+                        const container = document.getElementById('room-selection-container');
+
+                        const roomDiv = document.createElement('div');
+                        roomDiv.classList.add('room-section');
+                        roomDiv.innerHTML = `
+                                <div class="select-option">
+                                    <label>Room ${roomCount}</label>
+                                    <select>
+                                        <option value="1">1 Adult</option>
+                                        <option value="2">2 Adults</option>
+                                        <option value="3">3 Adults</option>
+                                    </select>
+                                    <select>
+                                        <option value="0">0 Children</option>
+                                        <option value="1">1 Child</option>
+                                        <option value="2">2 Children</option>
+                                    </select>
+                                    <select>
+                                        <option value="0">0 Infant</option>
+                                        <option value="1">1 Infant</option>
+                                        <option value="2">2 Infants</option>
+                                    </select>
+                                </div>
+                            `;
+                        container.appendChild(roomDiv);
+                        roomCount++;
+                    }
+
+                    document.getElementById('add-room-btn').addEventListener('click', addRoomSelection);
+
+                    // Initialize with one room selection
+                    addRoomSelection();
+                </script>
+
+                <style>
+                    .select-option label {
+                        font-weight: bold;
+                    }
+
+                    .select-option select {
+                        margin-right: 10px;
+                    }
+                </style>
+
             </div>
         </div>
         <div class="hero-slider owl-carousel">
@@ -274,9 +316,15 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-12">
+                <div class="section-title">
+                    <a class="btn btn-outline-dark" href="/rooms-suite.html" target="_self">View All Stay<i class="fal fa-long-arrow-right ml-2"></i></a>
+                </div>
+            </div>
            
                 <div class="row">
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.ServiceCategories)
                     {
                     <div class="col-lg-4 col-sm-6">
                         <div class="service-item">
@@ -295,134 +343,50 @@
         </section>
         <!-- Services Section End -->
         
-
-    
-
-
-
-
-
     <!-- Home Room Section Begin -->
     <section class="hp-room-section">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>What We Do</span>
+                    <h2>Discover Our Room/Suite</h2>
+                </div>
+            </div>
+
+
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <a class="btn btn-outline-dark" asp-controller="CategoriesRoom" asp-action="Index" target="_self">View All Stay<i class="fal fa-long-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+
+            
+        </div>
+
         <div class="container-fluid">
             <div class="hp-room-items">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="hp-room-item set-bg" data-setbg="img/room/room-b1.jpg">
-                            <div class="hr-text">
-                                <h3>Double Room</h3>
-                                <h2>199$<span>/Pernight</span></h2>
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td class="r-o">Size:</td>
-                                            <td>30 ft</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Capacity:</td>
-                                            <td>Max persion 5</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Bed:</td>
-                                            <td>King Beds</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Services:</td>
-                                            <td>Wifi, Television, Bathroom,...</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <a href="#" class="primary-btn">More Details</a>
+                    @foreach(var croom in Model.Room)
+                    {
+                        <div class="col-lg-3 col-md-6">
+                            <div class="hp-room-item set-bg" data-setbg="img/room/room-b1.jpg">
+                                <div class="hr-text">
+                                    <h3>@Html.DisplayFor(modelItem => croom.Status)</h3>
+                                    <h2>199$<span>/Pernight</span></h2>
+                                    <table>
+                                        <tbody>
+                                            <tr style="color: white;">
+                                                @Html.Raw(croom.Features)
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                    <a href= asp-controller="Blog" asp-action="Detail" asp-route-id="@croom.Id" class="primary-btn">More Details</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="hp-room-item set-bg" data-setbg="img/room/room-b2.jpg">
-                            <div class="hr-text">
-                                <h3>Premium King Room</h3>
-                                <h2>159$<span>/Pernight</span></h2>
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td class="r-o">Size:</td>
-                                            <td>30 ft</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Capacity:</td>
-                                            <td>Max persion 5</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Bed:</td>
-                                            <td>King Beds</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Services:</td>
-                                            <td>Wifi, Television, Bathroom,...</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <a href="#" class="primary-btn">More Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="hp-room-item set-bg" data-setbg="img/room/room-b3.jpg">
-                            <div class="hr-text">
-                                <h3>Deluxe Room</h3>
-                                <h2>198$<span>/Pernight</span></h2>
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td class="r-o">Size:</td>
-                                            <td>30 ft</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Capacity:</td>
-                                            <td>Max persion 5</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Bed:</td>
-                                            <td>King Beds</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Services:</td>
-                                            <td>Wifi, Television, Bathroom,...</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <a href="#" class="primary-btn">More Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="hp-room-item set-bg" data-setbg="img/room/room-b4.jpg">
-                            <div class="hr-text">
-                                <h3>Family Room</h3>
-                                <h2>299$<span>/Pernight</span></h2>
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td class="r-o">Size:</td>
-                                            <td>30 ft</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Capacity:</td>
-                                            <td>Max persion 5</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Bed:</td>
-                                            <td>King Beds</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Services:</td>
-                                            <td>Wifi, Television, Bathroom,...</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <a href="#" class="primary-btn">More Details</a>
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
@@ -500,51 +464,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="blog-item set-bg" data-setbg="img/blog/blog-1.jpg">
-                        <div class="bi-text">
-                            <span class="b-tag">Travel Trip</span>
-                            <h4><a href="#">Tremblant In Canada</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
+                @foreach (var i in Model.Blog)
+                {
+                    <div class="col-lg-4">
+                        <div class="blog-item set-bg" data-setbg="img/hero/hero-1.jpg">
+                            <div class="bi-text">
+                                <span class="b-tag">@Html.DisplayFor(modelItem => i.Title)</span>
+                                <h4><a asp-controller="Blog" asp-action="Detail" asp-route-id="@i.Id">@Html.DisplayFor(modelItem => i.BriefInfor)</a></h4>
+                                <div class="b-time"><i class="icon_clock_alt"></i> @Html.DisplayFor(modelItem => i.CreateAt)</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item set-bg" data-setbg="img/blog/blog-2.jpg">
-                        <div class="bi-text">
-                            <span class="b-tag">Camping</span>
-                            <h4><a href="#">Choosing A Static Caravan</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item set-bg" data-setbg="img/blog/blog-3.jpg">
-                        <div class="bi-text">
-                            <span class="b-tag">Event</span>
-                            <h4><a href="#">Copper Canyon</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 21th April, 2019</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="blog-item small-size set-bg" data-setbg="img/blog/blog-wide.jpg">
-                        <div class="bi-text">
-                            <span class="b-tag">Event</span>
-                            <h4><a href="#">Trip To Iqaluit In Nunavut A Canadian Arctic City</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 08th April, 2019</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item small-size set-bg" data-setbg="img/blog/blog-10.jpg">
-                        <div class="bi-text">
-                            <span class="b-tag">Travel</span>
-                            <h4><a href="#">Traveling To Barcelona</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 12th April, 2019</div>
-                        </div>
-                    </div>
-                </div>
+                }
+                
             </div>
         </div>
     </section>
