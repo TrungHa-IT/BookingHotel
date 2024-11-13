@@ -17,6 +17,8 @@
             <th>@Html.DisplayNameFor(model => model.CheckInOut) </th>
             <th>@Html.DisplayNameFor(model => model.Others) </th>
             <th>@Html.DisplayNameFor(model => model.Features) </th>
+            <th>@Html.DisplayNameFor(model => model.MaxAdultPeople) </th>
+            <th>@Html.DisplayNameFor(model => model.MaxChildrenPeople) </th>
             <th>@Html.DisplayNameFor(model => model.CreateAt) </th>
             <th>@Html.DisplayNameFor(model => model.Status) </th>
             <th>Voucher</th>
@@ -35,6 +37,8 @@
                 <td>@item.CheckInOut</td>
                 <td>@item.Others</td>
                 <td>@item.Features</td>
+                <td>@item.MaxAdultPeople</td>
+                <td>@item.MaxChildrenPeople</td>
                 <td>@item.CreateAt?.ToString("yyyy-MM-dd")</td>
                 <td>@item.Status</td>
                 <td>@item.VoucherId</td>

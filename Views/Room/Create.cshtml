@@ -78,7 +78,17 @@
             </div>
 
             <!-- Voucher Selection Dropdown -->
-            
+            <div class="form-group">
+                <label asp-for="MaxAdultPeople" class="control-label"></label>
+                <input asp-for="MaxAdultPeople" type="int" class="form-control" />
+                <span asp-validation-for="MaxAdultPeople" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MaxChildrenPeople" class="control-label"></label>
+                <input asp-for="MaxChildrenPeople" type="int" class="form-control" />
+                <span asp-validation-for="MaxChildrenPeople" class="text-danger"></span>
+            </div>
 
             <!-- Category Selection Dropdown -->
             <div class="form-group">

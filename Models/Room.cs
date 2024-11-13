@@ -34,6 +34,12 @@ namespace HotelBooking.Models
         [Required]
         public int Status { get; set; }  // Trạng thái của phòng (1: hoạt động, 0: không hoạt động)
 
+        [Required]
+        public int MaxAdultPeople { get; set; }
+
+        [Required]
+        public int MaxChildrenPeople {  get; set; }
+
         // Khóa ngoại liên kết đến bảng Voucher
         [ForeignKey("Voucher")]
         public int VoucherId { get; set; }  // Khóa ngoại từ bảng Voucher

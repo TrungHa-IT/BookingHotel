@@ -21,6 +21,12 @@ namespace HotelBooking.ViewModels
 
         public string? Features { get; set; }
 
+        [Required]
+        public int MaxAdultPeople { get; set; }
+
+        [Required]
+        public int MaxChildrenPeople { get; set; }
+
         // Selected Category ID
         [Display(Name = "Category")]
         public int? CategoryID { get; set; }
