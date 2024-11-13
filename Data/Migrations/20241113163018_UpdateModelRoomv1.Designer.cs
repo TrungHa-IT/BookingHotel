@@ -4,6 +4,7 @@ using HotelBooking.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelBooking.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241113163018_UpdateModelRoomv1")]
+    partial class UpdateModelRoomv1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -204,7 +207,8 @@ namespace HotelBooking.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.HasIndex("voucherID");
+                    b.HasIndex("voucherID")
+                        .IsUnique();
 
                     b.ToTable("Bookings");
                 });
@@ -603,7 +607,8 @@ namespace HotelBooking.Data.Migrations
 
                     b.HasIndex("CategoryID");
 
-                    b.HasIndex("VoucherId");
+                    b.HasIndex("VoucherId")
+                        .IsUnique();
 
                     b.ToTable("Rooms");
                 });
@@ -908,8 +913,8 @@ namespace HotelBooking.Data.Migrations
                         .HasForeignKey("UserId");
 
                     b.HasOne("HotelBooking.Models.Voucher", "Voucher")
-                        .WithMany("Bookings")
-                        .HasForeignKey("voucherID")
+                        .WithOne("Booking")
+                        .HasForeignKey("HotelBooking.Models.Booking", "voucherID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1012,8 +1017,8 @@ namespace HotelBooking.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("HotelBooking.Models.Voucher", "Voucher")
-                        .WithMany("Rooms")
-                        .HasForeignKey("VoucherId")
+                        .WithOne("Room")
+                        .HasForeignKey("HotelBooking.Models.Room", "VoucherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1146,9 +1151,9 @@ namespace HotelBooking.Data.Migrations
 
             modelBuilder.Entity("HotelBooking.Models.Voucher", b =>
                 {
-                    b.Navigation("Bookings");
+                    b.Navigation("Booking");
 
-                    b.Navigation("Rooms");
+                    b.Navigation("Room");
                 });
 #pragma warning restore 612, 618
         }

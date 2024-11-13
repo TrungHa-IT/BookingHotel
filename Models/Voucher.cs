@@ -20,7 +20,8 @@ namespace HotelBooking.Models
         public int Status { get; set; }
 
         //dieu huong
-        public virtual Booking? Booking { get; set; }    
-        public virtual Room? Room { get; set; }
+        public virtual ICollection<Room>? Rooms { get; set; }  // Một CategoriesRoom có thể có nhiều Room
+
+        public virtual ICollection<Booking>? Bookings { get; set; }  // Một CategoriesRoom có thể có nhiều Room
     }
 }

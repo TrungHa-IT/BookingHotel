@@ -51,6 +51,12 @@
     </div>
 
      <div>
+        <label asp-for="QuantityRoom"></label>
+        <input asp-for="QuantityRoom" class="form-control" />
+        <span asp-validation-for="QuantityRoom" class="text-danger"></span>
+    </div>
+
+     <div>
         <label asp-for="MaxAdultPeople"></label>
         <input asp-for="MaxAdultPeople" class="form-control" />
         <span asp-validation-for="MaxAdultPeople" class="text-danger"></span>

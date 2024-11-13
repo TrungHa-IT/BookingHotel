@@ -22,6 +22,9 @@ namespace HotelBooking.ViewModels
         public string? Features { get; set; }
 
         [Required]
+        public int Quantity { get; set; }
+
+        [Required]
         public int MaxAdultPeople { get; set; }
 
         [Required]

@@ -35,6 +35,9 @@ namespace HotelBooking.Models
         public int Status { get; set; }  // Trạng thái của phòng (1: hoạt động, 0: không hoạt động)
 
         [Required]
+        public int QuantityRoom { get; set; }
+
+        [Required]
         public int MaxAdultPeople { get; set; }
 
         [Required]
