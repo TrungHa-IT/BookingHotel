@@ -3,31 +3,129 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Category Room Details</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JM Family Suite Room</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-<div>
-    <h3>Category Information</h3>
-    <p><strong>ID:</strong> @Model.Id</p>
-    <p><strong>Name:</strong> @Model.Name</p>
-    <p><strong>Name:</strong> @Model.Description</p>
-    <p><strong>Name:</strong> @Model.Inclusions</p>
-    <p><strong>Description:</strong> @Model.Amenities</p>
-    <p><strong>Description:</strong> @Model.CheckInOut</p>
-    <p><strong>Description:</strong> @Model.Others</p>
-    <p><strong>Description:</strong> @Model.Features</p>
-    <p><strong>Description:</strong> @Model.QuantityRoom</p>
-    <p><strong>Description:</strong> @Model.MaxAdultPeople</p>
-    <p><strong>Description:</strong> @Model.MaxChildrenPeople</p>
-    <p><strong>Created At:</strong> @Model.CreateAt?.ToString("yyyy-MM-dd")</p>
-    <p><strong>Description:</strong> @Model.Status</p>
-    <p><strong>Description:</strong> @Model.VoucherId</p>
-    <p><strong>Description:</strong> @Model.CategoryID</p>
-</div>
+        .room-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
 
+        .feature-list li {
+            margin-bottom: 0.5rem;
+        }
 
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
-    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-</div>
+        .room-image {
+            border-radius: 10px 10px 0 0;
+            object-fit: cover;
+            height: 300px;
+        }
 
+        .info-section {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .unique-feature {
+            background-color: #ffebd6;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card">
+                    <!-- Image -->
+                    <img src="https://via.placeholder.com/800x300" alt="JM Family Suite Room" class="room-image">
+
+                    <div class="card-body">
+                        <!-- Title -->
+                        <h1 class="room-title">JM Family Suite Room</h1>
+
+                        <!-- Room Details -->
+                        <div class="info-section">
+                            <h3>Room Features</h3>
+                            <ul class="list-unstyled feature-list">
+                                <li>Flat screen TV connected to the Internet</li>
+                                <li>IDD telephone</li>
+                                <li>FREE High-speed Wireless Internet Access</li>
+                                <li>Refrigerator & Minibar</li>
+                                <li>Electronic safe deposit box</li>
+                                <li>Central air-conditioning with digital individual climate control</li>
+                                <li>Electrical adaptor</li>
+                                <li>1 Queen + 1 Single beds</li>
+                                <li>Bathrobe</li>
+                                <li>Iron & ironing board</li>
+                                <li>Weighing scale</li>
+                                <li>Hair dryer</li>
+                                <li>Shaver outlet (220 volts)</li>
+                                <li>Toiletries</li>
+                                <li>Walk-in shower</li>
+                                <li>Makeup/shaving mirror</li>
+                                <li>Alarm clock</li>
+                                <li>Tea bags & coffee making facilities</li>
+                            </ul>
+
+                            <h3>Policies</h3>
+                            <ul class="list-unstyled">
+                                <li>Check-in time: 14:00</li>
+                                <li>Check-out time: 12:00</li>
+                                <li>Flexible check-in and check-out upon availability</li>
+                                <li>Pets are not allowed</li>
+                                <li>Smoking is prohibited</li>
+                                <li>Extra bed & baby cot are subject to availability</li>
+                                <li>Free luggage storage</li>
+                            </ul>
+
+                            <h3>Room Information</h3>
+                            <ul class="list-unstyled">
+                                <li>Location: Middle of the hallway</li>
+                                <li>Size: 40 square meters</li>
+                                <li>Max Occupancy: 3 Adults + 1 Child</li>
+                                <li>Beds: 1 Double bed + 1 Single bed</li>
+                                <li>View: External window with natural light</li>
+                                <li>Bathroom: Walk-in shower</li>
+                                <li>Unique Features: Charm of oriental style</li>
+                            </ul>
+
+                            <div class="unique-feature mt-3">
+                                <h5>Special Amenities</h5>
+                                <ul class="list-unstyled">
+                                    <li>Daily complimentary breakfast</li>
+                                    <li>Daily housekeeping & turndown service</li>
+                                    <li>Welcome drinks upon check-in</li>
+                                    <li>Daily complimentary 2 bottles of water</li>
+                                    <li>Discount coupons for Spa, Restaurant & Sky Bar</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

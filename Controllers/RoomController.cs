@@ -23,6 +23,13 @@ namespace HotelBooking.Controllers
             return View(display);
         }
 
+        //Display all rooms
+        public async Task<IActionResult> All()
+        {
+            var display = await _roomRepositories.GetAllRoomAsync();
+            return View(display);
+        }
+
         //Create/CategoriesRoom
         public async Task<IActionResult> Create()
         {
@@ -54,7 +61,7 @@ namespace HotelBooking.Controllers
         public async Task<IActionResult> Details(int id)
         {
             var categoriesRoom = await _roomRepositories.GetRoomByIdAsync(id);
-            return categoriesRoom == null ? NotFound() : View(categoriesRoom);
+            return View(categoriesRoom);
         }
         //Edits/CategoriesRoom
         public async Task<IActionResult> Edit(int id)
