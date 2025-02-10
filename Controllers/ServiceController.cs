@@ -23,6 +23,13 @@ namespace HotelBooking.Controllers
             return View(sc);
         }
 
+        //display all services
+        public async Task<IActionResult> All()
+        {
+            var sc = await _serviceRepositories.GetAllServiceAsync();
+            return View(sc);
+        }
+
         public async Task<IActionResult> Create()
         {
             // Lấy danh sách ServiceCategories

@@ -61,64 +61,41 @@
 
                     <div class="card-body">
                         <!-- Title -->
-                        <h1 class="room-title">JM Family Suite Room</h1>
-
-                        <!-- Room Details -->
+                        <h1 class="room-title">@Model.Name</h1>
                         <div class="info-section">
                             <h3>Room Features</h3>
-                            <ul class="list-unstyled feature-list">
-                                <li>Flat screen TV connected to the Internet</li>
-                                <li>IDD telephone</li>
-                                <li>FREE High-speed Wireless Internet Access</li>
-                                <li>Refrigerator & Minibar</li>
-                                <li>Electronic safe deposit box</li>
-                                <li>Central air-conditioning with digital individual climate control</li>
-                                <li>Electrical adaptor</li>
-                                <li>1 Queen + 1 Single beds</li>
-                                <li>Bathrobe</li>
-                                <li>Iron & ironing board</li>
-                                <li>Weighing scale</li>
-                                <li>Hair dryer</li>
-                                <li>Shaver outlet (220 volts)</li>
-                                <li>Toiletries</li>
-                                <li>Walk-in shower</li>
-                                <li>Makeup/shaving mirror</li>
-                                <li>Alarm clock</li>
-                                <li>Tea bags & coffee making facilities</li>
+                            <ul class="list-unstyled">
+                                <ul class="list-unstyled feature-list">
+                                    @Html.Raw(Model.Features)
+                                </ul>
                             </ul>
-
                             <h3>Policies</h3>
                             <ul class="list-unstyled">
-                                <li>Check-in time: 14:00</li>
-                                <li>Check-out time: 12:00</li>
-                                <li>Flexible check-in and check-out upon availability</li>
-                                <li>Pets are not allowed</li>
-                                <li>Smoking is prohibited</li>
-                                <li>Extra bed & baby cot are subject to availability</li>
-                                <li>Free luggage storage</li>
+                                <ul class="list-unstyled feature-list">
+                                    @Html.Raw(Model.CheckInOut)
+                                </ul>
                             </ul>
-
                             <h3>Room Information</h3>
                             <ul class="list-unstyled">
-                                <li>Location: Middle of the hallway</li>
-                                <li>Size: 40 square meters</li>
-                                <li>Max Occupancy: 3 Adults + 1 Child</li>
-                                <li>Beds: 1 Double bed + 1 Single bed</li>
-                                <li>View: External window with natural light</li>
-                                <li>Bathroom: Walk-in shower</li>
-                                <li>Unique Features: Charm of oriental style</li>
+                                <ul class="list-unstyled feature-list">
+                                    @Html.Raw(Model.Amenities)
+                                </ul>
                             </ul>
-
                             <div class="unique-feature mt-3">
                                 <h5>Special Amenities</h5>
                                 <ul class="list-unstyled">
-                                    <li>Daily complimentary breakfast</li>
-                                    <li>Daily housekeeping & turndown service</li>
-                                    <li>Welcome drinks upon check-in</li>
-                                    <li>Daily complimentary 2 bottles of water</li>
-                                    <li>Discount coupons for Spa, Restaurant & Sky Bar</li>
+                                    <h3>Room Features</h3>
+                                    <ul class="list-unstyled feature-list">
+                                        @Html.Raw(Model.Inclusions)
+                                    </ul>
                                 </ul>
                             </div>
+                            <h3>Others</h3>
+                            <ul class="list-unstyled">
+                                <ul class="list-unstyled feature-list">
+                                    @Html.Raw(Model.Others)
+                                </ul>
+                            </ul>
                         </div>
                     </div>
                 </div>

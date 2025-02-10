@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<HotelBooking.Models.Room>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,42 +58,21 @@
         <h1 class="text-center mb-5">Rooms & Suites</h1>
         <div class="row g-4">
             <!-- Room 1 -->
-            <div class="col-md-4">
-                <div class="card room-card">
+             @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card room-card">
                     <img src="https://via.placeholder.com/400x200" alt="Room 1" class="card-img-top room-image">
                     <div class="card-body">
-                        <h5 class="room-title">Deluxe Room</h5>
-                        <p class="text-muted">30 sqm - Max 2 Adults</p>
-                        <p class="room-price">$120 / Night</p>
+                        <h5 class="room-title">@item.Name</h5>
+                        <p class="text-muted">Max @item.MaxChildrenPeople Childrens - Max @item.MaxAdultPeople Adults</p>
+                        <p class="room-price">$@item.Status / Night</p>
+                        <p class="room-price">@item.QuantityRoom rooms available</p>
                         <a href="#" class="btn btn-book w-100">Book Now</a>
                     </div>
                 </div>
             </div>
-            <!-- Room 2 -->
-            <div class="col-md-4">
-                <div class="card room-card">
-                    <img src="https://via.placeholder.com/400x200" alt="Room 2" class="card-img-top room-image">
-                    <div class="card-body">
-                        <h5 class="room-title">Family Suite</h5>
-                        <p class="text-muted">40 sqm - Max 4 Adults</p>
-                        <p class="room-price">$200 / Night</p>
-                        <a href="#" class="btn btn-book w-100">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Room 3 -->
-            <div class="col-md-4">
-                <div class="card room-card">
-                    <img src="https://via.placeholder.com/400x200" alt="Room 3" class="card-img-top room-image">
-                    <div class="card-body">
-                        <h5 class="room-title">Luxury Suite</h5>
-                        <p class="text-muted">50 sqm - Max 3 Adults</p>
-                        <p class="room-price">$300 / Night</p>
-                        <a href="#" class="btn btn-book w-100">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more rooms as needed -->
+            }
         </div>
     </div>
 
