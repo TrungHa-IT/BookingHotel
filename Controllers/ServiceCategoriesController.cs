@@ -8,12 +8,10 @@ namespace HotelBooking.Controllers
     public class ServiceCategoriesController : Controller
     {
         private readonly IServiceCategoriesRepositories _serviceCategoriesRepositories;
-        private readonly IImageRepositories _imageRepositories;
 
-        public ServiceCategoriesController(IServiceCategoriesRepositories serviceCategoriesRepositories, IImageRepositories imageRepositories)
-        {
-            _serviceCategoriesRepositories = serviceCategoriesRepositories;
-            _imageRepositories = imageRepositories;
+        public ServiceCategoriesController(IServiceCategoriesRepositories serviceCategoriesRepositories)
+        {          
+            _serviceCategoriesRepositories = serviceCategoriesRepositories; // Inject ServiceCategoriesRepository
         }
 
         public async Task<IActionResult> Index()
@@ -54,5 +52,19 @@ namespace HotelBooking.Controllers
 
             return View(sc);
         }
+
+        //Delete/CategoriesRoom
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var vc = await _serviceCategoriesRepositories.GetServiceCategoriesByIdAsync(id);
+            if (vc == null) return NotFound();
+            await _serviceCategoriesRepositories.DeleteServiceCategoriesAsync(id);
+
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
