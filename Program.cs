@@ -49,7 +49,6 @@ builder.Services.AddScoped<IBlogRepositories, BlogRepositories>();
 builder.Services.AddScoped<ILikeRecordRepositories, LikeRecordRepositories>();
 builder.Services.AddScoped<IServiceCategoriesRepositories, ServiceCategoriesRepositories>();
 builder.Services.AddScoped<IServiceRepositories, ServiceRepositories>();
-builder.Services.AddScoped<IImageRepositories, ImageRepositories>();
 builder.Services.AddScoped<ICategoriesRoomRepository, CategoriesRoomRepository>();
 builder.Services.AddScoped<IRoomRepositories, RoomRepository>();
 builder.Services.AddScoped<IVoucherRepositories, VoucherRepositories>();

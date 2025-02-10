@@ -15,8 +15,10 @@ namespace HotelBooking.Models
         public string? name { get; set; }
 
         [Required]
+        public int RID { get; set; }
+
+        [Required]
         public DateTime create_at { get; set; }
 
-       public virtual ICollection<UsingImage> UsingImages { get; set; }
     }
 }

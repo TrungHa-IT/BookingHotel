@@ -16,8 +16,6 @@ namespace HotelBooking.Data
         public DbSet<Service> Services { get; set; } = default!;
         public DbSet<ServiceCategories> ServiceCategories { get; set; } = default!;
         public DbSet<Image> Images { get; set; } = default!;
-        public DbSet<UsingType> UsingTypes { get; set; } = default!;
-        public DbSet<UsingImage> UsingImage { get; set; } = default!;
         public DbSet<BookingService> BookingServices { get; set; } = default!;
         public DbSet<Booking> Bookings { get; set; } = default!;
         public DbSet<BookingDetail> BookingDetails { get; set; } = default!;
