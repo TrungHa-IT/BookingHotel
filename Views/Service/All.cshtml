@@ -1,0 +1,92 @@
+﻿@model IEnumerable<HotelBooking.Models.Service>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .hero-section {
+            background-image: url('https://via.placeholder.com/1920x400'); /* Replace with actual hero image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+        }
+
+        .service-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+            .service-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .service-image {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .service-description {
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1 class="hero-title">Our Services</h1>
+        <p class="hero-subtitle">Discover our premium services for an unforgettable stay</p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="container my-5">
+         @foreach (var item in Model)
+        {
+            <div class="row g-4">
+                <!-- Service 1 -->
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <img src="https://via.placeholder.com/400x200" alt="Service 1" class="card-img-top service-image">
+                    <div class="card-body">
+                        <h5 class="service-title">@item.Name</h5>
+                        <p class="service-description">@item.Content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
