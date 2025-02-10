@@ -52,6 +52,7 @@ builder.Services.AddScoped<IServiceRepositories, ServiceRepositories>();
 builder.Services.AddScoped<ICategoriesRoomRepository, CategoriesRoomRepository>();
 builder.Services.AddScoped<IRoomRepositories, RoomRepository>();
 builder.Services.AddScoped<IVoucherRepositories, VoucherRepositories>();
+builder.Services.AddScoped<IImageRepositories, ImageRepositories>();
 
 
 builder.Services.AddTransient<UnitOfWork>();
