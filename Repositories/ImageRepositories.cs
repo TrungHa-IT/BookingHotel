@@ -18,22 +18,23 @@ namespace HotelBooking.Repositories
 
         public async Task DeleteImageAsync(int id)
         {
-            throw new NotImplementedException();
+           var image = await _unitOfWork._imageRepository.GetByIdAsync(id);
+            if (image != null)
+            {
+                _unitOfWork._imageRepository.Remove(image);
+                await _unitOfWork.SaveChangesAsync();
+            }
         }
 
         public async Task<Image> GetImageAsync(int id)
         {
-            throw new NotImplementedException();
+
+           return await _unitOfWork._imageRepository.GetByIdAsync(id);
         }
 
         public async Task<IEnumerable<Image>> GetAllImagesAsync()
         {
            return await _unitOfWork._imageRepository.GetAllAsync();
-        }
-
-        public async Task UpdateImageAsync(Image image)
-        {
-            throw new NotImplementedException();
         }
     }
 }
