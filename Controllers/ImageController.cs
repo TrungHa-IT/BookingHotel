@@ -29,7 +29,7 @@ namespace HotelBooking.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(List<IFormFile> files) // Accept multiple files
+        public async Task<IActionResult> Create(List<IFormFile> files, int relationID, string relation) // Accept multiple files
         {
             if (files == null || files.Count == 0)
             {

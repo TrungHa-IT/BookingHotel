@@ -55,6 +55,7 @@ namespace HotelBooking.Controllers
                 room.Features = "Default";
             }
                 await _roomRepositories.CreateRoomAsync(room);
+
                 return RedirectToAction(nameof(Index));
         }
         //Details/CategoriesRoom

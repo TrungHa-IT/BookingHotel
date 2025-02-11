@@ -27,7 +27,7 @@
 
 <div class="row">
     <div class="col-md-6">
-        <form asp-action="Create" method="post" id="roomForm">
+        <form asp-action="Create" method="post" id="roomForm" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
@@ -35,6 +35,12 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+
+            <div>
+                <label for="files">Select multiple images:</label>
+                <input type="file" id="files" name="files" multiple />
+            </div>
+
             <!-- Description Field -->
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
