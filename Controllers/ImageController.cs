@@ -27,36 +27,45 @@ namespace HotelBooking.Controllers
             return View();
         }
 
-        // POST: Create Image
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(IFormFile file)
+        public async Task<IActionResult> Create(List<IFormFile> files) // Accept multiple files
         {
-            if (file == null || file.Length == 0)
+            if (files == null || files.Count == 0)
             {
-                ModelState.AddModelError("file", "error");
+                ModelState.AddModelError("files", "Please select at least one image to upload.");
                 return View();
             }
 
             try
             {
-                Image image = new Image
+                foreach (var file in files)
                 {
-                    create_at = DateTime.Now,
-                    RID = 1, 
-                    imageURL = await _icloudinaryService.UploadImageAsync(file) ,
-                    name = file.FileName
-                };
+                    if (file.Length > 0)
+                    {
+                        // Create and populate the Image entity
+                        Image image = new Image
+                        {
+                            create_at = DateTime.Now,
+                            RID = 1, // Set your specific RID value
+                            imageURL = await _icloudinaryService.UploadImageAsync(file), // Upload file to cloud
+                            name = file.FileName // Use original file name or generate a new one
+                        };
 
-                await _imageRepositories.CreateImageAsync(image);
+                        // Save image to the database
+                        await _imageRepositories.CreateImageAsync(image);
+                    }
+                }
 
+                // Redirect to the index or another view
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", $"error: {ex.Message}");
+                ModelState.AddModelError("", $"An error occurred: {ex.Message}");
                 return View();
             }
         }
+
     }
 }
