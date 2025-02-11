@@ -18,7 +18,6 @@ namespace HotelBooking.Repositories
         public IRepository<CategoriesRoom> _categoriesRoomRepository { get; set; }
         public IRepository<Room> _roomRepository { get; set; }
         public IRepository<Voucher> _voucherRepository { get; set; }
-
         private bool _disposed = false;
 
         public UnitOfWork(AppDbContext dbContext)

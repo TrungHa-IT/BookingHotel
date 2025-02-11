@@ -1,6 +1,7 @@
 ﻿using HotelBooking.Data;
 using HotelBooking.Models;
 using HotelBooking.Repositories;
+using HotelBooking.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Identity;
@@ -52,6 +53,8 @@ builder.Services.AddScoped<IServiceRepositories, ServiceRepositories>();
 builder.Services.AddScoped<ICategoriesRoomRepository, CategoriesRoomRepository>();
 builder.Services.AddScoped<IRoomRepositories, RoomRepository>();
 builder.Services.AddScoped<IVoucherRepositories, VoucherRepositories>();
+builder.Services.AddScoped<IImageRepositories, ImageRepositories>();
+builder.Services.AddScoped<ICloudinaryService, CloudinaryService>();
 
 
 builder.Services.AddTransient<UnitOfWork>();
