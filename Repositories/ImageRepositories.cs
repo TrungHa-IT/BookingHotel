@@ -1,19 +1,32 @@
 ﻿using HotelBooking.Models;
+using HotelBooking.Services;
 
 namespace HotelBooking.Repositories
 {
     public class ImageRepositories : IImageRepositories
     {
         private readonly UnitOfWork _unitOfWork;
-
-        public ImageRepositories(UnitOfWork unitOfWork)
+        private readonly ICloudinaryService _icloudinaryService;
+        public ImageRepositories(UnitOfWork unitOfWork,ICloudinaryService cloudinaryService)
         {
+            _icloudinaryService = cloudinaryService;
             _unitOfWork = unitOfWork;
         }
-        public async Task CreateImageAsync(Image image)
+        public async Task CreateImageAsync(List<IFormFile> files, int relationID, string relationName)
         {
-            _unitOfWork._imageRepository.Add(image);
-            await _unitOfWork.SaveChangesAsync();
+
+            foreach (var file in files)
+            {
+                var image = new Image
+                {
+                    RID = relationID,
+                    Relation = relationName,
+                    imageURL = await _icloudinaryService.UploadImageAsync(file),
+                    name = file.FileName,
+                };
+                _unitOfWork._imageRepository.Add(image);
+                await _unitOfWork.SaveChangesAsync();
+            }
         }
 
         public async Task DeleteImageAsync(int id)

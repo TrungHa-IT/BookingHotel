@@ -11,11 +11,12 @@ namespace HotelBooking.Controllers
     {
         private readonly IRoomRepositories _roomRepositories;
         private readonly ICategoriesRoomRepository _categoriesRoomRepository;
-       
-        public RoomController(IRoomRepositories roomRepositories, ICategoriesRoomRepository categoriesRoomRepository)
+       private readonly IImageRepositories _imageRepositories;
+        public RoomController(IRoomRepositories roomRepositories, ICategoriesRoomRepository categoriesRoomRepository, IImageRepositories imageRepositories)
         {
             _roomRepositories = roomRepositories;
             _categoriesRoomRepository = categoriesRoomRepository;
+            _imageRepositories = imageRepositories;
         }
         public async Task<IActionResult> Index()
         {
@@ -44,20 +45,41 @@ namespace HotelBooking.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Room room)
+        public async Task<IActionResult> Create(RoomViewModel roomVM)
         {
-            
-                room.CreateAt = DateTime.Now;
-                room.VoucherId = 2;
-                room.Status = 1;
-                if(room.Features == null)
+            Room room = GetRoom(roomVM);
+
+
+            if (room.Features == null)
             {
                 room.Features = "Default";
             }
-                await _roomRepositories.CreateRoomAsync(room);
-
-                return RedirectToAction(nameof(Index));
+            await _roomRepositories.CreateRoomAsync(room);
+            await _imageRepositories.CreateImageAsync(roomVM.Images, room.Id, "Room");
+            return RedirectToAction(nameof(Index));
         }
+
+        private static Room GetRoom(RoomViewModel roomVM)
+        {
+            return new Room
+            {
+                Amenities = roomVM.Amenities,
+                CategoryID = roomVM.CategoryID,
+                CheckInOut = roomVM.CheckInOut,
+                Description = roomVM.Description,
+                Features = roomVM.Features,
+                Inclusions = roomVM.Inclusions,
+                MaxAdultPeople = roomVM.MaxAdultPeople,
+                MaxChildrenPeople = roomVM.MaxChildrenPeople,
+                Name = roomVM.Name,
+                Others = roomVM.Others,
+                QuantityRoom = roomVM.Quantity,
+                CreateAt = DateTime.Now,
+                VoucherId = 1,
+                Status = 1
+            };
+        }
+
         //Details/CategoriesRoom
         public async Task<IActionResult> Details(int id)
         {
