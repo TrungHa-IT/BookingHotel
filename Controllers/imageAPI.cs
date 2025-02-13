@@ -1,8 +1,10 @@
 ﻿using HotelBooking.Models;
 using HotelBooking.Repositories;
 using HotelBooking.Services;
+using HotelBooking.Utils.Constants;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection.Metadata;
 
 namespace HotelBooking.Controllers
 {
@@ -20,9 +22,7 @@ namespace HotelBooking.Controllers
 
         [HttpPost]
         [Route("Create")]
-
-
-        public async Task<IActionResult> Create(List<IFormFile> files, int relationID, string relation)
+        public async Task<IActionResult> Create(List<IFormFile> files, int relationID)
         {
             if (files == null || files.Count == 0)
             {
@@ -32,8 +32,7 @@ namespace HotelBooking.Controllers
 
             try
             {
-               await _imageRepositories.CreateImageAsync(files, relationID, relation);
-
+                await _imageRepositories.CreateImageAsync(files, relationID, Constants.room);
                 return Ok();
             }
             catch (Exception ex)
@@ -41,6 +40,7 @@ namespace HotelBooking.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
 
         [HttpGet]
         [Route("GetAllByRID")]
