@@ -4,14 +4,15 @@ using HotelBooking.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-
+using HotelBooking.Utils.Constants;
 namespace HotelBooking.Controllers
 {
     public class RoomController : Controller
     {
         private readonly IRoomRepositories _roomRepositories;
         private readonly ICategoriesRoomRepository _categoriesRoomRepository;
-       private readonly IImageRepositories _imageRepositories;
+        private readonly IImageRepositories _imageRepositories;
+
         public RoomController(IRoomRepositories roomRepositories, ICategoriesRoomRepository categoriesRoomRepository, IImageRepositories imageRepositories)
         {
             _roomRepositories = roomRepositories;
@@ -55,7 +56,7 @@ namespace HotelBooking.Controllers
                 room.Features = "Default";
             }
             await _roomRepositories.CreateRoomAsync(room);
-            await _imageRepositories.CreateImageAsync(roomVM.Images, room.Id, "Room");
+            await _imageRepositories.CreateImageAsync(roomVM.Images, room.Id, Constants.room);
             return RedirectToAction(nameof(Index));
         }
 

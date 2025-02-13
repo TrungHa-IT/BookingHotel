@@ -14,7 +14,7 @@ namespace HotelBooking.Repositories
         }
         public async Task CreateImageAsync(List<IFormFile> files, int relationID, string relationName)
         {
-
+            int count = 1;
             foreach (var file in files)
             {
                 var image = new Image
@@ -22,7 +22,7 @@ namespace HotelBooking.Repositories
                     RID = relationID,
                     Relation = relationName,
                     imageURL = await _icloudinaryService.UploadImageAsync(file),
-                    name = file.FileName,
+                    name = relationName +"~"+relationID+"~"+ count+".jpg",
                 };
                 _unitOfWork._imageRepository.Add(image);
                 await _unitOfWork.SaveChangesAsync();
@@ -48,6 +48,11 @@ namespace HotelBooking.Repositories
         public async Task<IEnumerable<Image>> GetAllImagesAsync()
         {
            return await _unitOfWork._imageRepository.GetAllAsync();
+        }
+
+        public async Task<List<Image?>> GetAllImageByIdOfRelationID(int relationID, string relationName)
+        {
+            return await _unitOfWork._imageRepository.GetImageByRIDAsync(relationID, relationName);
         }
     }
 }

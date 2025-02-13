@@ -1,4 +1,5 @@
-﻿using HotelBooking.Models;
+﻿using CloudinaryDotNet;
+using HotelBooking.Models;
 using HotelBooking.Repositories;
 using HotelBooking.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -6,7 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace HotelBooking.Controllers
 {
   
-    public class ImageController : Controller { 
+    public class ImageController : Controller {
+       
     //{
     //    private readonly IImageRepositories _imageRepositories;
     //    private readonly ICloudinaryService _icloudinaryService;
