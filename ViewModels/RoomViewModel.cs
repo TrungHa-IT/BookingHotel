@@ -32,8 +32,10 @@ namespace HotelBooking.ViewModels
 
         // Selected Category ID
         [Display(Name = "Category")]
-        public int? CategoryID { get; set; }
-        public SelectList CategoryList { get; set; }
+        public int CategoryID { get; set; }
+        public SelectList? CategoryList { get; set; }
+
+        public List<IFormFile> Images { get; set; }
     }
 }
 

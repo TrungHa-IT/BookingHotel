@@ -26,7 +26,7 @@ namespace HotelBooking.Repositories
         /// Get max image id
         /// </summary>
         /// <returns></returns>
-        int GetMaxImageId();
+        Task<List<Image?>> GetImageByRIDAsync(int id, string name);
         string ConvertIFormFileToString(IFormFile file);
         Task<IEnumerable<Service?>> GetByIdServiceCategoriesAsync(int id);
 
@@ -468,6 +468,14 @@ namespace HotelBooking.Repositories
         {
             return _entities.OfType<Image>()
                              .Max(e => e.ID);
+        }
+
+        public Task<List<Image>> GetImageByRIDAsync(int id, string name)
+        {
+              var result = _entities.OfType<Image>()
+                                        .Where(s => s.RID == id && s.Relation == name)
+                                        .ToListAsync();
+            return result;
         }
     }
 }

@@ -18,6 +18,9 @@ namespace HotelBooking.Models
         public int RID { get; set; }
 
         [Required]
+        public string Relation { get; set; }
+
+        [Required]
         public DateTime create_at { get; set; }
 
     }
