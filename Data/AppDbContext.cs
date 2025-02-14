@@ -18,7 +18,6 @@ namespace HotelBooking.Data
         public DbSet<Image> Images { get; set; } = default!;
         public DbSet<BookingService> BookingServices { get; set; } = default!;
         public DbSet<Booking> Bookings { get; set; } = default!;
-        public DbSet<BookingDetail> BookingDetails { get; set; } = default!;
         public DbSet<Voucher> Vouchers { get; set; } = default!;
         public DbSet<Room> Rooms { get; set; } = default!;
         public DbSet<CategoriesRoom> CategoriesRooms { get; set; } = default!;

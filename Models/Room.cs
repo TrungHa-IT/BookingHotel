@@ -42,18 +42,12 @@ namespace HotelBooking.Models
 
         [Required]
         public int MaxChildrenPeople {  get; set; }
-
-        // Khóa ngoại liên kết đến bảng Voucher
-        [ForeignKey("Voucher")]
         public int VoucherId { get; set; }  // Khóa ngoại từ bảng Voucher
-
-        public virtual Voucher? Voucher { get; set; }  // Điều hướng đến bảng Voucher
-
         // Khóa ngoại liên kết đến bảng CategoriesRoom
-        [ForeignKey("CategoriesRoom")]
         public int CategoryID { get; set; }  // Khóa ngoại từ bảng CategoriesRoom
 
-        public virtual CategoriesRoom? CategoriesRoom { get; set; }  // Điều hướng đến bảng CategoriesRoom
+        public virtual ICollection<BookAble?> BookAbles { get; set; }  // Danh sách các bản ghi trong bảng BookAble
+
     }
 
 }
