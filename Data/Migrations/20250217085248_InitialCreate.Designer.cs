@@ -4,6 +4,7 @@ using HotelBooking.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelBooking.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250217085248_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -184,9 +187,6 @@ namespace HotelBooking.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("ExtrasId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("check_in")
                         .IsRequired()
                         .HasColumnType("datetime2");
@@ -251,8 +251,6 @@ namespace HotelBooking.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ExtrasId");
 
                     b.HasIndex("voucherID");
 
@@ -397,34 +395,6 @@ namespace HotelBooking.Data.Migrations
                     b.HasIndex("ParentCommentID");
 
                     b.ToTable("Comments");
-                });
-
-            modelBuilder.Entity("HotelBooking.Models.Extras", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime?>("Created_at")
-                        .IsRequired()
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Extras");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.Feedback", b =>
@@ -868,10 +838,6 @@ namespace HotelBooking.Data.Migrations
 
             modelBuilder.Entity("HotelBooking.Models.Booking", b =>
                 {
-                    b.HasOne("HotelBooking.Models.Extras", null)
-                        .WithMany("Bookings")
-                        .HasForeignKey("ExtrasId");
-
                     b.HasOne("HotelBooking.Models.Voucher", null)
                         .WithMany("Bookings")
                         .HasForeignKey("voucherID")
@@ -1049,11 +1015,6 @@ namespace HotelBooking.Data.Migrations
                     b.Navigation("LikeRecords");
 
                     b.Navigation("Replies");
-                });
-
-            modelBuilder.Entity("HotelBooking.Models.Extras", b =>
-                {
-                    b.Navigation("Bookings");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.Room", b =>

@@ -24,5 +24,7 @@ namespace HotelBooking.Data
         public DbSet<AppUser> AppUsers { get; set; } = default!;
         public DbSet<Feedback> Feedbacks { get; set; } = default!;
         public DbSet<Payment> Payments { get; set; } = default!;
+        public DbSet<Extras> Extras { get; set; } = default!;
+
     }
 }
