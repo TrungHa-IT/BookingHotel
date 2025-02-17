@@ -56,5 +56,24 @@ namespace HotelBooking.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        [HttpPost]
+        [Route("UpdateAllImage")]
+
+        public async Task<IActionResult> UpdateAllImage(List<IFormFile> files,int relationID){
+           if(files == null || files.Count == 0){
+            ModelState.AddModelError("files", "Please select at least one image to upload.");
+                return BadRequest(ModelState);
+           }
+           try
+           {
+            await _imageRepositories.UpdateAllImage(files, Constants.room, relationID);
+            return Ok();
+           }
+           catch (Exception ex) 
+           {
+                return StatusCode(500, ex.Message);
+           }
+        }
     }
 }

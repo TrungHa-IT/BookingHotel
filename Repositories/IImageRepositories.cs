@@ -9,5 +9,7 @@ namespace HotelBooking.Repositories
         Task CreateImageAsync(List<IFormFile> files, int relationID, string relationName);
         Task DeleteImageAsync(int id);
         Task<List<Image>> GetAllImageByIdOfRelationID(int relationID, string relationName);
+
+        Task UpdateAllImage(List<IFormFile> files, string relationName, int relationID);
     }
 }
