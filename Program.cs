@@ -55,6 +55,8 @@ builder.Services.AddScoped<IRoomRepositories, RoomRepository>();
 builder.Services.AddScoped<IVoucherRepositories, VoucherRepositories>();
 builder.Services.AddScoped<IImageRepositories, ImageRepositories>();
 builder.Services.AddScoped<ICloudinaryService, CloudinaryService>();
+builder.Services.AddScoped<IBookingRepositories, BookingRepositories>();
+builder.Services.AddScoped<IBookAbleRepositories, BookAbleRepositories>();
 
 
 builder.Services.AddTransient<UnitOfWork>();

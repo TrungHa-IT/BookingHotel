@@ -14,5 +14,6 @@ namespace HotelBooking.Models
         public double Price { get; set; }
         [Required]
         public DateTime? Created_at { get; set; }
+        public virtual ICollection<Booking> Bookings { get; set; }
     }
 }
