@@ -18,6 +18,8 @@ namespace HotelBooking.Repositories
         public IRepository<CategoriesRoom> _categoriesRoomRepository { get; set; }
         public IRepository<Room> _roomRepository { get; set; }
         public IRepository<Voucher> _voucherRepository { get; set; }
+        public IRepository<Booking> _bookingRepository { get; set; }
+        public IRepository<BookAble> _bookAbleRepository { get; set; }
         private bool _disposed = false;
 
         public UnitOfWork(AppDbContext dbContext)
@@ -33,8 +35,10 @@ namespace HotelBooking.Repositories
             _categoriesRoomRepository = new Repository<CategoriesRoom>(_dbContext);
             _roomRepository = new Repository<Room>(_dbContext);
             _voucherRepository = new Repository<Voucher>(_dbContext);
+            _bookingRepository = new Repository<Booking>(_dbContext);
+            _bookAbleRepository = new Repository<BookAble>(_dbContext);
         }
-        
+
         /// <summary>
         /// Starts a new transaction.
         /// </summary>
