@@ -32,7 +32,7 @@ namespace HotelBooking.Repositories
             return await _unitOfWork._bookingRepository.GetAllAsync();
         }
 
-        public async Task<Booking> GetBookingsAsync(int id)
+        public async Task<Booking> GetBookingsByIdAsync(int id)
         {
             return await _unitOfWork._bookingRepository.GetByIdAsync(id);
         }

@@ -16,16 +16,16 @@ namespace HotelBooking.Controllers
 {
     public class BookingController : Controller
     {
-        private readonly IBookAbleRepositories _bookAbleRepositories;
+        private readonly IBookingRepositories _bookingRepositories;
 
-        public BookingController(IBookAbleRepositories bookAbleRepositories)
+        public BookingController(IBookingRepositories bookingRepositories)
         {
-            _bookAbleRepositories = bookAbleRepositories;
+            _bookingRepositories = bookingRepositories;
         }
 
         public async Task<IActionResult> Index()
         {
-            var display = await _bookAbleRepositories.GetAllBookAbleAsync();
+            var display = await _bookingRepositories.GetAllBookingsAsync();
             return View(display);
         }
 
@@ -35,14 +35,51 @@ namespace HotelBooking.Controllers
             return View();
         }
 
-        // [HttpPost]
-        // [ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
 
-        // public async Task<IActionResult> Create (Booking booking){
-        //     if(!ModelState.IsValid){
-        //         booking.
-        //     }
-        // }
-    
+        public async Task<IActionResult> Create(Booking booking)
+        {
+            if (!ModelState.IsValid)
+            {
+                booking.CreateAt = DateTime.Now;
+                await _bookingRepositories.CreateBookingAsync(booking);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(booking);
+        }
+
+        //detail
+        public async Task<IActionResult> Details(int id)
+        {
+            var booking = await _bookingRepositories.GetBookingsByIdAsync(id);
+            return booking == null ? NotFound() : View(booking);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(Booking booking)
+        {
+            await _bookingRepositories.UpdateBookingAsync(booking);
+            return RedirectToAction(nameof(Index));
+        }
+
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> DeleteCofirmed(int id)
+        {
+            var booking = await _bookingRepositories.GetBookingsByIdAsync(id);
+
+            if (booking != null)
+            {
+                await _bookingRepositories.DeleteBookingAsync(id);
+                return RedirectToAction(nameof(Index));
+            }
+            return NotFound();
+        }
+
     }
 }

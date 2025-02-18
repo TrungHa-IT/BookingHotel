@@ -6,7 +6,7 @@ namespace HotelBooking.Repositories
     {
         Task<IEnumerable<Booking>> GetAllBookingsAsync();
 
-        Task<Booking> GetBookingsAsync(int id);
+        Task<Booking> GetBookingsByIdAsync(int id);
 
         Task CreateBookingAsync(Booking booking);
 
