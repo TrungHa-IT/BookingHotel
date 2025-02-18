@@ -35,7 +35,14 @@ namespace HotelBooking.Controllers
             return View();
         }
 
-       
+        // [HttpPost]
+        // [ValidateAntiForgeryToken]
+
+        // public async Task<IActionResult> Create (Booking booking){
+        //     if(!ModelState.IsValid){
+        //         booking.
+        //     }
+        // }
     
     }
 }

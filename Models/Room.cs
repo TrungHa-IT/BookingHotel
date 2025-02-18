@@ -46,7 +46,7 @@ namespace HotelBooking.Models
         // Khóa ngoại liên kết đến bảng CategoriesRoom
         public int CategoryID { get; set; }  // Khóa ngoại từ bảng CategoriesRoom
 
-        public virtual ICollection<BookAble?> BookAbles { get; set; }  // Danh sách các bản ghi trong bảng BookAble
+        public virtual ICollection<BookAble>? BookAbles { get; set; }  // Danh sách các bản ghi trong bảng BookAble
 
     }
 

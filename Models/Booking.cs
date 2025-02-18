@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotelBooking.Models
 {
@@ -6,44 +7,65 @@ namespace HotelBooking.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
-        public DateTime? check_in { get; set; }
-        [Required]
-        public DateTime? check_out { get; set; }
-        [Required]
-        public int quantity_room { get; set; }
-        [Required]
-        public int quantity_adult { get; set; }
-        [Required]
-        public int quantity_children { get; set; }
-        [Required]
-        public int quantity_infants { get; set; }
-        [Required]
-        public string? first_name { get; set; }
-        [Required]
-        public string? last_name { get; set; }
-        [Required]
-        public string? email { get; set; }
-        [Required]
-        public string? confirm_email { get; set; }
-        [Required]
-        public string? phone { get; set; }
-        [Required]
-        public string? message { get; set; }
-        [Required]
-        public DateTime? plannedArrivalDate { get; set; }
-        [Required]
-        //khoa ngoai payment
-        public int payment_id { get; set; }
-        [Required]
-        public int extras_id { get; set; }
-        [Required]
-        public int status { get; set; }
-        //Khoa ngoai User
-        public int user_id { get; set; }
-        //khoa ngoai voucher
-        public int voucherID {  get; set; }
-        public virtual ICollection<BookAble?> BookAbles { get; set; }  // Danh sách các bản ghi trong bảng BookAble
 
+        [Required]
+        public DateTime? CheckIn { get; set; }
+
+        public DateTime? CheckOut { get; set; }
+
+        [Required]
+        public int QuantityRoom { get; set; }
+
+        [Required]
+        public int QuantityAdult { get; set; }
+
+        [Required]
+        public int QuantityChildren { get; set; }
+
+        [Required]
+        public int QuantityInfants { get; set; }
+
+        [Required]
+        public string? FirstName { get; set; }
+
+        [Required]
+        public string? LastName { get; set; }
+
+        [Required]
+        public string? Email { get; set; }
+
+        [Required]
+        public string? ConfirmEmail { get; set; }
+
+        [Required]
+        public string? Phone { get; set; }
+
+        public string? Message { get; set; }
+
+        [Required]
+        public DateTime? PlannedArrivalDate { get; set; }
+
+        [Required]
+        public int Status { get; set; }
+
+        [Required]
+        public DateTime? CreateAt { get; set; }
+
+        [ForeignKey("AppUser")]
+        public string? AppUserId { get; set; }
+
+        public virtual AppUser? User { get; set; }
+
+        public int ExtrasId { get; set; }
+
+        public int VoucherId { get; set; }
+
+        [ForeignKey("Payment")]
+        public int PaymentId { get; set; }
+
+        public virtual Payment? Payment { get; set; }
+
+        // Quan hệ nhiều với BookAble
+        public virtual ICollection<BookAble>? BookAbles { get; set; }
     }
 }

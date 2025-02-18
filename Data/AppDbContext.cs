@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HotelBooking.Data
 {
-    public class AppDbContext:IdentityDbContext<AppUser>
+    public class AppDbContext : IdentityDbContext<AppUser>
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) 
-        { 
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
         }
-        public DbSet<HotelBooking.Models.Categories> Categories { get; set; } = default!;
+        public DbSet<Categories> Categories { get; set; } = default!;
         public DbSet<Blog> Blogs { get; set; } = default!;
         public DbSet<Comments> Comments { get; set; } = default!;
         public DbSet<Service> Services { get; set; } = default!;
@@ -26,5 +26,24 @@ namespace HotelBooking.Data
         public DbSet<Payment> Payments { get; set; } = default!;
         public DbSet<Extras> Extras { get; set; } = default!;
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Cấu hình quan hệ giữa Booking và BookAble (một Booking có nhiều BookAbles)
+            modelBuilder.Entity<BookAble>()
+                .HasOne(ba => ba.Booking)
+                .WithMany(b => b.BookAbles)
+                .HasForeignKey(ba => ba.BookingId)
+                .OnDelete(DeleteBehavior.Restrict);  // Không cascade delete khi xóa Booking
+
+            // Cấu hình quan hệ giữa Room và BookAble (một Room có nhiều BookAbles)
+            modelBuilder.Entity<BookAble>()
+                .HasOne(ba => ba.Room)
+                .WithMany(r => r.BookAbles)
+                .HasForeignKey(ba => ba.RoomId)
+                .OnDelete(DeleteBehavior.Restrict);  // Không cascade delete khi xóa Room
+        }
     }
+
 }

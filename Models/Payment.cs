@@ -7,6 +7,7 @@ namespace HotelBooking.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string Credit { get; set; }  
+        public string? Credit { get; set; }
+        public virtual ICollection<Booking>? Bookings { get; set; }
     }
 }

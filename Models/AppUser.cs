@@ -25,6 +25,7 @@ namespace HotelBooking.Models
         // Thuộc tính điều hướng tới LikeRecord (1 AppUser có nhiều lượt Like)
         public virtual ICollection<LikeRecord> LikeRecords { get; set; }
 
+        public virtual ICollection<Booking>? Bookings { get; set; }
         public AppUser()
         {
             Blogs = new List<Blog>();
