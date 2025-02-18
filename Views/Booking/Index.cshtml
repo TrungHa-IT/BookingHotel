@@ -1,0 +1,45 @@
+@model IEnumerable<HotelBooking.Models.Booking>
+
+@{
+    ViewData["Title"] = "Booking List";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>CheckIn</th>
+            <th>CheckOut</th>
+            <th>Quantity Room</th>
+            <th>Quantity Adult</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model)
+        {
+            <tr>
+                <td>@booking.Id</td>
+                <td>@booking.CheckIn?.ToString("yyyy-MM-dd")</td>
+                <td>@booking.CheckOut?.ToString("yyyy-MM-dd")</td>
+                <td>@booking.QuantityRoom</td>
+                <td>@booking.QuantityAdult</td>
+                <td>@booking.FirstName</td>
+                <td>@booking.LastName</td>
+                <td>@booking.Status</td>
+                <td>
+                    <a href="@Url.Action("Details", "Booking", new { id = booking.Id })">Details</a> |
+                    <a href="@Url.Action("Edit", "Booking", new { id = booking.Id })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Booking", new { id = booking.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Booking")" class="btn btn-primary">Create New Booking</a>

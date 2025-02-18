@@ -1,0 +1,24 @@
+@model HotelBooking.Models.Booking
+
+@{
+    ViewData["Title"] = "Booking Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h2>Booking Information</h2>
+    <p><strong>ID:</strong> @Model.Id</p>
+    <p><strong>CheckIn:</strong> @Model.CheckIn?.ToString("yyyy-MM-dd")</p>
+    <p><strong>CheckOut:</strong> @Model.CheckOut?.ToString("yyyy-MM-dd")</p>
+    <p><strong>Quantity Room:</strong> @Model.QuantityRoom</p>
+    <p><strong>First Name:</strong> @Model.FirstName</p>
+    <p><strong>Last Name:</strong> @Model.LastName</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Phone:</strong> @Model.Phone</p>
+    <p><strong>Status:</strong> @Model.Status</p>
+    <p><strong>Message:</strong> @Model.Message</p>
+
+    <a href="@Url.Action("Edit", "Booking", new { id = Model.Id })" class="btn btn-warning">Edit</a>
+    <a href="@Url.Action("Index", "Booking")" class="btn btn-secondary">Back to List</a>
+</div>

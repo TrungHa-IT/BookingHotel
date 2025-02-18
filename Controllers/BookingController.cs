@@ -29,7 +29,10 @@ namespace HotelBooking.Controllers
             return View(display);
         }
 
-        // Create / BookAble
+       /// <summary>
+       /// create
+       /// </summary>
+       /// <returns></returns>
         public IActionResult Create()
         {
             return View();
@@ -49,14 +52,22 @@ namespace HotelBooking.Controllers
             return View(booking);
         }
 
-        //detail
+        /// <summary>
+        /// details
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Details(int id)
         {
             var booking = await _bookingRepositories.GetBookingsByIdAsync(id);
             return booking == null ? NotFound() : View(booking);
         }
 
-
+    /// <summary>
+    /// edit
+    /// </summary>
+    /// <param name="booking"></param>
+    /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Booking booking)
@@ -65,7 +76,11 @@ namespace HotelBooking.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
+/// <summary>
+/// delete
+/// </summary>
+/// <param name="id"></param>
+/// <returns></returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
 
