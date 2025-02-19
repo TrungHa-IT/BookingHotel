@@ -1,49 +1,129 @@
 @model HotelBooking.Models.Booking
 
 @{
-    ViewData["Title"] = "Create Booking";
+    ViewData["Title"] = "Create New Booking";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1>Create New Booking</h1>
 
-<form asp-action="Create">
+<form asp-action="Create" method="post" class="form">
     <div class="form-group">
-        <label asp-for="CheckIn" class="control-label"></label>
-        <input asp-for="CheckIn" class="form-control" />
+        <label asp-for="CheckIn" class="control-label">Check-In</label>
+        <input asp-for="CheckIn" class="form-control" type="date" />
         <span asp-validation-for="CheckIn" class="text-danger"></span>
     </div>
+
     <div class="form-group">
-        <label asp-for="CheckOut" class="control-label"></label>
-        <input asp-for="CheckOut" class="form-control" />
+        <label asp-for="CheckOut" class="control-label">Check-Out</label>
+        <input asp-for="CheckOut" class="form-control" type="date" />
         <span asp-validation-for="CheckOut" class="text-danger"></span>
     </div>
+
     <div class="form-group">
-        <label asp-for="QuantityRoom" class="control-label"></label>
-        <input asp-for="QuantityRoom" class="form-control" />
+        <label asp-for="QuantityRoom" class="control-label">Quantity of Rooms</label>
+        <input asp-for="QuantityRoom" class="form-control" type="number" />
         <span asp-validation-for="QuantityRoom" class="text-danger"></span>
     </div>
+
     <div class="form-group">
-        <label asp-for="FirstName" class="control-label"></label>
+        <label asp-for="QuantityAdult" class="control-label">Quantity of Adults</label>
+        <input asp-for="QuantityAdult" class="form-control" type="number" />
+        <span asp-validation-for="QuantityAdult" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="QuantityChildren" class="control-label">Quantity of Children</label>
+        <input asp-for="QuantityChildren" class="form-control" type="number" />
+        <span asp-validation-for="QuantityChildren" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="QuantityInfants" class="control-label">Quantity of Infants</label>
+        <input asp-for="QuantityInfants" class="form-control" type="number" />
+        <span asp-validation-for="QuantityInfants" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FirstName" class="control-label">First Name</label>
         <input asp-for="FirstName" class="form-control" />
         <span asp-validation-for="FirstName" class="text-danger"></span>
     </div>
+
     <div class="form-group">
-        <label asp-for="LastName" class="control-label"></label>
+        <label asp-for="LastName" class="control-label">Last Name</label>
         <input asp-for="LastName" class="form-control" />
         <span asp-validation-for="LastName" class="text-danger"></span>
     </div>
+
     <div class="form-group">
-        <label asp-for="Email" class="control-label"></label>
+        <label asp-for="Email" class="control-label">Email</label>
         <input asp-for="Email" class="form-control" />
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
+
     <div class="form-group">
-        <label asp-for="Phone" class="control-label"></label>
+        <label asp-for="ConfirmEmail" class="control-label">Confirm Email</label>
+        <input asp-for="ConfirmEmail" class="form-control" />
+        <span asp-validation-for="ConfirmEmail" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Phone" class="control-label">Phone</label>
         <input asp-for="Phone" class="form-control" />
         <span asp-validation-for="Phone" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Create</button>
-</form>
+    <div class="form-group">
+        <label asp-for="Message" class="control-label">Message</label>
+        <textarea asp-for="Message" class="form-control"></textarea>
+        <span asp-validation-for="Message" class="text-danger"></span>
+    </div>
 
-<a href="@Url.Action("Index", "Booking")" class="btn btn-secondary">Back to List</a>
+    <div class="form-group">
+        <label asp-for="PlannedArrivalDate" class="control-label">Planned Arrival Date</label>
+        <input asp-for="PlannedArrivalDate" class="form-control" type="date" />
+        <span asp-validation-for="PlannedArrivalDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Status" class="control-label">Status</label>
+        <input asp-for="Status" class="form-control" type="number" />
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AppUserId" class="control-label">AppUserId</label>
+        <input asp-for="AppUserId" class="form-control" />
+        <span asp-validation-for="AppUserId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ExtrasId" class="control-label">Extras Id</label>
+        <input asp-for="ExtrasId" class="form-control" type="number" />
+        <span asp-validation-for="ExtrasId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="VoucherId" class="control-label">Voucher Id</label>
+        <input asp-for="VoucherId" class="form-control" type="number" />
+        <span asp-validation-for="VoucherId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PaymentId" class="control-label">Payment Id</label>
+        <input asp-for="PaymentId" class="form-control" type="number" />
+        <span asp-validation-for="PaymentId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create Booking</button>
+    </div>
+</form>
+   <a href="@Url.Action("Index", "Booking")" class="btn btn-secondary">Back to Booking List</a>
+ 
+<!-- Validation Scripts -->
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

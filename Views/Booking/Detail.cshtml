@@ -4,21 +4,110 @@
     ViewData["Title"] = "Booking Details";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1>Booking Details</h1>
 
-<div>
-    <h2>Booking Information</h2>
-    <p><strong>ID:</strong> @Model.Id</p>
-    <p><strong>CheckIn:</strong> @Model.CheckIn?.ToString("yyyy-MM-dd")</p>
-    <p><strong>CheckOut:</strong> @Model.CheckOut?.ToString("yyyy-MM-dd")</p>
-    <p><strong>Quantity Room:</strong> @Model.QuantityRoom</p>
-    <p><strong>First Name:</strong> @Model.FirstName</p>
-    <p><strong>Last Name:</strong> @Model.LastName</p>
-    <p><strong>Email:</strong> @Model.Email</p>
-    <p><strong>Phone:</strong> @Model.Phone</p>
-    <p><strong>Status:</strong> @Model.Status</p>
-    <p><strong>Message:</strong> @Model.Message</p>
+<div class="details">
+    <div class="form-group">
+        <label class="control-label">Booking ID</label>
+        <p>@Model.Id</p>
+    </div>
 
-    <a href="@Url.Action("Edit", "Booking", new { id = Model.Id })" class="btn btn-warning">Edit</a>
-    <a href="@Url.Action("Index", "Booking")" class="btn btn-secondary">Back to List</a>
+    <div class="form-group">
+        <label class="control-label">Check-In</label>
+        <p>@Model.CheckIn?.ToString("yyyy-MM-dd")</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Check-Out</label>
+        <p>@Model.CheckOut?.ToString("yyyy-MM-dd")</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Quantity of Rooms</label>
+        <p>@Model.QuantityRoom</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Quantity of Adults</label>
+        <p>@Model.QuantityAdult</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Quantity of Children</label>
+        <p>@Model.QuantityChildren</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Quantity of Infants</label>
+        <p>@Model.QuantityInfants</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">First Name</label>
+        <p>@Model.FirstName</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Last Name</label>
+        <p>@Model.LastName</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Email</label>
+        <p>@Model.Email</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Confirm Email</label>
+        <p>@Model.ConfirmEmail</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Phone</label>
+        <p>@Model.Phone</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Message</label>
+        <p>@Model.Message</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Planned Arrival Date</label>
+        <p>@Model.PlannedArrivalDate?.ToString("yyyy-MM-dd")</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Status</label>
+        <p>@Model.Status</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Created At</label>
+        <p>@Model.CreateAt?.ToString("yyyy-MM-dd")</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">AppUserId</label>
+        <p>@Model.AppUserId</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Extras Id</label>
+        <p>@Model.ExtrasId</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Voucher Id</label>
+        <p>@Model.VoucherId</p>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Payment Id</label>
+        <p>@Model.PaymentId</p>
+    </div>
+
+    <div class="form-group">
+        <a href="@Url.Action("Index", "Booking")" class="btn btn-secondary">Back to Booking List</a>
+    </div>
 </div>
